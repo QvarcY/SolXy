@@ -1,0 +1,653 @@
+/* ============================================================
+   SolXy · controls.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   KARTĪTES AR RADIO PĀRSLĒGU (TABS BEZ JS)
+   ============================================================ */
+
+.control-tabs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.control-tabs__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.control-tabs__label {
+  flex: 1;
+  min-width: 100px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-secondary);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  user-select: none;
+}
+
+.control-tabs__label:hover {
+  color: var(--c-text-primary);
+  background: var(--c-bg-glass-light);
+}
+
+.control-tabs__label:focus-within {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.control-tabs__panels {
+  position: relative;
+}
+
+.control-tabs__panel {
+  display: none;
+  animation: control-tabs-fade-in var(--transition-base) var(--ease-out);
+}
+
+@keyframes control-tabs-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === STĀVOKĻI === */
+.control-tabs__input:nth-of-type(1):checked ~ .control-tabs__nav .control-tabs__label:nth-child(1),
+.control-tabs__input:nth-of-type(2):checked ~ .control-tabs__nav .control-tabs__label:nth-child(2),
+.control-tabs__input:nth-of-type(3):checked ~ .control-tabs__nav .control-tabs__label:nth-child(3),
+.control-tabs__input:nth-of-type(4):checked ~ .control-tabs__nav .control-tabs__label:nth-child(4),
+.control-tabs__input:nth-of-type(5):checked ~ .control-tabs__nav .control-tabs__label:nth-child(5) {
+  color: var(--c-accent-teal);
+  background: var(--c-accent-teal-glass);
+  box-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+.control-tabs__input:nth-of-type(1):checked ~ .control-tabs__panels .control-tabs__panel:nth-child(1),
+.control-tabs__input:nth-of-type(2):checked ~ .control-tabs__panels .control-tabs__panel:nth-child(2),
+.control-tabs__input:nth-of-type(3):checked ~ .control-tabs__panels .control-tabs__panel:nth-child(3),
+.control-tabs__input:nth-of-type(4):checked ~ .control-tabs__panels .control-tabs__panel:nth-child(4),
+.control-tabs__input:nth-of-type(5):checked ~ .control-tabs__panels .control-tabs__panel:nth-child(5) {
+  display: block;
+}
+
+/* ============================================================
+   PĀRSLĒGS (SWITCH)
+   ============================================================ */
+
+.control-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-md);
+  cursor: pointer;
+  user-select: none;
+}
+
+.control-switch__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-switch__track {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-default);
+  transition: all var(--transition-base) var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+.control-switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--c-text-secondary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+.control-switch__label {
+  font-size: var(--fs-sm);
+  color: var(--c-text-primary);
+  font-weight: var(--fw-medium);
+}
+
+.control-switch__input:checked ~ .control-switch__track {
+  background: var(--c-accent-teal-glass);
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 16px var(--c-accent-teal-glow);
+}
+
+.control-switch__input:checked ~ .control-switch__track .control-switch__thumb {
+  left: calc(100% - 23px);
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal);
+}
+
+.control-switch__input:focus-visible ~ .control-switch__track {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================================
+   PELDOŠAIS RADIO
+   ============================================================ */
+
+.control-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.control-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border-subtle);
+  background: var(--c-bg-glass);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  user-select: none;
+}
+
+.control-radio:hover {
+  border-color: var(--c-border-accent);
+  transform: translateX(4px);
+}
+
+.control-radio__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-radio__indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--c-border-strong);
+  position: relative;
+  flex-shrink: 0;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.control-radio__indicator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal);
+  transition: transform var(--transition-base) var(--ease-bounce);
+}
+
+.control-radio__label {
+  font-size: var(--fs-sm);
+  color: var(--c-text-primary);
+  font-weight: var(--fw-medium);
+}
+
+.control-radio__input:checked ~ .control-radio__indicator {
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal-glow);
+}
+
+.control-radio__input:checked ~ .control-radio__indicator::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.control-radio__input:focus-visible ~ .control-radio__indicator {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.control-radio__input:checked ~ .control-radio__label {
+  color: var(--c-accent-teal);
+}
+
+/* ============================================================
+   ĶEKSRUTS
+   ============================================================ */
+
+.control-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border-subtle);
+  background: var(--c-bg-glass);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  user-select: none;
+}
+
+.control-checkbox:hover {
+  border-color: var(--c-border-accent);
+}
+
+.control-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-checkbox__indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-xs);
+  border: 2px solid var(--c-border-strong);
+  position: relative;
+  flex-shrink: 0;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.control-checkbox__indicator::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 5px;
+  height: 10px;
+  border-right: 2px solid var(--c-bg-primary);
+  border-bottom: 2px solid var(--c-bg-primary);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transition: transform var(--transition-base) var(--ease-bounce);
+}
+
+.control-checkbox__label {
+  font-size: var(--fs-sm);
+  color: var(--c-text-primary);
+  font-weight: var(--fw-medium);
+}
+
+.control-checkbox__input:checked ~ .control-checkbox__indicator {
+  border-color: var(--c-accent-teal);
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal-glow);
+}
+
+.control-checkbox__input:checked ~ .control-checkbox__indicator::after {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+.control-checkbox__input:focus-visible ~ .control-checkbox__indicator {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.control-checkbox__input:checked ~ .control-checkbox__label {
+  color: var(--c-accent-teal);
+}
+
+/* ============================================================
+   SALOKĀMĀS SEKCIJAS (DETAILS / SUMMARY)
+   ============================================================ */
+
+.control-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.control-accordion__item {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-border-subtle);
+  background: var(--c-bg-glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  overflow: hidden;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.control-accordion__item[open] {
+  border-color: var(--c-border-accent);
+  box-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+.control-accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text-primary);
+  list-style: none;
+  user-select: none;
+  transition: background var(--transition-fast) var(--ease-in-out);
+}
+
+.control-accordion__summary:hover {
+  background: var(--c-bg-glass-light);
+}
+
+.control-accordion__summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
+
+.control-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.control-accordion__summary::after {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  color: var(--c-accent-teal);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  flex-shrink: 0;
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.control-accordion__item[open] .control-accordion__summary::after {
+  content: "−";
+  transform: rotate(180deg);
+  background: var(--c-accent-teal-glass);
+  border-color: var(--c-accent-teal);
+}
+
+.control-accordion__content {
+  padding: 0 var(--space-lg) var(--space-lg);
+  animation: control-accordion-slide var(--transition-base) var(--ease-out);
+  color: var(--c-text-secondary);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+
+@keyframes control-accordion-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   TOOLTIP
+   ============================================================ */
+
+.control-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  border-bottom: 1px dashed var(--c-accent-teal);
+}
+
+.control-tooltip__content {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-glass-strong);
+  border: 1px solid var(--c-border-default);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-primary);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all var(--transition-base) var(--ease-out);
+  z-index: var(--z-tooltip);
+  box-shadow: var(--shadow-lg);
+}
+
+.control-tooltip__content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--c-bg-glass-strong);
+}
+
+.control-tooltip:hover .control-tooltip__content,
+.control-tooltip:focus-visible .control-tooltip__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   SEGMENTĒTAIS KONTROLS
+   ============================================================ */
+
+.control-segmented {
+  display: inline-flex;
+  padding: var(--space-2xs);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  gap: var(--space-2xs);
+}
+
+.control-segmented__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-segmented__label {
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--ease-in-out);
+  user-select: none;
+}
+
+.control-segmented__label:hover {
+  color: var(--c-text-primary);
+}
+
+.control-segmented__input:checked ~ .control-segmented__label {
+  background: var(--c-accent-teal-glass);
+  color: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal-glow);
+}
+
+/* ============================================================
+   ATZĪMJU GRUPA (FILTRI)
+   ============================================================ */
+
+.control-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.control-chips__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.control-chips__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  user-select: none;
+}
+
+.control-chips__label:hover {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  transform: translateY(-2px);
+}
+
+.control-chips__input:checked ~ .control-chips__label {
+  background: var(--c-accent-teal-glass);
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal-glow);
+}
+
+/* ============================================================
+   PROGRESS INDIKATORS
+   ============================================================ */
+
+.control-progress {
+  position: relative;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  overflow: hidden;
+}
+
+.control-progress__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    var(--c-accent-teal),
+    var(--c-accent-violet)
+  );
+  box-shadow: 0 0 12px var(--c-accent-teal-glow);
+  transition: width var(--transition-slow) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.control-progress__fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: control-progress-shine 2s linear infinite;
+}
+
+@keyframes control-progress-shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .control-tabs__panel,
+  .control-accordion__content,
+  .control-progress__fill::after {
+    animation: none;
+  }
+
+  .control-radio__indicator::after,
+  .control-checkbox__indicator::after {
+    transition: none;
+  }
+}
+
+/* ============================================================
+   FORCED COLORS
+   ============================================================ */
+
+@media (forced-colors: active) {
+  .control-tabs__label,
+  .control-radio,
+  .control-checkbox,
+  .control-chips__label {
+    border: 1px solid CanvasText;
+  }
+
+  .control-tabs__input:checked ~ .control-tabs__nav .control-tabs__label,
+  .control-chips__input:checked ~ .control-chips__label {
+    border: 2px solid Highlight;
+  }
+}

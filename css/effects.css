@@ -1,0 +1,662 @@
+/* ============================================================
+   SolXy · effects.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   GLASS MORPHISM
+   ============================================================ */
+
+.effect-glass {
+  background: var(--c-bg-glass);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  border: 1px solid var(--c-border-subtle);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.effect-glass--strong {
+  background: var(--c-bg-glass-strong);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  border: 1px solid var(--c-border-default);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+}
+
+.effect-glass--light {
+  background: var(--c-bg-glass-light);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border: 1px solid var(--c-border-subtle);
+}
+
+/* ============================================================
+   GRADIENT BORDERS
+   ============================================================ */
+
+.effect-gradient-border {
+  position: relative;
+}
+
+.effect-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--c-accent-teal) 0%,
+    var(--c-accent-violet) 50%,
+    var(--c-accent-pink) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.effect-gradient-border--teal::before {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-teal-dark));
+}
+
+.effect-gradient-border--violet::before {
+  background: linear-gradient(135deg, var(--c-accent-violet), var(--c-accent-violet-dark));
+}
+
+.effect-gradient-border--pink::before {
+  background: linear-gradient(135deg, var(--c-accent-pink), var(--c-accent-pink-dark));
+}
+
+/* === ANIMĒTA GRADIENTA ROBEŽA === */
+.effect-gradient-border--animated::before {
+  background: linear-gradient(
+    135deg,
+    var(--c-accent-teal) 0%,
+    var(--c-accent-violet) 25%,
+    var(--c-accent-pink) 50%,
+    var(--c-accent-violet) 75%,
+    var(--c-accent-teal) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-border-shift 4s ease infinite;
+}
+
+@keyframes gradient-border-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================================
+   GLOW EFEKTI
+   ============================================================ */
+
+.effect-glow-teal {
+  box-shadow: var(--glow-teal-md);
+}
+
+.effect-glow-teal--lg {
+  box-shadow: var(--glow-teal-lg);
+}
+
+.effect-glow-violet {
+  box-shadow: var(--glow-violet-md);
+}
+
+.effect-glow-violet--lg {
+  box-shadow: var(--glow-violet-lg);
+}
+
+.effect-glow-pink {
+  box-shadow: var(--glow-pink-md);
+}
+
+.effect-glow-pink--lg {
+  box-shadow: var(--glow-pink-lg);
+}
+
+.effect-glow-amber {
+  box-shadow: var(--glow-amber-md);
+}
+
+.effect-glow-blue {
+  box-shadow: var(--glow-blue-md);
+}
+
+/* === TEKSTA GLOW === */
+.effect-text-glow {
+  text-shadow: 0 0 20px currentColor;
+}
+
+.effect-text-glow--teal {
+  color: var(--c-accent-teal);
+  text-shadow:
+    0 0 10px var(--c-accent-teal-glow),
+    0 0 20px var(--c-accent-teal-glow);
+}
+
+.effect-text-glow--violet {
+  color: var(--c-accent-violet);
+  text-shadow:
+    0 0 10px var(--c-accent-violet-glow),
+    0 0 20px var(--c-accent-violet-glow);
+}
+
+.effect-text-glow--pink {
+  color: var(--c-accent-pink);
+  text-shadow:
+    0 0 10px var(--c-accent-pink-glow),
+    0 0 20px var(--c-accent-pink-glow);
+}
+
+/* ============================================================
+   GRADIENTA TEKSTS
+   ============================================================ */
+
+.effect-gradient-text {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-violet), var(--c-accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.effect-gradient-text--teal {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-teal-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ============================================================
+   SHIMMER EFEKTS
+   ============================================================ */
+
+.effect-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: effect-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes effect-shimmer {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============================================================
+   NOISE / GRAIN EFEKTS
+   ============================================================ */
+
+.effect-noise {
+  position: relative;
+}
+
+.effect-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ============================================================
+   PARALLAX EFEKTS
+   ============================================================ */
+
+.effect-parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.effect-parallax__layer {
+  transition: transform var(--transition-slow) var(--ease-out);
+  will-change: transform;
+}
+
+.effect-parallax:hover .effect-parallax__layer--1 {
+  transform: translateZ(20px);
+}
+
+.effect-parallax:hover .effect-parallax__layer--2 {
+  transform: translateZ(40px);
+}
+
+.effect-parallax:hover .effect-parallax__layer--3 {
+  transform: translateZ(60px);
+}
+
+/* ============================================================
+   HOVER EFEKTI
+   ============================================================ */
+
+/* === PACEĻŠANA === */
+.effect-lift {
+  transition: transform var(--transition-base) var(--ease-out),
+              box-shadow var(--transition-base) var(--ease-in-out);
+}
+
+.effect-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* === PALIELINĀŠANA === */
+.effect-scale {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.effect-scale:hover {
+  transform: scale(1.05);
+}
+
+/* === ROTĀCIJA === */
+.effect-rotate {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.effect-rotate:hover {
+  transform: rotate(-2deg) scale(1.02);
+}
+
+/* === TILT === */
+.effect-tilt {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.effect-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+}
+
+/* === SPĪDĪGUMS === */
+.effect-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg) translateX(-100%);
+  transition: transform 0.6s var(--ease-out);
+  pointer-events: none;
+}
+
+.effect-shine:hover::before {
+  transform: rotate(45deg) translateX(100%);
+}
+
+/* ============================================================
+   MASK / MASKĒŠANA
+   ============================================================ */
+
+.effect-mask-fade-bottom {
+  mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, black 60%, transparent 100%);
+}
+
+.effect-mask-fade-top {
+  mask-image: linear-gradient(0deg, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(0deg, black 60%, transparent 100%);
+}
+
+.effect-mask-fade-right {
+  mask-image: linear-gradient(90deg, black 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, black 60%, transparent 100%);
+}
+
+.effect-mask-radial {
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
+
+/* ============================================================
+   BORDER BEVELS (FRAME EFEKTS)
+   ============================================================ */
+
+.effect-corners {
+  position: relative;
+}
+
+.effect-corners::before,
+.effect-corners::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--c-accent-teal);
+  pointer-events: none;
+}
+
+.effect-corners::before {
+  top: 0;
+  left: 0;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.effect-corners::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* ============================================================
+   RIPPLE EFEKTS
+   ============================================================ */
+
+.effect-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-ripple::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--c-accent-teal-glow);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.6s var(--ease-out),
+              height 0.6s var(--ease-out),
+              opacity 0.6s var(--ease-out);
+}
+
+.effect-ripple:hover::after {
+  width: 300px;
+  height: 300px;
+  opacity: 0.15;
+}
+
+/* ============================================================
+   FONA GRADIENTI
+   ============================================================ */
+
+.effect-bg-teal {
+  background: radial-gradient(ellipse at center, var(--c-accent-teal-glow), transparent 70%);
+}
+
+.effect-bg-violet {
+  background: radial-gradient(ellipse at center, var(--c-accent-violet-glow), transparent 70%);
+}
+
+.effect-bg-pink {
+  background: radial-gradient(ellipse at center, var(--c-accent-pink-glow), transparent 70%);
+}
+
+.effect-bg-aurora {
+  background:
+    radial-gradient(ellipse at 20% 30%, var(--c-accent-teal-glow), transparent 50%),
+    radial-gradient(ellipse at 80% 70%, var(--c-accent-violet-glow), transparent 50%),
+    radial-gradient(ellipse at 50% 50%, var(--c-accent-pink-glow), transparent 60%);
+}
+
+/* ============================================================
+   BLUR EFEKTI
+   ============================================================ */
+
+.effect-blur-sm {
+  filter: blur(var(--blur-sm));
+}
+
+.effect-blur-md {
+  filter: blur(var(--blur-md));
+}
+
+.effect-blur-lg {
+  filter: blur(var(--blur-lg));
+}
+
+/* === HOVER BLUR === */
+.effect-blur-hover {
+  transition: filter var(--transition-base) var(--ease-in-out);
+}
+
+.effect-blur-hover:hover {
+  filter: blur(0);
+}
+
+.effect-blur-hover--inverse {
+  filter: blur(var(--blur-sm));
+}
+
+.effect-blur-hover--inverse:hover {
+  filter: blur(0);
+}
+
+/* ============================================================
+   MIX BLEND MODES
+   ============================================================ */
+
+.effect-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.effect-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.effect-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.effect-blend-soft-light {
+  mix-blend-mode: soft-light;
+}
+
+/* ============================================================
+   TRANSFORM EFEKTI
+   ============================================================ */
+
+.effect-flip-x {
+  transform: scaleX(-1);
+}
+
+.effect-flip-y {
+  transform: scaleY(-1);
+}
+
+.effect-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.effect-rotate-180 {
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   KOMBINĒTIE EFEKTI
+   ============================================================ */
+
+/* === CARD WITH GLOW === */
+.effect-card-glow {
+  position: relative;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.effect-card-glow:hover {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 60px var(--c-accent-teal-glow);
+  transform: translateY(-4px);
+}
+
+/* === SPOTLIGHT (pele) === */
+.effect-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+.effect-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(94, 234, 212, 0.15),
+    transparent 60%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base) var(--ease-in-out);
+}
+
+.effect-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* === FROSTED === */
+.effect-frosted {
+  background: rgba(13, 20, 40, 0.5);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid var(--c-border-default);
+}
+
+/* === NEON === */
+.effect-neon {
+  border: 1px solid var(--c-accent-teal);
+  box-shadow:
+    0 0 10px var(--c-accent-teal-glow),
+    inset 0 0 10px var(--c-accent-teal-glow);
+  text-shadow: 0 0 8px var(--c-accent-teal-glow);
+}
+
+.effect-neon--violet {
+  border-color: var(--c-accent-violet);
+  box-shadow:
+    0 0 10px var(--c-accent-violet-glow),
+    inset 0 0 10px var(--c-accent-violet-glow);
+  text-shadow: 0 0 8px var(--c-accent-violet-glow);
+  color: var(--c-accent-violet);
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .effect-shimmer::after,
+  .effect-gradient-border--animated::before,
+  .effect-ripple::after,
+  .effect-spotlight::before,
+  .effect-shine::before {
+    animation: none;
+    transition: none;
+  }
+
+  .effect-lift:hover,
+  .effect-scale:hover,
+  .effect-rotate:hover,
+  .effect-tilt:hover,
+  .effect-card-glow:hover {
+    transform: none;
+  }
+
+  .effect-parallax:hover .effect-parallax__layer {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .effect-corners::before,
+  .effect-corners::after {
+    width: 12px;
+    height: 12px;
+  }
+
+  .effect-spotlight::before {
+    background: radial-gradient(
+      circle at 50% 0%,
+      rgba(94, 234, 212, 0.1),
+      transparent 70%
+    );
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .effect-glass,
+  .effect-glass--strong,
+  .effect-glass--light,
+  .effect-frosted {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid #ccc;
+  }
+
+  .effect-shimmer::after,
+  .effect-noise::after,
+  .effect-shine::before,
+  .effect-spotlight::before {
+    display: none;
+  }
+
+  .effect-glow-teal,
+  .effect-glow-violet,
+  .effect-glow-pink,
+  .effect-glow-amber,
+  .effect-glow-blue,
+  .effect-neon {
+    box-shadow: none;
+  }
+}

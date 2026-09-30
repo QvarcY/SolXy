@@ -1,0 +1,380 @@
+/* ============================================================
+   SolXy · planets.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === PLANĒTU BĀZE === */
+.planet {
+  position: relative;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+  z-index: var(--z-raised);
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* Fona gradients — pēc noklusējuma Zemes, pārrakstīts katrā planētas failā */
+  background: var(--planet-gradient, var(--earth-gradient));
+  /* Iekšējā ēna, lai izskatītos 3D */
+  box-shadow:
+    inset -6px -6px 12px rgba(0, 0, 0, 0.6),
+    inset 3px 3px 8px rgba(255, 255, 255, 0.15);
+}
+
+/* === PLANĒTU IZMĒRI === */
+.planet--mercury {
+  width: var(--planet-size-mercury);
+  height: var(--planet-size-mercury);
+  --planet-gradient: var(--mercury-gradient);
+}
+
+.planet--venus {
+  width: var(--planet-size-venus);
+  height: var(--planet-size-venus);
+  --planet-gradient: var(--venus-gradient);
+}
+
+.planet--earth {
+  width: var(--planet-size-earth);
+  height: var(--planet-size-earth);
+  --planet-gradient: var(--earth-gradient);
+}
+
+.planet--mars {
+  width: var(--planet-size-mars);
+  height: var(--planet-size-mars);
+  --planet-gradient: var(--mars-gradient);
+}
+
+.planet--jupiter {
+  width: var(--planet-size-jupiter);
+  height: var(--planet-size-jupiter);
+  --planet-gradient: var(--jupiter-gradient);
+}
+
+.planet--saturn {
+  width: var(--planet-size-saturn);
+  height: var(--planet-size-saturn);
+  --planet-gradient: var(--saturn-gradient);
+}
+
+.planet--uranus {
+  width: var(--planet-size-uranus);
+  height: var(--planet-size-uranus);
+  --planet-gradient: var(--uranus-gradient);
+}
+
+.planet--neptune {
+  width: var(--planet-size-neptune);
+  height: var(--planet-size-neptune);
+  --planet-gradient: var(--neptune-gradient);
+}
+
+/* === PLANĒTU VIRSMA (kad ir iekšējie div) === */
+.planet__surface {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* === PLANĒTU ATMOSFĒRA (tikai spīdums, bez fona) === */
+.planet__atmosphere {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === PLANĒTU ĒNA === */
+.planet__shadow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+/* === PLANĒTU ROTĀCIJA === */
+.planet--rotate {
+  animation: planet-rotate var(--rotate-duration, 10s) linear infinite;
+}
+
+.planet--rotate-slow {
+  animation: planet-rotate var(--rotate-duration-planet-slow, 20s) linear infinite;
+}
+
+.planet--rotate-fast {
+  animation: planet-rotate var(--rotate-duration-planet-fast, 5s) linear infinite;
+}
+
+@keyframes planet-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === PLANĒTU PULSĀCIJA === */
+.planet--pulse {
+  animation: planet-pulse 4s ease-in-out infinite;
+}
+
+@keyframes planet-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* === PLANĒTU GLOW === */
+.planet--glow {
+  box-shadow: 0 0 20px var(--planet-glow, var(--c-accent-teal-glow));
+}
+
+/* === PLANĒTU HOVER === */
+.planet--hoverable {
+  cursor: pointer;
+  transition: transform var(--transition-base) var(--ease-out),
+              filter var(--transition-base) var(--ease-in-out),
+              box-shadow var(--transition-base) var(--ease-in-out);
+}
+
+.planet--hoverable:hover {
+  transform: scale(1.5);
+  filter: brightness(1.3);
+  z-index: var(--z-modal);
+}
+
+/* === PLANĒTU LAPĀ === */
+.planet--page {
+  width: clamp(180px, 30vw, 380px) !important;
+  height: clamp(180px, 30vw, 380px) !important;
+  margin-inline: auto;
+}
+
+/* === PLANĒTU INFORMĀCIJAS KARTĪTE === */
+.planet-info {
+  display: grid;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.planet-info__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding-block: var(--space-xs);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.planet-info__row:last-child {
+  border-bottom: none;
+}
+
+.planet-info__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.planet-info__value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-text-primary);
+  font-weight: var(--fw-semibold);
+  text-align: right;
+}
+
+/* === PLANĒTU INDIKATORS === */
+.planet-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.planet-indicator--mercury { background: var(--mercury-primary); color: var(--mercury-primary); }
+.planet-indicator--venus { background: var(--venus-primary); color: var(--venus-primary); }
+.planet-indicator--earth { background: var(--earth-primary); color: var(--earth-primary); }
+.planet-indicator--mars { background: var(--mars-primary); color: var(--mars-primary); }
+.planet-indicator--jupiter { background: var(--jupiter-primary); color: var(--jupiter-primary); }
+.planet-indicator--saturn { background: var(--saturn-primary); color: var(--saturn-primary); }
+.planet-indicator--uranus { background: var(--uranus-primary); color: var(--uranus-primary); }
+.planet-indicator--neptune { background: var(--neptune-primary); color: var(--neptune-primary); }
+
+/* === PLANĒTU GRAUDU STRUKTŪRA === */
+.planet__texture {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* === PLANĒTU GREDZENI === */
+.planet__rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220%;
+  height: 220%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotateX(70deg);
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+/* === PLANĒTU PAVADOŅI === */
+.planet__moons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* === PLANĒTU KARTĪTES === */
+.planet-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-xl);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  transition: all var(--transition-base) var(--ease-in-out);
+  overflow: hidden;
+}
+
+.planet-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-border-accent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), var(--glow-teal-sm);
+}
+
+.planet-card__preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-inline: auto;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow:
+    inset -6px -6px 12px rgba(0, 0, 0, 0.5),
+    0 0 30px currentColor;
+}
+
+.planet-card__preview--mercury {
+  background: var(--mercury-gradient);
+  color: var(--mercury-primary);
+}
+
+.planet-card__preview--venus {
+  background: var(--venus-gradient);
+  color: var(--venus-primary);
+}
+
+.planet-card__preview--earth {
+  background: var(--earth-gradient);
+  color: var(--earth-primary);
+}
+
+.planet-card__preview--mars {
+  background: var(--mars-gradient);
+  color: var(--mars-primary);
+}
+
+.planet-card__preview--jupiter {
+  background: var(--jupiter-gradient);
+  color: var(--jupiter-primary);
+}
+
+.planet-card__preview--saturn {
+  background: var(--saturn-gradient);
+  color: var(--saturn-primary);
+}
+
+.planet-card__preview--uranus {
+  background: var(--uranus-gradient);
+  color: var(--uranus-primary);
+}
+
+.planet-card__preview--neptune {
+  background: var(--neptune-gradient);
+  color: var(--neptune-primary);
+}
+
+.planet-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--c-text-primary);
+  text-align: center;
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+}
+
+.planet-card__text {
+  font-size: var(--fs-sm);
+  color: var(--c-text-secondary);
+  text-align: center;
+  line-height: var(--lh-normal);
+  margin: 0;
+}
+
+.planet-card__meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.planet-card__link {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-raised);
+  border-radius: inherit;
+}
+
+.planet-card__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* === PLANĒTU GRIDS === */
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: var(--space-lg);
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--rotate,
+  .planet--rotate-slow,
+  .planet--rotate-fast,
+  .planet--pulse {
+    animation: none;
+  }
+}

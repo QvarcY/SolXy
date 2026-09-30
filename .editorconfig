@@ -1,0 +1,67 @@
+# ============================================================
+# SolXy · .editorconfig
+# Autors: QvarcY (https://github.com/QvarcY)
+# Licence: MIT
+# ============================================================
+
+# === SAKNE ===
+root = true
+
+# === VISPĀRĪGI ===
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+max_line_length = 100
+
+# === HTML ===
+[*.html]
+indent_style = space
+indent_size = 2
+
+# === CSS ===
+[*.css]
+indent_style = space
+indent_size = 2
+
+# === MARKDOWN ===
+[*.md]
+trim_trailing_whitespace = false
+indent_style = space
+indent_size = 2
+
+# === YAML ===
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# === JSON ===
+[*.json]
+indent_style = space
+indent_size = 2
+
+# === SVG ===
+[*.svg]
+indent_style = space
+indent_size = 2
+
+# === GIT ===
+[.gitignore]
+indent_style = space
+indent_size = 2
+
+[.gitattributes]
+indent_style = space
+indent_size = 2
+
+# === LICENCE ===
+[LICENSE]
+indent_style = space
+indent_size = 2
+
+# === MAKEFILE (ja kādreiz) ===
+[Makefile]
+indent_style = tab

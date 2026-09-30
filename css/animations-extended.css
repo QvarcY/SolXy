@@ -1,0 +1,629 @@
+/* ============================================================
+   SolXy · animations-extended.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   SAULES SISTĒMAS SPECIFISKĀS ANIMĀCIJAS
+   ============================================================ */
+
+/* === SAULES PULSĀCIJA === */
+@keyframes sun-pulse-xl {
+  0%, 100% {
+    box-shadow:
+      0 0 30px var(--sun-glow-inner),
+      0 0 60px var(--sun-glow-mid),
+      0 0 120px var(--sun-glow-outer),
+      inset 0 0 40px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 50px var(--sun-glow-inner),
+      0 0 100px var(--sun-glow-mid),
+      0 0 200px var(--sun-glow-outer),
+      inset 0 0 60px rgba(255, 255, 255, 0.6);
+  }
+}
+
+/* === SAULES KORONAS PLŪSMA === */
+@keyframes solar-flare {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.3) rotate(15deg);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(30deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) rotate(60deg);
+  }
+}
+
+/* === ORBĪTAS KUSTĪBA (ar elipsi) === */
+@keyframes orbit-elliptical {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(0) rotate(-360deg);
+  }
+}
+
+/* === PLANĒTU ROTĀCIJA AR ĒNU === */
+@keyframes planet-rotation-shadow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+/* === PLANĒTU JOSLU PLŪSMA (Jupiters, Saturns) === */
+@keyframes planet-band-flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 200px;
+  }
+}
+
+/* === SATURNA GREDZENU ROTĀCIJA === */
+@keyframes saturn-rings-rotate {
+  from {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg);
+  }
+}
+
+/* === URĀNA GREDZENU ŠŪPOŠANĀS === */
+@keyframes uranus-rings-sway {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(-3deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(3deg);
+  }
+}
+
+/* === ASTEROĪDU JOSLAS ROTĀCIJA === */
+@keyframes asteroid-belt-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* === PAVADOŅU ORBĪTAS === */
+@keyframes moon-orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--moon-orbit-radius, 40px)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--moon-orbit-radius, 40px)) rotate(-360deg);
+  }
+}
+
+/* ============================================================
+   TEKSTA ANIMĀCIJAS
+   ============================================================ */
+
+/* === RAKSTĪŠANAS EFEKTS === */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* === MIRGOŠANA === */
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+/* === TEKSTA GLOW PULSĀCIJA === */
+@keyframes text-glow-pulse {
+  0%, 100% {
+    text-shadow: 0 0 8px currentColor;
+  }
+  50% {
+    text-shadow:
+      0 0 16px currentColor,
+      0 0 32px currentColor;
+  }
+}
+
+/* === KRĀSU MAINĪŠANA === */
+@keyframes color-cycle {
+  0% { color: var(--c-accent-teal); }
+  33% { color: var(--c-accent-violet); }
+  66% { color: var(--c-accent-pink); }
+  100% { color: var(--c-accent-teal); }
+}
+
+/* === TEKSTA PARĀDĪŠANĀS PA BURTIEM === */
+@keyframes letter-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+/* ============================================================
+   UZMANĪBAS PIESAISTĪŠANAS ANIMĀCIJAS
+   ============================================================ */
+
+/* === RIPPLE === */
+@keyframes ripple-expand {
+  from {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  to {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0;
+  }
+}
+
+/* === ATTENTION SHAKE === */
+@keyframes attention-shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+  20%, 40%, 60%, 80% { transform: translateX(6px); }
+}
+
+/* === ATTENTION BELL === */
+@keyframes attention-bell {
+  0%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(-15deg); }
+  20% { transform: rotate(15deg); }
+  30% { transform: rotate(-12deg); }
+  40% { transform: rotate(12deg); }
+  50% { transform: rotate(-8deg); }
+  60% { transform: rotate(8deg); }
+  70% { transform: rotate(-4deg); }
+  80% { transform: rotate(4deg); }
+  90% { transform: rotate(0deg); }
+}
+
+/* === BOUNCE IN === */
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === FLIP IN === */
+@keyframes flip-in-x {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0);
+  }
+}
+
+@keyframes flip-in-y {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0);
+  }
+}
+
+/* ============================================================
+   IELĀDES ANIMĀCIJAS
+   ============================================================ */
+
+/* === SKELETON SHIMMER === */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* === SPINNER === */
+@keyframes spinner-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+/* === DOTS LOADING === */
+@keyframes dots-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.4;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === PROGRESS INDETERMINATE === */
+@keyframes progress-indeterminate {
+  0% {
+    left: -40%;
+    width: 40%;
+  }
+  50% {
+    left: 30%;
+    width: 60%;
+  }
+  100% {
+    left: 100%;
+    width: 40%;
+  }
+}
+
+/* ============================================================
+   DEKORATĪVĀS ANIMĀCIJAS
+   ============================================================ */
+
+/* === VILŅOŠANĀS === */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(6px) rotate(-2deg);
+  }
+}
+
+/* === PELDOŠANA === */
+@keyframes swim {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -10px) rotate(45deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(90deg);
+  }
+  75% {
+    transform: translate(-20px, -10px) rotate(135deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(180deg);
+  }
+}
+
+/* === PUKOŠANA === */
+@keyframes bloom {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* === PLŪSMA === */
+@keyframes drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(8px, -4px);
+  }
+  50% {
+    transform: translate(-4px, 8px);
+  }
+  75% {
+    transform: translate(4px, 4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* ============================================================
+   ZVAIGŽŅU KARTES ANIMĀCIJAS
+   ============================================================ */
+
+/* === ZVAIGZŅU PARĀDĪŠANĀS === */
+@keyframes star-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* === ZVAIGZŅU MIRGOŠANA === */
+@keyframes star-twinkle-alt {
+  0%, 100% {
+    opacity: 0.3;
+    filter: brightness(0.8);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.4);
+  }
+}
+
+/* === KONSTELĀCIJAS PARĀDĪŠANĀS === */
+@keyframes constellation-draw {
+  from {
+    stroke-dashoffset: 1000;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   LAIKA LĪNIJAS ANIMĀCIJAS
+   ============================================================ */
+
+@keyframes timeline-marker-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 4px var(--c-bg-primary), 0 0 20px var(--c-accent-teal-glow);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 8px var(--c-bg-primary), 0 0 40px var(--c-accent-teal-glow);
+  }
+}
+
+@keyframes timeline-now-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* ============================================================
+   KARTĪTES ANIMĀCIJAS
+   ============================================================ */
+
+@keyframes card-shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes card-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes card-hover-lift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+/* ============================================================
+   LAPU PĀREJAS
+   ============================================================ */
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-exit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* ============================================================
+   PIEKĻUVES ELEMENTU ANIMĀCIJAS
+   ============================================================ */
+
+/* === SKIP LINK === */
+@keyframes skip-link-appear {
+  from {
+    transform: translateY(-200%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* === FOCUS INDICATOR === */
+@keyframes focus-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px var(--c-accent-teal);
+  }
+  50% {
+    box-shadow:
+      0 0 0 2px var(--c-accent-teal),
+      0 0 0 6px var(--c-accent-teal-glass);
+  }
+}
+
+/* ============================================================
+   MOBILĀS NAVIGĀCIJAS ANIMĀCIJAS
+   ============================================================ */
+
+@keyframes mobile-nav-slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobile-nav-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes backdrop-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ============================================================
+   KOMBINĒTĀS ANIMĀCIJAS
+   ============================================================ */
+
+/* === IEELPOŠANA === */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* === HOVER MAGIC === */
+@keyframes hover-magic {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* === SUCCESS POP === */
+@keyframes success-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}

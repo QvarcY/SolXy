@@ -1,0 +1,283 @@
+/* ============================================================
+   SolXy · sun.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === SAULES KONTEINERIS === */
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--sun-size);
+  height: var(--sun-size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-raised);
+  isolation: isolate;
+  /* Fona gradients uzreiz uz .sun elementa */
+  background: var(--sun-gradient);
+  /* Spēcīgs spīdums */
+  box-shadow:
+    0 0 20px var(--sun-glow-inner),
+    0 0 40px var(--sun-glow-inner),
+    0 0 80px var(--sun-glow-mid),
+    0 0 160px var(--sun-glow-outer),
+    inset 0 0 30px rgba(255, 255, 255, 0.6),
+    inset 0 0 60px rgba(255, 200, 68, 0.4);
+  animation: sun-pulse 4s ease-in-out infinite;
+}
+
+/* === SAULES KODOLS === */
+.sun__core {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--sun-gradient);
+  box-shadow:
+    inset 0 0 30px rgba(255, 255, 255, 0.6),
+    inset 0 0 60px rgba(255, 200, 68, 0.4);
+}
+
+/* === SAULES VIRSMAS STRUKTŪRA === */
+.sun__surface {
+  position: absolute;
+  inset: 5%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.4), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255, 200, 68, 0.6), transparent 30%),
+    radial-gradient(circle at 40% 80%, rgba(255, 153, 34, 0.5), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(255, 102, 0, 0.3), transparent 25%);
+  /* Blend režīms radīja rotējoša kvadrāta kompozīcijas artefaktu dažos pārlūkos. */
+  mix-blend-mode: normal;
+  opacity: 0.42;
+  clip-path: circle(50% at 50% 50%);
+  animation: none;
+  pointer-events: none;
+}
+
+/* === SAULES KORONA === */
+.sun__corona {
+  position: absolute;
+  inset: -30%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--sun-glow-mid) 0%,
+    var(--sun-glow-outer) 40%,
+    transparent 70%
+  );
+  animation: sun-corona 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+/* === SAULES STARU STARI === */
+.sun__rays {
+  position: absolute;
+  inset: -50%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(255, 204, 68, 0.08) 10deg,
+    transparent 20deg,
+    transparent 40deg,
+    rgba(255, 204, 68, 0.05) 50deg,
+    transparent 60deg,
+    transparent 100deg,
+    rgba(255, 204, 68, 0.08) 110deg,
+    transparent 120deg,
+    transparent 160deg,
+    rgba(255, 204, 68, 0.06) 170deg,
+    transparent 180deg,
+    transparent 220deg,
+    rgba(255, 204, 68, 0.08) 230deg,
+    transparent 240deg,
+    transparent 280deg,
+    rgba(255, 204, 68, 0.05) 290deg,
+    transparent 300deg,
+    transparent 340deg,
+    rgba(255, 204, 68, 0.08) 350deg,
+    transparent 360deg
+  );
+  animation: none;
+  pointer-events: none;
+  z-index: var(--z-below);
+  opacity: 0.34;
+}
+
+/* === SAULES UZLIESMOJUMS === */
+.sun__flare {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 30%;
+  height: 20%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 200, 68, 0.9), transparent 70%);
+  filter: blur(8px);
+  transform-origin: 100% 50%;
+  animation: sun-flare 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.sun__flare--2 {
+  top: auto;
+  bottom: 20%;
+  left: auto;
+  right: -8%;
+  width: 25%;
+  height: 15%;
+  background: radial-gradient(circle, rgba(255, 153, 34, 0.85), transparent 70%);
+  animation-delay: 3s;
+  transform-origin: 0% 50%;
+}
+
+.sun__flare--3 {
+  top: 60%;
+  left: -5%;
+  width: 22%;
+  height: 12%;
+  background: radial-gradient(circle, rgba(255, 102, 0, 0.7), transparent 70%);
+  animation-delay: 5s;
+}
+
+/* === SAULES GRANULAS === */
+.sun__granules {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 2%, transparent 4%),
+    radial-gradient(circle at 60% 25%, rgba(255, 255, 255, 0.08) 2%, transparent 5%),
+    radial-gradient(circle at 45% 70%, rgba(255, 255, 255, 0.1) 2%, transparent 4%),
+    radial-gradient(circle at 70% 55%, rgba(255, 255, 255, 0.06) 2%, transparent 3%),
+    radial-gradient(circle at 25% 65%, rgba(255, 255, 255, 0.08) 2%, transparent 4%),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.07) 2%, transparent 3%),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.06) 2%, transparent 3%);
+  mix-blend-mode: normal;
+  clip-path: circle(50% at 50% 50%);
+  opacity: 0.34;
+  animation: sun-granules 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* === SAULES SUNSPOTS === */
+.sun__sunspot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(102, 40, 0, 0.7), rgba(153, 60, 0, 0.4) 50%, transparent 70%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.sun__sunspot--1 {
+  top: 30%;
+  left: 35%;
+  width: 12%;
+  height: 12%;
+}
+
+.sun__sunspot--2 {
+  top: 55%;
+  left: 60%;
+  width: 8%;
+  height: 8%;
+}
+
+.sun__sunspot--3 {
+  top: 20%;
+  left: 65%;
+  width: 6%;
+  height: 6%;
+}
+
+/* === SAULES ANIMĀCIJAS === */
+@keyframes sun-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px var(--sun-glow-inner),
+      0 0 40px var(--sun-glow-inner),
+      0 0 80px var(--sun-glow-mid),
+      0 0 160px var(--sun-glow-outer),
+      inset 0 0 30px rgba(255, 255, 255, 0.6),
+      inset 0 0 60px rgba(255, 200, 68, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 30px var(--sun-glow-inner),
+      0 0 60px var(--sun-glow-inner),
+      0 0 120px var(--sun-glow-mid),
+      0 0 200px var(--sun-glow-outer),
+      inset 0 0 40px rgba(255, 255, 255, 0.7),
+      inset 0 0 80px rgba(255, 200, 68, 0.5);
+  }
+}
+
+@keyframes sun-surface {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sun-corona {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes sun-rays {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes sun-flare {
+  0%, 100% { opacity: 0; transform: scale(0.8) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes sun-granules {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(1.03); }
+}
+
+/* === SAULES LAPĀ === */
+.sun--page {
+  position: relative;
+  width: clamp(200px, 30vw, 400px);
+  height: clamp(200px, 30vw, 400px);
+  margin-inline: auto;
+  top: auto;
+  left: auto;
+  transform: none;
+}
+
+.sun--page .sun__core {
+  animation-duration: 6s;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .sun,
+  .sun__surface,
+  .sun__corona,
+  .sun__rays,
+  .sun__flare,
+  .sun__granules {
+    animation: none;
+  }
+}
+
+/* === RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .sun__rays {
+    opacity: 0.4;
+  }
+
+  .sun__corona {
+    inset: -20%;
+  }
+}

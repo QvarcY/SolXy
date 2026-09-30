@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     SolXy · assets/favicon.svg
+     Autors: QvarcY (https://github.com/QvarcY)
+     Licence: MIT
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="SolXy favicon">
+  <title>SolXy</title>
+  <desc>SolXy favicon — Saules ikona ar orbītas gredzenu</desc>
+
+  <defs>
+    <!-- Fona gradients -->
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#070b1a"/>
+      <stop offset="100%" stop-color="#03050d"/>
+    </radialGradient>
+
+    <!-- Saules kodola gradients -->
+    <radialGradient id="sunGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="30%" stop-color="#ffcc44"/>
+      <stop offset="70%" stop-color="#ff9922"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </radialGradient>
+
+    <!-- Saules spīduma filtrs -->
+    <filter id="sunGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Orbitas gradients -->
+    <linearGradient id="orbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fons -->
+  <rect width="64" height="64" rx="14" fill="url(#bgGradient)"/>
+
+  <!-- Zvaigznes (fona punkti) -->
+  <circle cx="12" cy="14" r="0.8" fill="#e8eefc" opacity="0.8"/>
+  <circle cx="52" cy="18" r="0.6" fill="#e8eefc" opacity="0.6"/>
+  <circle cx="48" cy="48" r="0.7" fill="#e8eefc" opacity="0.7"/>
+  <circle cx="16" cy="50" r="0.5" fill="#e8eefc" opacity="0.5"/>
+  <circle cx="8" cy="34" r="0.6" fill="#5eead4" opacity="0.7"/>
+  <circle cx="56" cy="36" r="0.5" fill="#a78bfa" opacity="0.6"/>
+
+  <!-- Orbītas gredzens -->
+  <ellipse
+    cx="32"
+    cy="34"
+    rx="24"
+    ry="9"
+    fill="none"
+    stroke="url(#orbitGradient)"
+    stroke-width="1"
+    opacity="0.6"
+    transform="rotate(-20 32 34)"
+  />
+
+  <!-- Saule -->
+  <circle cx="32" cy="32" r="11" fill="url(#sunGradient)" filter="url(#sunGlow)"/>
+
+  <!-- Saules iekšējais spīdums -->
+  <circle cx="29" cy="29" r="4" fill="#ffffff" opacity="0.5"/>
+
+  <!-- Saules koronas stari -->
+  <g opacity="0.7" stroke="#ffcc44" stroke-width="0.8" stroke-linecap="round">
+    <line x1="32" y1="18" x2="32" y2="15"/>
+    <line x1="32" y1="46" x2="32" y2="49"/>
+    <line x1="18" y1="32" x2="15" y2="32"/>
+    <line x1="46" y1="32" x2="49" y2="32"/>
+    <line x1="22" y1="22" x2="20" y2="20"/>
+    <line x1="42" y1="22" x2="44" y2="20"/>
+    <line x1="22" y1="42" x2="20" y2="44"/>
+    <line x1="42" y1="42" x2="44" y2="44"/>
+  </g>
+
+  <!-- Planēta uz orbītas -->
+  <circle cx="52" cy="28" r="2" fill="#5eead4" opacity="0.9"/>
+</svg>

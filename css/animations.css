@@ -1,0 +1,533 @@
+/* ============================================================
+   SolXy · animations.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   PAMATA ANIMĀCIJAS — FADE
+   ============================================================ */
+
+.anim-fade-in {
+  animation: anim-fade-in var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-fade-out {
+  animation: anim-fade-out var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-up {
+  animation: anim-fade-in-up var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-down {
+  animation: anim-fade-in-down var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-left {
+  animation: anim-fade-in-left var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-fade-in-right {
+  animation: anim-fade-in-right var(--transition-slow) var(--ease-out) both;
+}
+
+@keyframes anim-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes anim-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes anim-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes anim-fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes anim-fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================================
+   SLIDE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-slide-up {
+  animation: anim-slide-up var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-slide-down {
+  animation: anim-slide-down var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-slide-left {
+  animation: anim-slide-left var(--transition-slow) var(--ease-out) both;
+}
+
+.anim-slide-right {
+  animation: anim-slide-right var(--transition-slow) var(--ease-out) both;
+}
+
+@keyframes anim-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes anim-slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes anim-slide-left {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes anim-slide-right {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* ============================================================
+   SCALE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-scale-in {
+  animation: anim-scale-in var(--transition-base) var(--ease-bounce) both;
+}
+
+.anim-scale-out {
+  animation: anim-scale-out var(--transition-base) var(--ease-in) both;
+}
+
+.anim-pop {
+  animation: anim-pop var(--transition-base) var(--ease-bounce) both;
+}
+
+@keyframes anim-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes anim-scale-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes anim-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
+   PULSE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-pulse {
+  animation: anim-pulse 2s var(--ease-in-out) infinite;
+}
+
+.anim-pulse-slow {
+  animation: anim-pulse 4s var(--ease-in-out) infinite;
+}
+
+.anim-heartbeat {
+  animation: anim-heartbeat 1.5s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes anim-heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.1); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.08); }
+  60% { transform: scale(1); }
+}
+
+/* ============================================================
+   ROTATE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-spin {
+  animation: anim-spin 2s linear infinite;
+}
+
+.anim-spin-slow {
+  animation: anim-spin 8s linear infinite;
+}
+
+.anim-spin-reverse {
+  animation: anim-spin 2s linear infinite reverse;
+}
+
+.anim-wobble {
+  animation: anim-wobble 2s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes anim-wobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+/* ============================================================
+   BOUNCE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-bounce {
+  animation: anim-bounce 2s var(--ease-in-out) infinite;
+}
+
+.anim-float {
+  animation: anim-float 3s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes anim-float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(4px, -8px) rotate(1deg);
+  }
+  50% {
+    transform: translate(0, -12px) rotate(0deg);
+  }
+  75% {
+    transform: translate(-4px, -8px) rotate(-1deg);
+  }
+}
+
+/* ============================================================
+   SHAKE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-shake {
+  animation: anim-shake 0.5s var(--ease-in-out);
+}
+
+.anim-shake-horizontal {
+  animation: anim-shake-horizontal 0.5s var(--ease-in-out);
+}
+
+@keyframes anim-shake {
+  0%, 100% { transform: translate(0, 0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-4px, 2px); }
+  20%, 40%, 60%, 80% { transform: translate(4px, -2px); }
+}
+
+@keyframes anim-shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* ============================================================
+   GLOW / SPĪDĪGUMA ANIMĀCIJAS
+   ============================================================ */
+
+.anim-glow {
+  animation: anim-glow 2s var(--ease-in-out) infinite;
+}
+
+.anim-glow-teal {
+  animation: anim-glow-teal 2s var(--ease-in-out) infinite;
+}
+
+.anim-glow-violet {
+  animation: anim-glow-violet 2s var(--ease-in-out) infinite;
+}
+
+.anim-glow-pink {
+  animation: anim-glow-pink 2s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-glow {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 4px currentColor);
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 16px currentColor);
+  }
+}
+
+@keyframes anim-glow-teal {
+  0%, 100% {
+    box-shadow: 0 0 12px var(--c-accent-teal-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 24px var(--c-accent-teal-glow),
+      0 0 48px var(--c-accent-teal-glow);
+  }
+}
+
+@keyframes anim-glow-violet {
+  0%, 100% {
+    box-shadow: 0 0 12px var(--c-accent-violet-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 24px var(--c-accent-violet-glow),
+      0 0 48px var(--c-accent-violet-glow);
+  }
+}
+
+@keyframes anim-glow-pink {
+  0%, 100% {
+    box-shadow: 0 0 12px var(--c-accent-pink-glow);
+  }
+  50% {
+    box-shadow:
+      0 0 24px var(--c-accent-pink-glow),
+      0 0 48px var(--c-accent-pink-glow);
+  }
+}
+
+/* ============================================================
+   GRADIENT ANIMĀCIJAS
+   ============================================================ */
+
+.anim-gradient-shift {
+  background-size: 200% auto;
+  animation: anim-gradient-shift 4s linear infinite;
+}
+
+.anim-gradient-pulse {
+  background-size: 200% auto;
+  animation: anim-gradient-pulse 3s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes anim-gradient-pulse {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* ============================================================
+   ZVAIGŽŅU / TWINKLE ANIMĀCIJAS
+   ============================================================ */
+
+.anim-twinkle {
+  animation: anim-twinkle 2s var(--ease-in-out) infinite;
+}
+
+.anim-twinkle-slow {
+  animation: anim-twinkle 4s var(--ease-in-out) infinite;
+}
+
+@keyframes anim-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* ============================================================
+   ORBITĀLĀS ANIMĀCIJAS
+   ============================================================ */
+
+.anim-orbit {
+  animation: anim-orbit 20s linear infinite;
+}
+
+.anim-orbit-reverse {
+  animation: anim-orbit 20s linear infinite reverse;
+}
+
+@keyframes anim-orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+   SLIDE-IN/OUT ANIMĀCIJAS AR ANIMĀCIJAS-DELAY
+   ============================================================ */
+
+.anim-delay-1 { animation-delay: 0.1s; }
+.anim-delay-2 { animation-delay: 0.2s; }
+.anim-delay-3 { animation-delay: 0.3s; }
+.anim-delay-4 { animation-delay: 0.4s; }
+.anim-delay-5 { animation-delay: 0.5s; }
+.anim-delay-6 { animation-delay: 0.6s; }
+.anim-delay-7 { animation-delay: 0.7s; }
+.anim-delay-8 { animation-delay: 0.8s; }
+.anim-delay-9 { animation-delay: 0.9s; }
+.anim-delay-10 { animation-delay: 1s; }
+
+/* === ANIMĀCIJU ILGUMI === */
+.anim-fast { animation-duration: 0.3s; }
+.anim-base { animation-duration: 0.5s; }
+.anim-slow { animation-duration: 0.8s; }
+.anim-slower { animation-duration: 1.2s; }
+.anim-slowest { animation-duration: 2s; }
+
+/* === ANIMĀCIJU ATKĀRTOŠANA === */
+.anim-once { animation-iteration-count: 1; }
+.anim-twice { animation-iteration-count: 2; }
+.anim-infinite { animation-iteration-count: infinite; }
+
+/* ============================================================
+   PALĪGKLASES — PAUZE
+   ============================================================ */
+
+.anim-paused,
+.anim-paused * {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   SCROLL REVEAL (vienkāršota bez JS)
+   ============================================================ */
+
+.anim-reveal {
+  animation: anim-reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+@keyframes anim-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-in,
+  .anim-fade-out,
+  .anim-fade-in-up,
+  .anim-fade-in-down,
+  .anim-fade-in-left,
+  .anim-fade-in-right,
+  .anim-slide-up,
+  .anim-slide-down,
+  .anim-slide-left,
+  .anim-slide-right,
+  .anim-scale-in,
+  .anim-scale-out,
+  .anim-pop,
+  .anim-pulse,
+  .anim-pulse-slow,
+  .anim-heartbeat,
+  .anim-spin,
+  .anim-spin-slow,
+  .anim-spin-reverse,
+  .anim-wobble,
+  .anim-bounce,
+  .anim-float,
+  .anim-shake,
+  .anim-shake-horizontal,
+  .anim-glow,
+  .anim-glow-teal,
+  .anim-glow-violet,
+  .anim-glow-pink,
+  .anim-gradient-shift,
+  .anim-gradient-pulse,
+  .anim-twinkle,
+  .anim-twinkle-slow,
+  .anim-orbit,
+  .anim-orbit-reverse,
+  .anim-reveal {
+    animation: none;
+  }
+}

@@ -1,0 +1,372 @@
+/* ============================================================
+   SolXy · orbits.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === SAULES SISTĒMAS SCĒNA === */
+.solar-system {
+  position: relative;  /* ← ŠIS IR KRITISKI SVARĪGI */
+  width: 100%;
+  max-width: var(--orbit-8-size);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-base);
+}
+
+/* === ORBĪTU KONTEINERIS === */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px solid var(--c-border-subtle);
+  transform: translate(-50%, -50%) rotate(var(--orbit-static-angle, 0deg));
+  transform-origin: center center;
+  animation: orbit-rotate var(--orbit-duration, 30s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+  pointer-events: none;
+}
+
+/* === ORBĪTU IZMĒRI === */
+.orbit--1 {
+  width: var(--orbit-1-size);
+  height: var(--orbit-1-size);
+  --orbit-duration: var(--orbit-duration-mercury);
+  --orbit-delay: -1.1s;
+  --orbit-static-angle: 33deg;
+  --orbit-static-counter-angle: -33deg;
+}
+
+.orbit--2 {
+  width: var(--orbit-2-size);
+  height: var(--orbit-2-size);
+  --orbit-duration: var(--orbit-duration-venus);
+  --orbit-delay: -9.4s;
+  --orbit-static-angle: 169deg;
+  --orbit-static-counter-angle: -169deg;
+}
+
+.orbit--3 {
+  width: var(--orbit-3-size);
+  height: var(--orbit-3-size);
+  --orbit-duration: var(--orbit-duration-earth);
+  --orbit-delay: -25.6s;
+  --orbit-static-angle: 307deg;
+  --orbit-static-counter-angle: -307deg;
+}
+
+.orbit--4 {
+  width: var(--orbit-4-size);
+  height: var(--orbit-4-size);
+  --orbit-duration: var(--orbit-duration-mars);
+  --orbit-delay: -10.6s;
+  --orbit-static-angle: 85deg;
+  --orbit-static-counter-angle: -85deg;
+}
+
+.orbit--5 {
+  width: var(--orbit-5-size);
+  height: var(--orbit-5-size);
+  --orbit-duration: var(--orbit-duration-jupiter);
+  --orbit-delay: -49.3s;
+  --orbit-static-angle: 222deg;
+  --orbit-static-counter-angle: -222deg;
+}
+
+.orbit--6 {
+  width: var(--orbit-6-size);
+  height: var(--orbit-6-size);
+  --orbit-duration: var(--orbit-duration-saturn);
+  --orbit-delay: -119.8s;
+  --orbit-static-angle: 359deg;
+  --orbit-static-counter-angle: -359deg;
+}
+
+.orbit--7 {
+  width: var(--orbit-7-size);
+  height: var(--orbit-7-size);
+  --orbit-duration: var(--orbit-duration-uranus);
+  --orbit-delay: -68.5s;
+  --orbit-static-angle: 137deg;
+  --orbit-static-counter-angle: -137deg;
+}
+
+.orbit--8 {
+  width: var(--orbit-8-size);
+  height: var(--orbit-8-size);
+  --orbit-duration: var(--orbit-duration-neptune);
+  --orbit-delay: -183s;
+  --orbit-static-angle: 275deg;
+  --orbit-static-counter-angle: -275deg;
+}
+
+/* === ORBĪTU STILI === */
+.orbit--dashed {
+  border-style: dashed;
+}
+
+.orbit--dotted {
+  border-style: dotted;
+}
+
+.orbit--highlight {
+  border-color: var(--c-border-accent);
+  box-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+/* === ORBĪTU KUSTĪBA === */
+@keyframes orbit-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* === ORBĪTAS PRETĒJĀ VIRZIENĀ === */
+.orbit--reverse {
+  animation-direction: reverse;
+}
+
+/* === ORBĪTAS AR MAINĪGU ĀTRUMU === */
+.orbit--pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+/* === ASTEROĪDU JOSLA === */
+.asteroid-belt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc((var(--orbit-4-size) + var(--orbit-5-size)) / 2);
+  height: calc((var(--orbit-4-size) + var(--orbit-5-size)) / 2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+  pointer-events: none;
+  z-index: var(--z-base);
+}
+
+.asteroid-belt__asteroid {
+  position: absolute;
+  top: var(--asteroid-y);
+  left: var(--asteroid-x);
+  width: var(--asteroid-size);
+  height: calc(var(--asteroid-size) * var(--asteroid-ratio, 0.72));
+  border-radius: 55% 45% 58% 42%;
+  background: var(--asteroid-color, #8b806f);
+  box-shadow: none;
+  opacity: var(--asteroid-opacity, 0.62);
+  transform: translate(-50%, -50%) rotate(var(--asteroid-tilt, 0deg));
+}
+
+/* Dažādi izmēri, krāsas un radiāls nobīdes biezums rada joslu, nevis punktotu orbītu. */
+.asteroid-belt__asteroid:nth-child(3n) { filter: brightness(1.15); }
+.asteroid-belt__asteroid:nth-child(5n) { filter: brightness(0.72); }
+
+/* === ORBĪTAS INFORMĀCIJAS === */
+.orbit-info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.orbit-info__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.orbit-info__value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-text-primary);
+  font-weight: var(--fw-medium);
+}
+
+/* === TRAJEKTORIJAS LĪNIJA === */
+.orbit-trail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-accent-teal-glow), transparent);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* === ORBĪTAS INDIKATORS === */
+.orbit-marker {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 10px var(--c-accent-teal);
+  transform: translate(-50%, -50%);
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .orbit,
+  .orbit__planet-holder,
+  .asteroid-belt {
+    animation: none;
+  }
+}
+
+/* === RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .orbit {
+    border-width: 0.5px;
+  }
+
+  .asteroid-belt {
+    width: calc(var(--orbit-4-size) * 1.1);
+    height: calc(var(--orbit-4-size) * 1.1);
+  }
+}
+
+/* === ORBĪTAS AR NOSLĒPŠANU === */
+.orbit--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* === ORBĪTAS HOVER EFEKTS === */
+.solar-system:hover .orbit {
+  border-color: var(--c-border-default);
+}
+
+.solar-system:hover .orbit--highlight {
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 30px var(--c-accent-teal-glow);
+}
+
+/* === ORBĪTAS SLĀŅI === */
+.orbit-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* === PUNKTA INDIKATORS UZ ORBĪTAS === */
+.orbit__planet-holder {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(var(--orbit-static-counter-angle, 0deg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  animation: orbit-counter-rotate var(--orbit-duration, 30s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+/* Keep planets and rings visually upright while the orbit rotates. */
+@keyframes orbit-counter-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+/* === ORBĪTAS LEĢENDA === */
+.orbit-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.orbit-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-secondary);
+}
+
+.orbit-legend__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* === ORBĪTAS AR PUNKTIEM === */
+.orbit--dotted {
+  border: 1px dotted var(--c-border-subtle);
+}
+
+/* === ORBĪTAS AR GRADIENTU === */
+.orbit--gradient {
+  border: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--c-border-subtle),
+    transparent
+  );
+  -webkit-mask: radial-gradient(circle, transparent calc(50% - 1px), black calc(50% - 1px), black 50%, transparent calc(50% + 1px));
+  mask: radial-gradient(circle, transparent calc(50% - 1px), black calc(50% - 1px), black 50%, transparent calc(50% + 1px));
+}
+
+/* === ZVAIGŽŅU CEĻŠ (ORBĪTAS IEZĪMĒŠANA) === */
+.orbit--marker {
+  border-color: transparent;
+  background: radial-gradient(circle, transparent 48%, var(--c-border-subtle) 49%, var(--c-border-subtle) 51%, transparent 52%);
+}
+
+/* === ORBĪTAS LAIKA RĀDĪTĀJS === */
+.orbit__progress {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-accent-violet);
+  box-shadow: 0 0 8px var(--c-accent-violet-glow);
+  transform: translate(-50%, -50%);
+}
+
+/* === ORBĪTAS AR PERIODU === */
+.orbit--period-short {
+  animation-duration: 8s;
+}
+
+.orbit--period-medium {
+  animation-duration: 30s;
+}
+
+.orbit--period-long {
+  animation-duration: 90s;
+}

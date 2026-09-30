@@ -1,0 +1,669 @@
+/* ============================================================
+   SolXy · layout.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === LAPAS PAMATA IZKĀRTOJUMS === */
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* === GALVENAIS SATURS === */
+.page__main {
+  flex: 1;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* === SATURA KONTEINERIS === */
+.page__container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-container);
+}
+
+/* === SATURA KONTEINERIS — ŠAURS === */
+.page__container--narrow {
+  max-width: var(--container-lg);
+}
+
+/* === SATURA KONTEINERIS — PLATS === */
+.page__container--wide {
+  max-width: var(--container-2xl);
+}
+
+/* === SATURA KONTEINERIS — PILNS === */
+.page__container--full {
+  max-width: none;
+}
+
+/* ============================================================
+   SEKCIJU IZKĀRTOJUMS
+   ============================================================ */
+
+.section-layout {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+.section-layout--sm {
+  padding-block: var(--space-section-sm);
+}
+
+.section-layout--lg {
+  padding-block: var(--space-4xl);
+}
+
+.section-layout--no-padding {
+  padding-block: 0;
+}
+
+/* === SEKCIJAS AR FONU === */
+.section-layout--alt {
+  background: var(--c-bg-secondary);
+}
+
+.section-layout--glass {
+  background: var(--c-bg-glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  border-block: 1px solid var(--c-border-subtle);
+}
+
+/* === SEKCIJAS AR GRADIENTU === */
+.section-layout--gradient {
+  background: linear-gradient(
+    180deg,
+    var(--c-bg-primary) 0%,
+    var(--c-bg-secondary) 50%,
+    var(--c-bg-primary) 100%
+  );
+}
+
+/* === SEKCIJAS AR RĒĢI === */
+.section-layout--grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--c-border-subtle) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-border-subtle) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.15;
+  pointer-events: none;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* === SEKCIJAS VIRSR AKSTS === */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-3xl);
+  text-align: center;
+}
+
+.section-header--left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.section-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-mega);
+  text-transform: uppercase;
+  color: var(--c-accent-teal);
+}
+
+.section-header__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+  max-width: 25ch;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.section-header__subtitle {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  max-width: 60ch;
+  text-wrap: pretty;
+  margin: 0;
+}
+
+/* === UNIVERSĀLS INFORMĀCIJAS BLOKS === */
+.info-block {
+  display: grid;
+  gap: var(--space-md);
+  padding: clamp(var(--space-lg), 3vw, var(--space-2xl));
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, var(--c-bg-glass-strong), var(--c-bg-glass));
+  border: 1px solid var(--c-border-subtle);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+}
+
+.info-block > * {
+  min-width: 0;
+}
+
+.info-block__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  color: var(--c-text-primary);
+  margin: 0;
+  max-width: 24ch;
+  text-wrap: balance;
+}
+
+.info-block__text {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  margin: 0;
+  max-width: 72ch;
+}
+
+.info-block__text strong {
+  color: var(--c-text-primary);
+}
+
+.page__container--narrow > .info-block,
+.page__container--narrow .info-block {
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .info-block {
+    padding: var(--space-lg);
+    gap: var(--space-sm);
+  }
+
+  .info-block__title {
+    font-size: var(--fs-xl);
+  }
+}
+
+/* ============================================================
+   GRID IZKĀRTOJUMI
+   ============================================================ */
+
+/* === PAMATA GRIDS === */
+.grid-layout {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* === 2 KOLONNAS === */
+.grid-layout--2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+}
+
+/* === 3 KOLONNAS === */
+.grid-layout--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+/* === 4 KOLONNAS === */
+.grid-layout--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+
+/* === FIKSĒTAS KOLONNAS (tikai desktop) === */
+@media (min-width: 1024px) {
+  .grid-layout--fixed-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .grid-layout--fixed-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .grid-layout--fixed-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* === MASONRY-STYLE GRIDS === */
+.grid-layout--masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  grid-auto-rows: 10px;
+  gap: var(--space-lg);
+}
+
+/* ============================================================
+   FLEX IZKĀRTOJUMI
+   ============================================================ */
+
+.flex-layout {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.flex-layout--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-layout--between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-layout--column {
+  flex-direction: column;
+}
+
+.flex-layout--wrap {
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   SATURA PLATUMS
+   ============================================================ */
+
+/* === ŠAURS SATURS === */
+.content-narrow {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* === VIDĒJS SATURS === */
+.content-medium {
+  max-width: 80ch;
+  margin-inline: auto;
+}
+
+/* === PLATS SATURS === */
+.content-wide {
+  max-width: 100ch;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   DIVKOLONNU IZKĀRTOJUMS
+   ============================================================ */
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .split-layout {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .split-layout--reverse {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .split-layout--even {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-layout--sidebar-left {
+    grid-template-columns: minmax(240px, 1fr) 2fr;
+  }
+}
+
+/* === MALAS JOSLA === */
+.split-layout__sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.split-layout__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+/* ============================================================
+   LAPAS KARKASS
+   ============================================================ */
+
+/* === LAPAS IETVARS === */
+.page-frame {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-frame__header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.page-frame__main {
+  flex: 1;
+}
+
+.page-frame__footer {
+  margin-top: auto;
+}
+
+/* ============================================================
+   HERO SEKCIJAS
+   ============================================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-4xl);
+  overflow: hidden;
+}
+
+.hero-section--small {
+  min-height: 60vh;
+}
+
+.hero-section--full {
+  min-height: 100vh;
+}
+
+/* ============================================================
+   ATSTARPJU PALĪGI IZKĀRTOJUMAM
+   ============================================================ */
+
+/* === VERTIKĀLĀS ATSTARPES STARP BLOKIEM === */
+.stack > * + * {
+  margin-top: var(--space-md);
+}
+
+.stack--sm > * + * {
+  margin-top: var(--space-sm);
+}
+
+.stack--lg > * + * {
+  margin-top: var(--space-lg);
+}
+
+.stack--xl > * + * {
+  margin-top: var(--space-xl);
+}
+
+.stack--2xl > * + * {
+  margin-top: var(--space-2xl);
+}
+
+/* === HORIZONTĀLĀS ATSTARPES === */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.cluster--sm {
+  gap: var(--space-xs);
+}
+
+.cluster--lg {
+  gap: var(--space-lg);
+}
+
+.cluster--center {
+  justify-content: center;
+}
+
+.cluster--between {
+  justify-content: space-between;
+}
+
+.cluster--end {
+  justify-content: flex-end;
+}
+
+/* ============================================================
+   ASIMETRISKIE IZKĀRTOJUMI
+   ============================================================ */
+
+/* === SATURS AR MALAS JOSLU === */
+.with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .with-sidebar {
+    grid-template-columns: 3fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .with-sidebar--narrow {
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .with-sidebar--wide {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* === MALAS JOSLAS BLOKS === */
+.sidebar-block {
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.sidebar-block__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+/* ============================================================
+   LAPU PĀRVIETOŠANAS INDIKATORS
+   ============================================================ */
+
+.page-indicator {
+  position: fixed;
+  top: 50%;
+  right: var(--space-lg);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  z-index: var(--z-sticky);
+  pointer-events: auto;
+}
+
+@media (max-width: 1023px) {
+  .page-indicator {
+    display: none;
+  }
+}
+
+.page-indicator__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-border-default);
+  transition: all var(--transition-base) var(--ease-in-out);
+  cursor: pointer;
+}
+
+.page-indicator__dot:hover {
+  background: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-sm);
+  transform: scale(1.3);
+}
+
+.page-indicator__dot--active {
+  background: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-sm);
+  height: 24px;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================================
+   LAPAS AUGŠUP POGAS
+   ============================================================ */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--c-bg-glass-strong);
+  border: 1px solid var(--c-border-default);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-primary);
+  font-size: var(--fs-lg);
+  z-index: var(--z-sticky);
+  transition: all var(--transition-base) var(--ease-in-out);
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-md);
+  transform: translateY(-4px);
+}
+
+.back-to-top::before {
+  content: "↑";
+  font-family: var(--font-mono);
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   PĀRKLĀJUMS
+   ============================================================ */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--c-bg-overlay);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  z-index: var(--z-overlay);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .split-layout__sidebar {
+    position: static;
+  }
+
+  .back-to-top {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .back-to-top,
+  .page-indicator {
+    display: none;
+  }
+
+  .page {
+    min-height: auto;
+  }
+}
+/* === ŠAURU SATURA LAPU RITMS === */
+.page__container--narrow > .section-header--left {
+  width: 100%;
+  max-width: 72ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-xl);
+}
+
+.page__container--narrow > .info-block {
+  width: 100%;
+  max-width: 72ch;
+}
+
+@media (max-width: 767px) {
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .section-header__title {
+    font-size: clamp(1.75rem, 8vw, var(--fs-3xl));
+  }
+
+  .section-header__subtitle {
+    font-size: var(--fs-base);
+  }
+}

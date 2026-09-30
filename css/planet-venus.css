@@ -1,0 +1,175 @@
+/* ============================================================
+   SolXy · planet-venus.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === VENĒRAS MAINĪGIE === */
+:root {
+  --venus-color-primary: #e8b960;
+  --venus-color-secondary: #c9944a;
+  --venus-color-accent: #f5d896;
+  --venus-color-dark: #8a6224;
+  --venus-color-glow: rgba(232, 185, 96, 0.5);
+  --venus-color-atmosphere: rgba(245, 216, 150, 0.25);
+}
+
+/* === VENĒRAS VIRSMA === */
+.planet--venus .planet__surface {
+  background:
+    radial-gradient(circle at 25% 30%, var(--venus-color-accent), transparent 45%),
+    radial-gradient(circle at 70% 60%, var(--venus-color-primary), transparent 50%),
+    radial-gradient(circle at 50% 85%, var(--venus-color-secondary), transparent 40%),
+    radial-gradient(circle at 15% 60%, var(--venus-color-dark), transparent 35%),
+    linear-gradient(135deg, var(--venus-color-primary), var(--venus-color-secondary));
+}
+
+/* === VENĒRAS MĀKOŅU STRUKTŪRA === */
+.planet--venus .planet__texture {
+  background-image:
+    radial-gradient(ellipse at 30% 25%, rgba(245, 216, 150, 0.6) 8%, transparent 15%),
+    radial-gradient(ellipse at 65% 40%, rgba(245, 216, 150, 0.5) 10%, transparent 18%),
+    radial-gradient(ellipse at 45% 65%, rgba(245, 216, 150, 0.55) 12%, transparent 20%),
+    radial-gradient(ellipse at 75% 75%, rgba(245, 216, 150, 0.4) 8%, transparent 15%),
+    radial-gradient(ellipse at 20% 80%, rgba(245, 216, 150, 0.5) 10%, transparent 18%),
+    radial-gradient(ellipse at 80% 20%, rgba(245, 216, 150, 0.45) 9%, transparent 16%);
+  opacity: 0.8;
+  animation: venus-clouds 20s linear infinite;
+}
+
+@keyframes venus-clouds {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* === VENĒRAS ATMOSFĒRA === */
+.planet--venus .planet__atmosphere {
+  box-shadow:
+    0 0 15px var(--venus-color-glow),
+    0 0 30px rgba(245, 216, 150, 0.2),
+    inset 0 0 15px rgba(245, 216, 150, 0.3);
+}
+
+/* === VENĒRAS GLOW === */
+.planet--venus {
+  box-shadow: 0 0 25px var(--venus-color-glow);
+}
+
+.planet--venus:hover {
+  box-shadow: 0 0 40px var(--venus-color-glow),
+              0 0 80px rgba(245, 216, 150, 0.3);
+}
+
+/* === VENĒRAS LAPA === */
+.planet-page--venus {
+  --planet-page-accent: var(--venus-color-accent);
+  --planet-page-primary: var(--venus-color-primary);
+  --planet-page-glow: var(--venus-color-glow);
+}
+
+/* === VENĒRAS HERO === */
+.planet-page--venus .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 40% 30%, var(--venus-color-glow), transparent 60%),
+    radial-gradient(ellipse at 60% 70%, rgba(245, 216, 150, 0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === VENĒRAS STATISTIKAS KARTĪTES === */
+.planet-page--venus .stat-card {
+  border-color: rgba(245, 216, 150, 0.15);
+}
+
+.planet-page--venus .stat-card:hover {
+  border-color: var(--venus-color-accent);
+  box-shadow: 0 0 20px var(--venus-color-glow);
+}
+
+.planet-page--venus .stat-card__value {
+  color: var(--venus-color-accent);
+  text-shadow: 0 0 10px var(--venus-color-glow);
+}
+
+/* === VENĒRAS FAKTU KARTĪTES === */
+.planet-page--venus .fact-card {
+  border-color: rgba(245, 216, 150, 0.15);
+}
+
+.planet-page--venus .fact-card__number {
+  color: var(--venus-color-accent);
+}
+
+.planet-page--venus .fact-card:hover {
+  border-color: var(--venus-color-accent);
+}
+
+/* === VENĒRAS ORBĪTAS IZCELŠANA === */
+.planet-page--venus .planet-page__orbit {
+  border-color: var(--venus-color-accent);
+  box-shadow: 0 0 20px var(--venus-color-glow);
+}
+
+/* === VENĒRAS KRĀSU AKCENTI === */
+.planet-page--venus .eyebrow {
+  color: var(--venus-color-accent);
+  border-color: rgba(245, 216, 150, 0.3);
+  background: rgba(245, 216, 150, 0.1);
+}
+
+.planet-page--venus .eyebrow::before {
+  background: var(--venus-color-accent);
+  box-shadow: 0 0 10px var(--venus-color-accent);
+}
+
+/* === VENĒRAS NAVIGĀCIJA === */
+.planet-page--venus .planet-nav__link {
+  border-color: rgba(245, 216, 150, 0.2);
+}
+
+.planet-page--venus .planet-nav__link:hover {
+  border-color: var(--venus-color-accent);
+  color: var(--venus-color-accent);
+  box-shadow: 0 0 20px var(--venus-color-glow);
+}
+
+/* === VENĒRAS GRADIENTA TEKSTS === */
+.planet-page--venus .heading--planet {
+  background: linear-gradient(135deg, var(--venus-color-accent), var(--venus-color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === VENĒRAS ĪPAŠAIS — MĀKOŅU SEDZIENS === */
+.planet--venus .planet__surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 30% 25%,
+    rgba(255, 240, 200, 0.4),
+    transparent 50%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--venus .planet__texture {
+    animation: none;
+  }
+}

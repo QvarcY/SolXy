@@ -1,0 +1,663 @@
+/* ============================================================
+   SolXy · header.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === GALVENE === */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  width: 100%;
+  background: var(--c-bg-glass-strong);
+  border-bottom: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+/* === GALVENES IEKŠĒJAIS === */
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-block: var(--space-md);
+  min-height: 64px;
+}
+
+/* === LOGOTIPS === */
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--space-sm) + 2px);
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+.header__logo:hover {
+  color: var(--c-accent-teal);
+}
+
+.header__logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--sun-gradient);
+  box-shadow:
+    0 0 12px var(--sun-glow-inner),
+    0 0 24px var(--sun-glow-mid);
+  position: relative;
+  flex-shrink: 0;
+  animation: header-logo-pulse 4s ease-in-out infinite;
+}
+
+.header__logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--c-accent-teal);
+  opacity: 0.5;
+}
+
+@keyframes header-logo-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 12px var(--sun-glow-inner),
+      0 0 24px var(--sun-glow-mid);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--sun-glow-inner),
+      0 0 40px var(--sun-glow-mid);
+  }
+}
+
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  line-height: 1.05;
+}
+
+.header__logo-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-tight);
+  transform: translateY(1px);
+}
+
+.header__logo-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.63rem;
+  line-height: 1.15;
+  color: var(--c-text-tertiary);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: var(--fw-regular);
+}
+
+/* === GALVENĀ NAVIGĀCIJA === */
+.header__nav {
+  display: none;
+  flex: 1;
+}
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__nav-item {
+  position: relative;
+}
+
+.header__nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast) var(--ease-in-out);
+  white-space: nowrap;
+}
+
+.header__nav-link:hover {
+  color: var(--c-text-primary);
+  background: var(--c-bg-glass);
+}
+
+.header__nav-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.header__nav-link--active {
+  color: var(--c-accent-teal);
+  background: var(--c-accent-teal-glass);
+}
+
+.header__nav-link--active::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 8px var(--c-accent-teal);
+}
+
+/* === NAVIGĀCIJAS IZKLAĻUVIENU SARAKSTS === */
+.header__nav-item--dropdown {
+  position: relative;
+}
+
+.header__nav-item--dropdown:hover .header__dropdown,
+.header__nav-item--dropdown:focus-within .header__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 220px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass-strong);
+  border: 1px solid var(--c-border-default);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base) var(--ease-out);
+  z-index: var(--z-dropdown);
+  list-style: none;
+  margin: 0;
+}
+
+.header__dropdown-item {
+  display: block;
+}
+
+.header__dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  color: var(--c-text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast) var(--ease-in-out);
+}
+
+.header__dropdown-link:hover {
+  color: var(--c-accent-teal);
+  background: var(--c-accent-teal-glass);
+}
+
+.header__dropdown-link::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* === GALVENES POGAS === */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* === MOBILĀS NAVIGĀCIJAS POGA === */
+.header__toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .header__toggle {
+    display: none;
+  }
+}
+
+.header__toggle:hover {
+  border-color: var(--c-accent-teal);
+}
+
+.header__toggle-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--c-text-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+/* === MOBILĀ NAVIGĀCIJA === */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(100%, 360px);
+  height: 100vh;
+  height: 100dvh;
+  background: var(--c-bg-secondary);
+  border-left: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  transform: translateX(100%);
+  transition: transform var(--transition-slow) var(--ease-out);
+  z-index: var(--z-modal);
+  overflow-y: auto;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.mobile-nav--open {
+  transform: translateX(0);
+}
+
+.mobile-nav__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.mobile-nav__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--c-text-primary);
+}
+
+.mobile-nav__close {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--ease-in-out);
+  position: relative;
+}
+
+.mobile-nav__close::before,
+.mobile-nav__close::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: var(--radius-full);
+}
+
+.mobile-nav__close::before {
+  transform: rotate(45deg);
+}
+
+.mobile-nav__close::after {
+  transform: rotate(-45deg);
+}
+
+.mobile-nav__close:hover {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+}
+
+/* === MOBILĀS NAVIGĀCIJAS SARAKSTS === */
+.mobile-nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast) var(--ease-in-out);
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link:focus-visible {
+  background: var(--c-accent-teal-glass);
+  color: var(--c-accent-teal);
+  outline: none;
+}
+
+.mobile-nav__link--active {
+  background: var(--c-accent-teal-glass);
+  color: var(--c-accent-teal);
+}
+
+/* === BREADCRUMBS === */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding-block: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+  content: "/";
+  color: var(--c-text-muted);
+}
+
+.breadcrumbs__link {
+  color: var(--c-text-tertiary);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-in-out);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+.breadcrumbs__link:hover {
+  color: var(--c-accent-teal);
+}
+
+.breadcrumbs__current {
+  color: var(--c-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+/* === LAPAS NOSAUKUMA JOSLA === */
+.page-title-bar {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding-block: var(--space-2xl);
+  border-bottom: 1px solid var(--c-border-subtle);
+  background: linear-gradient(180deg, rgba(3, 5, 13, 0.92), rgba(3, 5, 13, 0.78) 55%, rgba(5, 10, 28, 0.55));
+}
+
+.page-title-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 15% 25%, rgba(94, 234, 212, 0.08), transparent 35%),
+    radial-gradient(circle at 82% 12%, rgba(167, 139, 250, 0.08), transparent 30%),
+    linear-gradient(180deg, transparent, rgba(94, 234, 212, 0.04));
+  pointer-events: none;
+}
+
+.page-title-bar__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 72ch;
+}
+
+.page-title-bar__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+  text-wrap: balance;
+  margin: 0;
+}
+
+.page-title-bar__subtitle {
+  font-size: var(--fs-base);
+  color: var(--c-text-secondary);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* === AUGŠUP PĀRVIETOŠANĀS JOSLA === */
+.header-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--c-border-subtle);
+  overflow: hidden;
+}
+
+.header-progress__bar {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--c-accent-teal),
+    var(--c-accent-violet),
+    var(--c-accent-pink)
+  );
+  width: 0%;
+  animation: header-progress-sim 60s linear infinite;
+}
+
+@keyframes header-progress-sim {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .header__logo-mark,
+  .header-progress__bar {
+    animation: none;
+  }
+
+  .mobile-nav {
+    transition: none;
+  }
+}
+
+/* === RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .header__inner {
+    padding-block: var(--space-sm);
+    min-height: 56px;
+  }
+
+  .header__logo-title {
+    font-size: var(--fs-base);
+  }
+
+  .header__logo-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .header__logo-mark {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* === FORCED COLORS === */
+@media (forced-colors: active) {
+  .header {
+    border-bottom: 1px solid CanvasText;
+  }
+
+  .header__nav-link--active {
+    border: 1px solid Highlight;
+  }
+}
+/* ============================================================
+   RESPONSĪVA GALVENE — CSS-ONLY NAVIGĀCIJA
+   ============================================================ */
+@media (max-width: 1023px) {
+  .header__inner {
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+    padding-block: var(--space-sm);
+  }
+
+  .header__logo {
+    margin-inline: auto;
+  }
+
+  .header__nav {
+    display: block;
+    order: 2;
+    flex: 0 0 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+
+  .header__nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header__nav-list {
+    width: max-content;
+    min-width: 100%;
+    justify-content: center;
+    gap: var(--space-2xs);
+  }
+
+  .header__nav-link {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--fs-xs);
+  }
+
+  .header__dropdown {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .header__logo {
+    margin-inline: 0;
+  }
+
+  .header__logo-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .header__logo-text {
+    display: flex;
+  }
+
+  .header__logo-title {
+    font-size: var(--fs-base);
+  }
+
+  .header__logo-subtitle {
+    display: none;
+  }
+
+  .header__nav-list {
+    justify-content: flex-start;
+  }
+}
+
+/* Headera saraksti neizmanto globālo dekoratīvo <li> punktu. */
+.header__nav-item::before,
+.header__dropdown-item::before {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header__nav {
+    overflow: visible;
+  }
+
+  .header__nav-list {
+    width: 100%;
+    min-width: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.15rem;
+    column-gap: 0.2rem;
+  }
+
+  .header__nav-link {
+    padding: 0.32rem 0.52rem;
+    font-size: 0.69rem;
+  }
+}

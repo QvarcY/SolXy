@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     SolXy · assets/og-image.svg
+     Autors: QvarcY (https://github.com/QvarcY)
+     Licence: MIT
+     Izmērs: 1200×630 (Open Graph standarts)
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="SolXy — Saules sistēmas izpēte bez JavaScript">
+  <title>SolXy — Tīra CSS Saules sistēma</title>
+  <desc>Open Graph attēls SolXy projektam</desc>
+
+  <defs>
+    <!-- Fona gradients -->
+    <linearGradient id="ogBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#03050d"/>
+      <stop offset="50%" stop-color="#070b1a"/>
+      <stop offset="100%" stop-color="#0d1428"/>
+    </linearGradient>
+
+    <!-- Radiālais fona spīdums -->
+    <radialGradient id="ogBgGlow" cx="30%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.12"/>
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#03050d" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Saules gradients -->
+    <radialGradient id="ogSunGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="30%" stop-color="#ffcc44"/>
+      <stop offset="70%" stop-color="#ff9922"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </radialGradient>
+
+    <!-- Teksta gradients -->
+    <linearGradient id="ogTextGradient" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#e8eefc"/>
+      <stop offset="40%" stop-color="#5eead4"/>
+      <stop offset="70%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+
+    <!-- Orbitas gradients -->
+    <linearGradient id="ogOrbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Saules glow filtrs -->
+    <filter id="ogSunGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Teksta glow filtrs -->
+    <filter id="ogTextGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Planētu glow filtrs -->
+    <filter id="ogPlanetGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Planētu gradienti -->
+    <radialGradient id="ogEarthGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#6bb6ff"/>
+      <stop offset="40%" stop-color="#4a90d9"/>
+      <stop offset="100%" stop-color="#2d5f99"/>
+    </radialGradient>
+
+    <radialGradient id="ogJupiterGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f0c896"/>
+      <stop offset="40%" stop-color="#d4a373"/>
+      <stop offset="100%" stop-color="#a87e56"/>
+    </radialGradient>
+
+    <radialGradient id="ogMarsGradient" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#f08d68"/>
+      <stop offset="40%" stop-color="#d1603d"/>
+      <stop offset="100%" stop-color="#a13f22"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ============================================================
+       FONS
+       ============================================================ -->
+  <rect width="1200" height="630" fill="url(#ogBgGradient)"/>
+  <rect width="1200" height="630" fill="url(#ogBgGlow)"/>
+
+  <!-- ============================================================
+       ZVAIGZNES (fona punkti)
+       ============================================================ -->
+  <g fill="#e8eefc">
+    <circle cx="80" cy="60" r="1.2" opacity="0.7"/>
+    <circle cx="200" cy="120" r="0.9" opacity="0.5"/>
+    <circle cx="350" cy="80" r="1" opacity="0.6"/>
+    <circle cx="500" cy="150" r="0.8" opacity="0.4"/>
+    <circle cx="680" cy="50" r="1.1" opacity="0.7"/>
+    <circle cx="820" cy="130" r="0.9" opacity="0.5"/>
+    <circle cx="950" cy="90" r="1" opacity="0.6"/>
+    <circle cx="1080" cy="140" r="1.2" opacity="0.7"/>
+    <circle cx="150" cy="480" r="0.8" opacity="0.5"/>
+    <circle cx="300" cy="550" r="1" opacity="0.6"/>
+    <circle cx="550" cy="580" r="0.9" opacity="0.5"/>
+    <circle cx="750" cy="520" r="1.1" opacity="0.6"/>
+    <circle cx="950" cy="570" r="0.9" opacity="0.5"/>
+    <circle cx="1120" cy="500" r="1" opacity="0.6"/>
+    <circle cx="450" cy="60" r="0.7" opacity="0.4"/>
+    <circle cx="1050" cy="230" r="0.8" opacity="0.5"/>
+    <circle cx="120" cy="250" r="0.7" opacity="0.4"/>
+    <circle cx="380" cy="380" r="0.8" opacity="0.5"/>
+    <circle cx="700" cy="430" r="0.9" opacity="0.5"/>
+    <circle cx="1000" cy="400" r="0.7" opacity="0.4"/>
+  </g>
+
+  <!-- Krāsainas zvaigznes -->
+  <circle cx="420" cy="200" r="1.5" fill="#5eead4" opacity="0.8"/>
+  <circle cx="880" cy="300" r="1.3" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="220" cy="400" r="1.4" fill="#f472b6" opacity="0.6"/>
+  <circle cx="1150" cy="350" r="1.2" fill="#5eead4" opacity="0.7"/>
+
+  <!-- ============================================================
+       SAULES SISTĒMAS VIZUĀLAIS — LABĀ PUSE
+       ============================================================ -->
+
+  <!-- Orbītu gredzeni -->
+  <g transform="translate(880, 315)">
+    <!-- Orbīta 1 -->
+    <ellipse
+      cx="0"
+      cy="0"
+      rx="130"
+      ry="45"
+      fill="none"
+      stroke="url(#ogOrbitGradient)"
+      stroke-width="1"
+      opacity="0.5"
+      transform="rotate(-20)"
+    />
+    <!-- Orbīta 2 -->
+    <ellipse
+      cx="0"
+      cy="0"
+      rx="180"
+      ry="62"
+      fill="none"
+      stroke="url(#ogOrbitGradient)"
+      stroke-width="0.8"
+      opacity="0.4"
+      transform="rotate(-20)"
+    />
+    <!-- Orbīta 3 -->
+    <ellipse
+      cx="0"
+      cy="0"
+      rx="230"
+      ry="80"
+      fill="none"
+      stroke="#5eead4"
+      stroke-width="0.6"
+      opacity="0.25"
+      transform="rotate(-20)"
+    />
+
+    <!-- Saule -->
+    <circle cx="0" cy="0" r="52" fill="url(#ogSunGradient)" filter="url(#ogSunGlow)"/>
+    <circle cx="-15" cy="-15" r="18" fill="#ffffff" opacity="0.35"/>
+
+    <!-- Koronas stari -->
+    <g stroke="#ffcc44" stroke-width="2" stroke-linecap="round" opacity="0.6">
+      <line x1="0" y1="-68" x2="0" y2="-80"/>
+      <line x1="0" y1="68" x2="0" y2="80"/>
+      <line x1="-68" y1="0" x2="-80" y2="0"/>
+      <line x1="68" y1="0" x2="80" y2="0"/>
+      <line x1="-48" y1="-48" x2="-58" y2="-58"/>
+      <line x1="48" y1="-48" x2="58" y2="-58"/>
+      <line x1="-48" y1="48" x2="-58" y2="58"/>
+      <line x1="48" y1="48" x2="58" y2="58"/>
+    </g>
+  </g>
+
+  <!-- Planētas uz orbītām (absolūtās pozīcijas) -->
+  <g filter="url(#ogPlanetGlow)">
+    <!-- Zeme (uz iekšējās orbītas) -->
+    <circle cx="815" cy="285" r="8" fill="url(#ogEarthGradient)"/>
+
+    <!-- Marss (uz iekšējās orbītas) -->
+    <circle cx="1000" cy="230" r="6" fill="url(#ogMarsGradient)"/>
+
+    <!-- Jupiters (uz vidējās orbītas) -->
+    <circle cx="720" cy="400" r="18" fill="url(#ogJupiterGradient)"/>
+
+    <!-- Nelielas planētas -->
+    <circle cx="1055" cy="415" r="4" fill="#8c8074"/>
+    <circle cx="650" cy="245" r="5" fill="#e8b960"/>
+  </g>
+
+  <!-- ============================================================
+       TEKSTS
+       ============================================================ -->
+
+  <!-- Mazais virsraksts -->
+  <g filter="url(#ogTextGlow)">
+    <text
+      x="100"
+      y="200"
+      font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+      font-size="18"
+      font-weight="500"
+      letter-spacing="8"
+      fill="#5eead4"
+      opacity="0.9"
+    >TĪRA CSS · 0 JAVASCRIPT</text>
+  </g>
+
+  <!-- Galvenais virsraksts -->
+  <g filter="url(#ogTextGlow)">
+    <text
+      x="100"
+      y="320"
+      font-family="'Space Grotesk', 'Inter', system-ui, sans-serif"
+      font-size="120"
+      font-weight="700"
+      letter-spacing="-3"
+      fill="url(#ogTextGradient)"
+    >SolXy</text>
+  </g>
+
+  <!-- Apakšvirsraksts -->
+  <text
+    x="100"
+    y="380"
+    font-family="'Space Grotesk', 'Inter', system-ui, sans-serif"
+    font-size="32"
+    font-weight="500"
+    letter-spacing="-0.5"
+    fill="#e8eefc"
+    opacity="0.9"
+  >Saules sistēmas izpēte</text>
+
+  <!-- Apraksts -->
+  <text
+    x="100"
+    y="440"
+    font-family="'Inter', system-ui, sans-serif"
+    font-size="20"
+    font-weight="400"
+    fill="#9aa8c8"
+  >8 planētas · 6 pavadoņi · 7 datu lapas · bez JavaScript</text>
+
+  <!-- Akcenta līnija -->
+  <rect
+    x="100"
+    y="470"
+    width="400"
+    height="3"
+    rx="1.5"
+    fill="url(#ogOrbitGradient)"
+    opacity="0.7"
+  />
+
+  <!-- Autora atsauce -->
+  <text
+    x="100"
+    y="520"
+    font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+    font-size="16"
+    font-weight="500"
+    letter-spacing="4"
+    fill="#5a6788"
+  >AUTORS · QVARCY · MIT LICENCE</text>
+
+  <!-- GitHub saite -->
+  <text
+    x="100"
+    y="555"
+    font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+    font-size="14"
+    font-weight="400"
+    letter-spacing="2"
+    fill="#5eead4"
+    opacity="0.7"
+  >github.com/QvarcY</text>
+
+  <!-- ============================================================
+       DEKORATĪVĀS LĪNIJAS
+       ============================================================ -->
+
+  <!-- Apakšējā līnija -->
+  <rect
+    x="0"
+    y="625"
+    width="1200"
+    height="5"
+    fill="url(#ogOrbitGradient)"
+    opacity="0.4"
+  />
+
+  <!-- Stūra dekors — augšējais kreisais -->
+  <g stroke="#5eead4" stroke-width="2" fill="none" opacity="0.4">
+    <line x1="40" y1="40" x2="80" y2="40"/>
+    <line x1="40" y1="40" x2="40" y2="80"/>
+  </g>
+
+  <!-- Stūra dekors — augšējais labais -->
+  <g stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.4">
+    <line x1="1160" y1="40" x2="1120" y2="40"/>
+    <line x1="1160" y1="40" x2="1160" y2="80"/>
+  </g>
+
+  <!-- Stūra dekors — apakšējais kreisais -->
+  <g stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.4">
+    <line x1="40" y1="590" x2="80" y2="590"/>
+    <line x1="40" y1="590" x2="40" y2="550"/>
+  </g>
+
+  <!-- Stūra dekors — apakšējais labais -->
+  <g stroke="#f472b6" stroke-width="2" fill="none" opacity="0.4">
+    <line x1="1160" y1="590" x2="1120" y2="590"/>
+    <line x1="1160" y1="590" x2="1160" y2="550"/>
+  </g>
+</svg>

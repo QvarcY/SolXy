@@ -1,0 +1,462 @@
+/* ============================================================
+   SolXy · hero.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === HERO SEKCIJA === */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: var(--space-4xl);
+  overflow: hidden;
+  z-index: var(--z-base);
+}
+
+/* === HERO FONA EFEKTI === */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(94, 234, 212, 0.08), transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(167, 139, 250, 0.06), transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(244, 114, 182, 0.05), transparent 50%);
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+/* === HERO SATURS === */
+.hero__content {
+  position: relative;
+  z-index: var(--z-raised);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  max-width: 900px;
+  padding-inline: var(--space-container);
+}
+
+/* === HERO EYEBROW === */
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-mega);
+  text-transform: uppercase;
+  color: var(--c-accent-teal);
+}
+
+.hero__eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 10px var(--c-accent-teal);
+  animation: hero-eyebrow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hero-eyebrow-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+/* === HERO VIRSR AKSTS === */
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-6xl);
+  font-weight: var(--fw-extrabold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tighter);
+  text-wrap: balance;
+  margin: 0;
+}
+
+.hero__title-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--c-text-primary) 0%,
+    var(--c-accent-teal) 30%,
+    var(--c-accent-violet) 60%,
+    var(--c-accent-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: block;
+}
+
+.hero__title-line {
+  display: block;
+}
+
+/* === HERO APAKŠVIRSR AKSTS === */
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-snug);
+  color: var(--c-text-secondary);
+  letter-spacing: var(--ls-tight);
+  max-width: 55ch;
+  text-wrap: balance;
+  margin: 0;
+}
+
+/* === HERO APRAKSTS === */
+.hero__description {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  max-width: 60ch;
+  text-wrap: pretty;
+  margin: 0;
+}
+
+/* === HERO POGAS === */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  margin-top: var(--space-md);
+}
+
+/* === HERO STATISTIKA === */
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  width: 100%;
+  max-width: 800px;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.hero__stat:hover {
+  border-color: var(--c-border-accent);
+  transform: translateY(-4px);
+  box-shadow: var(--glow-teal-sm);
+}
+
+.hero__stat-value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--c-accent-teal);
+  letter-spacing: var(--ls-tight);
+  line-height: 1;
+  text-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+.hero__stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  text-align: center;
+}
+
+/* === HERO AR SAULES SISTĒMU === */
+.hero--solar {
+  min-height: 100vh;
+  padding-block: var(--space-2xl);
+}
+
+.hero--solar .hero__content {
+  gap: var(--space-xl);
+}
+
+/* === HERO AR SCĒNU === */
+.hero__scene {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-2xl);
+}
+
+/* === HERO AR SCĒNU — RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .hero__scene {
+    max-width: 100%;
+  }
+}
+
+/* === HERO SCROLL INDIKATORS === */
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-xl);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--c-text-tertiary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-mega);
+  text-transform: uppercase;
+  animation: hero-scroll-bounce 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero__scroll-icon {
+  width: 20px;
+  height: 32px;
+  border: 2px solid var(--c-text-tertiary);
+  border-radius: var(--radius-full);
+  position: relative;
+}
+
+.hero__scroll-icon::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--c-accent-teal);
+  animation: hero-scroll-dot 2s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+@keyframes hero-scroll-dot {
+  0% {
+    opacity: 1;
+    top: 6px;
+  }
+  100% {
+    opacity: 0;
+    top: 18px;
+  }
+}
+
+/* === HERO AR PAMATNIECISKO IZKĀRTOJUMU === */
+.hero--split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero--split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+  }
+
+  .hero--split .hero__content {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero--split .hero__actions {
+    justify-content: flex-start;
+  }
+}
+
+/* === HERO AR PAMATNIECISKO IZKĀRTOJUMU — SCĒNA === */
+.hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+/* === HERO AR PAMATNIECISKO IZKĀRTOJUMU — ORBĪTAS === */
+.hero__orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--c-border-subtle);
+  pointer-events: none;
+}
+
+.hero__orbit--1 {
+  width: 40%;
+  height: 40%;
+  animation: hero-orbit-rotate 20s linear infinite;
+}
+
+.hero__orbit--2 {
+  width: 60%;
+  height: 60%;
+  animation: hero-orbit-rotate 35s linear infinite reverse;
+}
+
+.hero__orbit--3 {
+  width: 80%;
+  height: 80%;
+  animation: hero-orbit-rotate 50s linear infinite;
+}
+
+.hero__orbit--4 {
+  width: 100%;
+  height: 100%;
+  animation: hero-orbit-rotate 70s linear infinite reverse;
+}
+
+@keyframes hero-orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === HERO AR PAMATNIECISKO IZKĀRTOJUMU — PUNKTI === */
+.hero__orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: 0 0 12px var(--c-accent-teal);
+  transform: translate(-50%, -50%);
+}
+
+/* === HERO AR PAMATNIECISKO IZKĀRTOJUMU — RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .hero--split {
+    gap: var(--space-xl);
+  }
+
+  .hero__visual {
+    max-width: 400px;
+  }
+}
+
+/* === HERO AR GRADIENTA PĀRKLĀJUMU === */
+.hero--overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 60%,
+    var(--c-bg-primary) 100%
+  );
+  pointer-events: none;
+  z-index: var(--z-base);
+}
+
+/* === HERO AR VIDEO/PARALLAX === */
+.hero--parallax {
+  background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+  .hero--parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* === HERO AR MIRGOŠU === */
+.hero__shimmer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(94, 234, 212, 0.05) 90deg,
+    transparent 180deg,
+    rgba(167, 139, 250, 0.05) 270deg,
+    transparent 360deg
+  );
+  animation: hero-shimmer-rotate 30s linear infinite;
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+@keyframes hero-shimmer-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* === HERO AR MIRGOŠU — RESPONSĪVAIS === */
+@media (max-width: 767px) {
+  .hero__shimmer {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .hero__eyebrow::before,
+  .hero__scroll,
+  .hero__scroll-icon::before,
+  .hero__orbit,
+  .hero__shimmer {
+    animation: none;
+  }
+}

@@ -1,0 +1,662 @@
+/* ============================================================
+   SolXy · accessibility.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--c-accent-teal);
+  color: var(--c-text-inverse);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  z-index: var(--z-max);
+  transform: translateY(-200%);
+  transition: transform var(--transition-base) var(--ease-out);
+  box-shadow: var(--shadow-lg);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid var(--c-text-inverse);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   FOKUSA INDIKATORI
+   ============================================================ */
+
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-xs);
+}
+
+/* === FOKUSA INDIKATORI — POGAS === */
+button:focus-visible,
+.btn:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+input[type="reset"]:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  box-shadow:
+    0 0 0 var(--focus-ring-width) var(--focus-ring-color),
+    0 0 0 calc(var(--focus-ring-width) + 3px) var(--c-accent-teal-glass);
+}
+
+/* === FOKUSA INDIKATORI — SAITES === */
+a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  background: var(--c-accent-teal-glass);
+  border-radius: var(--radius-xs);
+}
+
+/* === FOKUSA INDIKATORI — IEVAde === */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 0 3px var(--c-accent-teal-glass);
+}
+
+/* === FOKUSA INDIKATORI — KARTĪTES === */
+.card__link:focus-visible,
+.planet-card__link:focus-visible,
+.moon-card__link:focus-visible {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  border-radius: var(--radius-xl);
+}
+
+/* === FOKUSA INDIKATORI — INTERAKTĪVIE === */
+.control-switch__input:focus-visible ~ .control-switch__track,
+.control-radio__input:focus-visible ~ .control-radio__indicator,
+.control-checkbox__input:focus-visible ~ .control-checkbox__indicator,
+.control-chips__input:focus-visible ~ .control-chips__label,
+.control-segmented__input:focus-visible ~ .control-segmented__label,
+.theme-switch__input:focus-visible ~ .theme-switch__label {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* === FOKUSA INDIKATORI — DETAILS/SUMMARY === */
+summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .stars__layer,
+  .nebula__blob,
+  .sun__core,
+  .sun__surface,
+  .sun__corona,
+  .sun__rays,
+  .sun__flare,
+  .sun__granules,
+  .sun__sunspot,
+  .planet,
+  .orbit,
+  .asteroid-belt,
+  .hero__orbit,
+  .hero__shimmer {
+    animation: none !important;
+  }
+
+  .planet--hoverable:hover,
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .hover-rotate:hover,
+  .effect-lift:hover,
+  .effect-scale:hover {
+    transform: none !important;
+  }
+}
+
+/* ============================================================
+   PREFERS-CONTRAST: MORE
+   ============================================================ */
+
+@media (prefers-contrast: more) {
+  :root {
+    --c-text-primary: #ffffff;
+    --c-text-secondary: #e8eefc;
+    --c-text-tertiary: #b0bedc;
+    --c-text-muted: #8a98b8;
+
+    --c-border-subtle: rgba(232, 238, 252, 0.25);
+    --c-border-default: rgba(232, 238, 252, 0.45);
+    --c-border-strong: rgba(232, 238, 252, 0.65);
+    --c-border-accent: rgba(94, 234, 212, 0.85);
+
+    --c-accent-teal: #7fffe8;
+    --c-accent-teal-light: #b0fff5;
+    --c-accent-violet: #c4b0ff;
+    --c-accent-violet-light: #d8c8ff;
+    --c-accent-pink: #ff9dd6;
+    --c-accent-pink-light: #ffbde4;
+
+    --focus-ring-width: 3px;
+    --focus-ring-color: #7fffe8;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  button,
+  .btn,
+  .card,
+  .planet-card,
+  .stat-card,
+  .fact-card,
+  .mission-card,
+  .exoplanet-card,
+  .moon-card {
+    border-width: 2px;
+  }
+
+  input,
+  textarea,
+  select {
+    border-width: 2px;
+  }
+
+  code {
+    border-width: 2px;
+    background: var(--c-bg-primary);
+  }
+
+  .card:hover,
+  .planet-card:hover,
+  .stat-card:hover,
+  .fact-card:hover {
+    box-shadow:
+      0 0 0 2px var(--c-accent-teal),
+      0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .header,
+  .footer {
+    border-width: 2px;
+  }
+
+  hr {
+    background: var(--c-border-default);
+    height: 2px;
+  }
+}
+
+/* ============================================================
+   PREFERS-CONTRAST: LESS
+   ============================================================ */
+
+@media (prefers-contrast: less) {
+  :root {
+    --c-text-secondary: #7a88a8;
+    --c-text-tertiary: #4a5878;
+    --c-border-subtle: rgba(232, 238, 252, 0.04);
+    --c-border-default: rgba(232, 238, 252, 0.08);
+  }
+
+  .card,
+  .planet-card,
+  .stat-card {
+    border-color: transparent;
+  }
+}
+
+/* ============================================================
+   PREFERS-COLOR-SCHEME
+   ============================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    /* Šie mainīgie tiek definēti themes.css, bet šeit ir atkārtota drošība */
+    color-scheme: light;
+  }
+
+  .stars,
+  .nebula {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+/* ============================================================
+   FORCED-COLORS: ACTIVE
+   ============================================================ */
+
+@media (forced-colors: active) {
+  /* Noņemam visus custom gradientus un ēnas */
+  * {
+    background-image: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Nodrošinām robežas */
+  body,
+  header,
+  footer,
+  main,
+  section,
+  article,
+  aside,
+  nav {
+    border-color: CanvasText;
+    background: Canvas;
+    color: CanvasText;
+  }
+
+  a {
+    color: LinkText;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: VisitedText;
+  }
+
+  a:hover,
+  a:focus {
+    color: LinkText;
+    background: Canvas;
+  }
+
+  button,
+  .btn,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"] {
+    background: ButtonFace;
+    color: ButtonText;
+    border: 2px solid ButtonText;
+  }
+
+  button:hover,
+  .btn:hover,
+  button:focus-visible,
+  .btn:focus-visible {
+    background: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
+  }
+
+  input,
+  textarea,
+  select {
+    background: Field;
+    color: FieldText;
+    border: 2px solid FieldText;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  .card,
+  .planet-card,
+  .moon-card,
+  .mission-card,
+  .exoplanet-card,
+  .stat-card,
+  .fact-card,
+  .glossary-item,
+  .comparison-group {
+    background: Canvas;
+    border: 2px solid CanvasText;
+  }
+
+  .header,
+  .footer {
+    background: Canvas;
+    border: 2px solid CanvasText;
+  }
+
+  *:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 3px;
+  }
+
+  /* Zvaigznes un planētas kā vienkāršas formas */
+  .planet,
+  .sun__core,
+  .moon {
+    background: Canvas;
+    border: 2px solid CanvasText;
+  }
+
+  .sun__core {
+    background: Highlight;
+  }
+
+  /* Statusa indikatori */
+  .mission-status,
+  .card__status {
+    border: 1px solid CanvasText;
+  }
+
+  .mission-status::before,
+  .card__status::before {
+    background: currentColor;
+  }
+
+  /* Navigācija */
+  .header__nav-link--active,
+  .mobile-nav__link--active {
+    border: 2px solid Highlight;
+    color: Highlight;
+  }
+}
+
+/* ============================================================
+   SR-ONLY (SCREEN READER ONLY)
+   ============================================================ */
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* === SR-ONLY AR FOKUSU === */
+.sr-only--focusable:focus,
+.sr-only--focusable:active {
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
+  padding: inherit !important;
+  margin: inherit !important;
+  overflow: visible !important;
+  clip: auto !important;
+  white-space: normal !important;
+}
+
+/* ============================================================
+   ARIA ATRIBŪTU STILI
+   ============================================================ */
+
+/* === ARIA-DISABLED === */
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === ARIA-HIDDEN === */
+/*
+ * aria-hidden removes decorative content from the accessibility tree.
+ * It must NOT hide that content visually. Use the native [hidden]
+ * attribute or a dedicated utility class when visual hiding is intended.
+ */
+
+/* === ARIA-CURRENT === */
+[aria-current="page"] {
+  font-weight: var(--fw-bold);
+  color: var(--c-accent-teal);
+}
+
+[aria-current="true"] {
+  font-weight: var(--fw-semibold);
+}
+
+/* === ARIA-BUSY === */
+[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+/* === ARIA-INVALID === */
+[aria-invalid="true"] {
+  border-color: var(--c-accent-red);
+  box-shadow: 0 0 0 3px var(--c-accent-red-glow);
+}
+
+/* ============================================================
+   TOUCH TARGET SIZE (WCAG 2.5.5)
+   ============================================================ */
+
+@media (pointer: coarse) {
+  a,
+  button,
+  .btn,
+  summary,
+  input[type="checkbox"],
+  input[type="radio"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  a:not(.btn):not(.card__link):not(.header__logo) {
+    padding: var(--space-xs) var(--space-sm);
+    margin: calc(var(--space-xs) * -1) calc(var(--space-sm) * -1);
+  }
+
+  .header__nav-link,
+  .mobile-nav__link,
+  .footer__link {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .card__link,
+  .planet-card__link,
+  .moon-card__link {
+    min-height: 0;
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   TEKSTA LASĀMĪBA
+   ============================================================ */
+
+/* === MAKSIMĀLAIS PLATUMS === */
+p,
+.lead,
+.hero__description,
+.planet-page__description,
+.moon-page__description {
+  max-width: 70ch;
+}
+
+/* === HIPLINKU IZCELŠANA === */
+a:not([class]) {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-thickness var(--transition-fast) var(--ease-in-out);
+}
+
+a:not([class]):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* === KONTRASTA PALIELINĀŠANA === */
+@media (prefers-contrast: more) {
+  ::selection {
+    background: var(--c-accent-teal);
+    color: var(--c-text-inverse);
+  }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-TRANSPARENCY
+   ============================================================ */
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass,
+  .glass--strong,
+  .glass--light,
+  .card,
+  .planet-card,
+  .header,
+  .footer,
+  .mobile-nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--c-bg-secondary);
+  }
+}
+
+/* ============================================================
+   PREFERS-REDUCED-DATA
+   ============================================================ */
+
+@media (prefers-reduced-data: reduce) {
+  .stars,
+  .nebula,
+  .hero__shimmer,
+  .nebula__blob {
+    display: none;
+  }
+
+  * {
+    background-image: none;
+  }
+}
+
+/* ============================================================
+   KUSTĪBAS PIEKĻUVES PREFERENCE
+   ============================================================ */
+
+/* === PREFERS-REDUCED-MOTION — PAPILDU === */
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll {
+    animation: none;
+    opacity: 0.5;
+  }
+
+  .timeline-now__dot::before {
+    animation: none;
+  }
+
+  .constellation__star--pulse {
+    animation: none;
+  }
+
+  .header__logo-mark {
+    animation: none;
+  }
+
+  .control-progress__fill::after {
+    animation: none;
+  }
+
+  .anim-delay-1,
+  .anim-delay-2,
+  .anim-delay-3,
+  .anim-delay-4,
+  .anim-delay-5,
+  .anim-delay-6,
+  .anim-delay-7,
+  .anim-delay-8,
+  .anim-delay-9,
+  .anim-delay-10 {
+    animation-delay: 0s;
+  }
+}
+
+/* ============================================================
+   KLAVIATŪRAS NAVIGĀCIJA
+   ============================================================ */
+
+/* === UZMANĪBU PIESAISTOŠS FOKUSS === */
+*:focus-visible {
+  scroll-margin-top: 80px;
+  scroll-margin-bottom: 40px;
+}
+
+/* === FOKUSA GREDZENS UZ TUMPŠA FONA === */
+.hero *:focus-visible,
+.planet-page__hero *:focus-visible,
+.moon-page__hero *:focus-visible {
+  outline-color: var(--c-accent-teal);
+  box-shadow:
+    0 0 0 3px var(--c-accent-teal),
+    0 0 0 5px rgba(3, 5, 13, 0.8);
+}
+
+/* === IEVAde AR LABEL === */
+.form-label:has(+ input:focus-visible),
+.form-label:has(+ textarea:focus-visible),
+.form-label:has(+ select:focus-visible) {
+  color: var(--c-accent-teal);
+}
+
+/* ============================================================
+   PRINT — A11Y
+   ============================================================ */
+
+@media print {
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+}

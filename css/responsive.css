@@ -1,0 +1,796 @@
+/* ============================================================
+   SolXy · responsive.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   BREAKPOINTU SISTĒMA
+   6 breakpointi:
+   - xs: 0–479px    (mazie telefoni)
+   - sm: 480–767px  (lielie telefoni)
+   - md: 768–1023px (planšetes)
+   - lg: 1024–1279px (mazie portatīvie)
+   - xl: 1280–1535px (lielie ekrāni)
+   - 2xl: 1536px+   (ļoti lieli ekrāni)
+   ============================================================ */
+
+/* ============================================================
+   XS — MAZIE TELEFONI (<480px)
+   ============================================================ */
+
+@media (max-width: 479px) {
+  :root {
+    --space-container: 1rem;
+    --space-section: 2.5rem;
+    --space-section-sm: 1.75rem;
+  }
+
+  html {
+    font-size: 90%;
+  }
+
+  .page__container {
+    padding-inline: 1rem;
+  }
+
+  /* === HEADER === */
+  .header__inner {
+    padding-block: var(--space-xs);
+    min-height: 52px;
+    gap: var(--space-sm);
+  }
+
+  .header__logo-text {
+    display: flex;
+  }
+
+  .header__logo-subtitle {
+    display: none;
+  }
+
+  .header__logo-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header__actions {
+    gap: var(--space-2xs);
+  }
+
+  /* === MOBILĀ NAVIGĀCIJA === */
+  .mobile-nav {
+    width: 100%;
+    padding: var(--space-md);
+  }
+
+  .mobile-nav__link {
+    padding: var(--space-sm);
+    font-size: var(--fs-sm);
+  }
+
+  /* === HERO === */
+  .hero {
+    min-height: 90vh;
+    padding-block: var(--space-2xl);
+  }
+
+  .hero__title {
+    font-size: var(--fs-4xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--fs-lg);
+  }
+
+  .hero__description {
+    font-size: var(--fs-base);
+  }
+
+  .hero__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .hero__stat {
+    padding: var(--space-sm);
+  }
+
+  .hero__stat-value {
+    font-size: var(--fs-xl);
+  }
+
+  .hero__stat-label {
+    font-size: 0.65rem;
+  }
+
+  /* === SAULES SISTĒMA === */
+  .solar-system {
+    max-width: 100vw;
+  }
+
+  /* === STATISTIKAS KARTĪTES === */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .stat-card {
+    padding: var(--space-md);
+  }
+
+  .stat-card__value {
+    font-size: var(--fs-xl);
+  }
+
+  /* === FAKTU KARTĪTES === */
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fact-card {
+    padding: var(--space-md);
+    flex-direction: column;
+  }
+
+  .fact-card__number {
+    font-size: var(--fs-xl);
+  }
+
+  /* === KARTĪTES === */
+  .planet-card,
+  .moon-card,
+  .mission-card,
+  .exoplanet-card {
+    padding: var(--space-md);
+  }
+
+  .planet-card__preview,
+  .moon-card__preview {
+    width: 60px;
+    height: 60px;
+  }
+
+  .planet-card__title,
+  .moon-card__title {
+    font-size: var(--fs-base);
+  }
+
+  /* === TIMELINE === */
+  .timeline-item__content {
+    padding: var(--space-md);
+  }
+
+  .timeline-item__year {
+    font-size: var(--fs-base);
+  }
+
+  .timeline-item__title {
+    font-size: var(--fs-base);
+  }
+
+  .timeline-item__description {
+    font-size: var(--fs-xs);
+  }
+
+  /* === POGAS === */
+  .btn {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--fs-xs);
+  }
+
+  .btn--lg,
+  .btn--xl {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--fs-sm);
+  }
+
+  /* === FORMAS === */
+  .form {
+    padding: var(--space-md);
+  }
+
+  /* === FOOTER === */
+  .footer {
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .footer__content {
+    gap: var(--space-lg);
+  }
+
+  .footer__brand {
+    font-size: var(--fs-lg);
+  }
+
+  /* === BACK TO TOP === */
+  .back-to-top {
+    width: 36px;
+    height: 36px;
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+  }
+
+  /* === THEME SWITCH === */
+  .theme-switch {
+    bottom: calc(var(--space-sm) + 44px);
+    right: var(--space-sm);
+    padding: 2px;
+  }
+
+  .theme-switch__label {
+    width: 28px;
+    height: 28px;
+    font-size: 0.65rem;
+  }
+}
+
+/* ============================================================
+   SM — LIELIE TELEFONI (480px–767px)
+   ============================================================ */
+
+@media (min-width: 480px) and (max-width: 767px) {
+  :root {
+    --space-container: 1.25rem;
+  }
+
+  .hero__title {
+    font-size: var(--fs-5xl);
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item__content {
+    padding: var(--space-md);
+  }
+
+  .planet-card__preview,
+  .moon-card__preview {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* ============================================================
+   MD — PLANŠETES (768px–1023px)
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .moons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .missions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .exoplanets-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .with-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-page__hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .moon-page__hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-page__hero-text,
+  .moon-page__hero-text {
+    text-align: center;
+    align-items: center;
+  }
+
+  .planet-page__hero-visual,
+  .moon-page__hero-visual {
+    max-width: 400px;
+  }
+}
+
+/* ============================================================
+   LG — MAZIE PORTATĪVIE (1024px–1279px)
+   ============================================================ */
+
+@media (min-width: 1024px) {
+  .header__nav {
+    display: flex;
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .moons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .missions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .exoplanets-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   XL — LIELIE EKRĀNI (1280px–1535px)
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  :root {
+    --space-container: 3rem;
+  }
+
+  .facts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .planets-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .moons-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================================
+   2XL — ĻOTI LIELIE EKRĀNI (1536px+)
+   ============================================================ */
+
+@media (min-width: 1536px) {
+  :root {
+    --container-max: 1600px;
+  }
+
+  .hero__title {
+    font-size: var(--fs-6xl);
+  }
+
+  .page-indicator {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   ORIENTĀCIJA — AINAVA
+   ============================================================ */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-xl);
+  }
+
+  .header__inner {
+    min-height: 48px;
+  }
+
+  .mobile-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ============================================================
+   ORIENTĀCIJA — PORTRETS
+   ============================================================ */
+
+@media (orientation: portrait) and (max-width: 767px) {
+  .solar-system {
+    max-width: 95vw;
+  }
+
+  .star-map {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+}
+
+/* ============================================================
+   AUGSTAS DENSITĀTES EKRĀNI (Retina)
+   ============================================================ */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Smalkākas robežas augstas izšķirtspējas ekrāniem */
+  .card,
+  .planet-card,
+  .stat-card,
+  .fact-card,
+  .mission-card,
+  .exoplanet-card,
+  .moon-card {
+    border-width: 0.5px;
+  }
+}
+
+/* ============================================================
+   TOUCH IERĪCES
+   ============================================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Palielinām pieskaršanās mērķus */
+  .btn,
+  .header__nav-link,
+  .mobile-nav__link,
+  .footer__link,
+  .card__link {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Noņemam hover efektus */
+  .card:hover,
+  .planet-card:hover,
+  .moon-card:hover,
+  .mission-card:hover,
+  .exoplanet-card:hover {
+    transform: none;
+  }
+
+  .card:hover::before,
+  .planet-card:hover::before {
+    opacity: 0;
+  }
+
+  /* Aktīvais stāvoklis */
+  .card:active,
+  .planet-card:active,
+  .moon-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ============================================================
+   PELE (precīza norāde)
+   ============================================================ */
+
+@media (hover: hover) and (pointer: fine) {
+  /* Hover efekti ir aktīvi */
+  .planet--hoverable:hover {
+    transform: scale(1.4);
+  }
+}
+
+/* ============================================================
+   RESPONSĪVIE ATTĒLI
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .planet--page,
+  .moon--page {
+    width: clamp(140px, 50vw, 240px);
+    height: clamp(140px, 50vw, 240px);
+  }
+
+  .sun--page {
+    width: clamp(160px, 55vw, 260px);
+    height: clamp(160px, 55vw, 260px);
+  }
+
+  .planet-card__preview::after {
+    opacity: 0.3;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVIE TEKSTI
+   ============================================================ */
+
+@media (max-width: 479px) {
+  .heading--display,
+  .hero__title {
+    letter-spacing: var(--ls-tight);
+  }
+
+  .lead,
+  .hero__description {
+    font-size: var(--fs-base);
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    padding: var(--space-2xs) var(--space-xs);
+    letter-spacing: var(--ls-wider);
+  }
+}
+
+/* ============================================================
+   RESPONSĪVIE GRIDI
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .grid--cols-2,
+  .grid--cols-3,
+  .grid--cols-4,
+  .grid--cols-5,
+  .grid--cols-6 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-layout--2,
+  .grid-layout--3,
+  .grid-layout--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table {
+    font-size: var(--fs-xs);
+  }
+
+  .comparison-bar {
+    grid-template-columns: 70px 1fr;
+    gap: var(--space-sm);
+  }
+
+  .comparison-bar__value {
+    grid-column: 1 / -1;
+    text-align: left;
+    min-width: 0;
+  }
+
+  .size-comparison {
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-sm);
+    min-height: 300px;
+  }
+
+  .size-comparison__sphere {
+    width: calc(var(--sphere-size, 80px) * 0.7);
+  }
+}
+
+/* ============================================================
+   RESPONSĪVIE LAIKA LĪNIJAS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .timeline::before {
+    left: 12px;
+    transform: none;
+  }
+
+  .timeline-item {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .timeline-item__marker {
+    grid-column: 1;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+  }
+
+  .timeline-item__marker::before {
+    width: 6px;
+    height: 6px;
+  }
+
+  .timeline-item__content {
+    grid-column: 2;
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVĀS KĀJENES
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .footer__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .footer__block {
+    align-items: flex-start;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .footer__badges {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVĀS ZVAIGŽŅU KARTES
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .star-map {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+
+  .constellation__label {
+    font-size: 0.55rem;
+    padding: 2px 4px;
+  }
+
+  .constellation-legend {
+    grid-template-columns: 1fr;
+  }
+
+  .star-map__compass {
+    font-size: 0.6rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+/* ============================================================
+   RESPONSĪVĀS FORMAS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVIE KONTROLI
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .control-tabs__nav {
+    flex-direction: column;
+  }
+
+  .control-tabs__label {
+    width: 100%;
+  }
+
+  .control-segmented {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .control-chips {
+    justify-content: center;
+  }
+}
+
+/* ============================================================
+   AUGSTU EKRĀNU PIELĀGOJUMI
+   ============================================================ */
+
+@media (min-height: 1200px) {
+  .hero {
+    min-height: 80vh;
+  }
+}
+
+/* ============================================================
+   ZEMA EKRĀNA PIELĀGOJUMI
+   ============================================================ */
+
+@media (max-height: 600px) {
+  .hero {
+    min-height: auto;
+    padding-block: var(--space-2xl);
+  }
+
+  .section-layout {
+    padding-block: var(--space-2xl);
+  }
+}
+
+/* ============================================================
+   FOLDABLE IERĪCES
+   ============================================================ */
+
+@media (max-width: 280px) {
+  :root {
+    font-size: 85%;
+  }
+
+  .header__logo-mark {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero__title {
+    font-size: var(--fs-3xl);
+  }
+
+  .btn {
+    padding: var(--space-2xs) var(--space-sm);
+    font-size: 0.65rem;
+  }
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA RESPONSĪVAJĀ
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) and (max-width: 767px) {
+  * {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+}

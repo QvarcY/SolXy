@@ -1,0 +1,284 @@
+/* ============================================================
+   SolXy · planet-uranus.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === URĀNA MAINĪGIE === */
+:root {
+  --uranus-color-primary: #7dd3d3;
+  --uranus-color-secondary: #4a9d9d;
+  --uranus-color-accent: #a8ecec;
+  --uranus-color-dark: #2a6666;
+  --uranus-color-band-light: #9ee5e5;
+  --uranus-color-band-dark: #5fb8b8;
+  --uranus-color-ring-primary: #6bc2c2;
+  --uranus-color-ring-secondary: #4a9d9d;
+  --uranus-color-glow: rgba(125, 211, 211, 0.5);
+  --uranus-color-atmosphere: rgba(168, 236, 236, 0.3);
+}
+
+/* === URĀNA VIRSMA === */
+.planet--uranus .planet__surface {
+  background:
+    radial-gradient(circle at 35% 25%, var(--uranus-color-accent), transparent 45%),
+    radial-gradient(circle at 70% 65%, var(--uranus-color-primary), transparent 55%),
+    radial-gradient(circle at 45% 85%, var(--uranus-color-secondary), transparent 45%),
+    linear-gradient(135deg, var(--uranus-color-primary), var(--uranus-color-secondary));
+}
+
+/* === URĀNA JOSLAS (BANDS) === */
+.planet--uranus .planet__texture {
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--uranus-color-band-light) 0%,
+    var(--uranus-color-band-light) 12%,
+    var(--uranus-color-band-dark) 12%,
+    var(--uranus-color-band-dark) 16%,
+    var(--uranus-color-band-light) 16%,
+    var(--uranus-color-band-light) 28%,
+    var(--uranus-color-band-dark) 28%,
+    var(--uranus-color-band-dark) 32%,
+    var(--uranus-color-primary) 32%,
+    var(--uranus-color-primary) 42%,
+    var(--uranus-color-band-dark) 42%,
+    var(--uranus-color-band-dark) 46%,
+    var(--uranus-color-band-light) 46%,
+    var(--uranus-color-band-light) 58%,
+    var(--uranus-color-primary) 58%,
+    var(--uranus-color-primary) 66%,
+    var(--uranus-color-band-dark) 66%,
+    var(--uranus-color-band-dark) 70%,
+    var(--uranus-color-band-light) 70%,
+    var(--uranus-color-band-light) 82%,
+    var(--uranus-color-band-dark) 82%,
+    var(--uranus-color-band-dark) 86%,
+    var(--uranus-color-band-light) 86%,
+    var(--uranus-color-band-light) 100%
+  );
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+/* === URĀNA ATMOSFĒRA === */
+.planet--uranus .planet__atmosphere {
+  box-shadow:
+    0 0 25px var(--uranus-color-glow),
+    0 0 50px rgba(168, 236, 236, 0.25),
+    inset 0 0 25px rgba(168, 236, 236, 0.4),
+    inset 0 0 50px rgba(125, 211, 211, 0.2);
+}
+
+/* === URĀNA GLOW === */
+.planet--uranus {
+  box-shadow: 0 0 30px var(--uranus-color-glow);
+}
+
+.planet--uranus:hover {
+  box-shadow: 0 0 50px var(--uranus-color-glow),
+              0 0 100px rgba(168, 236, 236, 0.4);
+}
+
+/* === URĀNA GREDZENI (VERTIKĀLI!) === */
+/* Urānam ir unikāla iezīme — tie ir gandrīz perpendikulāri orbītas plaknei */
+.planet--uranus .planet__rings {
+  width: 200%;
+  height: 200%;
+  /* Rotējam 90 grādus, lai gredzeni būtu vertikāli */
+  transform: translate(-50%, -50%) rotateY(90deg);
+  background:
+    radial-gradient(
+      circle,
+      transparent 0%,
+      transparent 42%,
+      rgba(74, 157, 157, 0.25) 42%,
+      rgba(74, 157, 157, 0.35) 43%,
+      transparent 44%,
+      transparent 47%,
+      var(--uranus-color-ring-primary) 47%,
+      var(--uranus-color-ring-secondary) 48%,
+      transparent 49%,
+      transparent 52%,
+      rgba(74, 157, 157, 0.3) 52%,
+      rgba(74, 157, 157, 0.4) 53%,
+      transparent 54%,
+      transparent 57%,
+      var(--uranus-color-ring-primary) 57%,
+      var(--uranus-color-ring-secondary) 58%,
+      transparent 59%
+    );
+  box-shadow:
+    0 0 15px var(--uranus-color-glow),
+    0 0 30px rgba(125, 211, 211, 0.2);
+  opacity: 0.9;
+  animation: uranus-rings-tilt 30s ease-in-out infinite alternate;
+}
+
+/* === URĀNA GREDZENU KUSTĪBA (viegla šūpošanās) === */
+@keyframes uranus-rings-tilt {
+  0% {
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateY(90deg) rotateZ(3deg);
+  }
+}
+
+/* === URĀNA PAVADOŅI — TITĀNIJA UN OBERONS === */
+.planet--uranus .planet__moons::before,
+.planet--uranus .planet__moons::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: var(--uranus-color-accent);
+  box-shadow: 0 0 4px var(--uranus-color-glow);
+}
+
+.planet--uranus .planet__moons::before {
+  width: 2px;
+  height: 2px;
+  top: -30px;
+  left: 50%;
+  animation: uranus-moon-titania 14s linear infinite;
+}
+
+.planet--uranus .planet__moons::after {
+  width: 2px;
+  height: 2px;
+  top: -34px;
+  left: 50%;
+  animation: uranus-moon-oberon 18s linear infinite reverse;
+}
+
+@keyframes uranus-moon-titania {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}
+
+@keyframes uranus-moon-oberon {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(34px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(34px) rotate(-360deg);
+  }
+}
+
+/* === URĀNA GRAUDU STRUKTŪRA === */
+.planet--uranus .planet__surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(ellipse at 25% 30%, rgba(255, 255, 255, 0.2), transparent 40%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 255, 255, 0.12), transparent 35%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* === URĀNA LAPA === */
+.planet-page--uranus {
+  --planet-page-accent: var(--uranus-color-accent);
+  --planet-page-primary: var(--uranus-color-primary);
+  --planet-page-glow: var(--uranus-color-glow);
+}
+
+/* === URĀNA HERO === */
+.planet-page--uranus .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--uranus-color-glow), transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(168, 236, 236, 0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === URĀNA STATISTIKAS KARTĪTES === */
+.planet-page--uranus .stat-card {
+  border-color: rgba(168, 236, 236, 0.2);
+}
+
+.planet-page--uranus .stat-card:hover {
+  border-color: var(--uranus-color-accent);
+  box-shadow: 0 0 20px var(--uranus-color-glow);
+}
+
+.planet-page--uranus .stat-card__value {
+  color: var(--uranus-color-accent);
+  text-shadow: 0 0 10px var(--uranus-color-glow);
+}
+
+/* === URĀNA FAKTU KARTĪTES === */
+.planet-page--uranus .fact-card {
+  border-color: rgba(168, 236, 236, 0.2);
+}
+
+.planet-page--uranus .fact-card__number {
+  color: var(--uranus-color-accent);
+}
+
+.planet-page--uranus .fact-card:hover {
+  border-color: var(--uranus-color-accent);
+}
+
+/* === URĀNA ORBĪTAS IZCELŠANA === */
+.planet-page--uranus .planet-page__orbit {
+  border-color: var(--uranus-color-accent);
+  box-shadow: 0 0 20px var(--uranus-color-glow);
+}
+
+/* === URĀNA KRĀSU AKCENTI === */
+.planet-page--uranus .eyebrow {
+  color: var(--uranus-color-accent);
+  border-color: rgba(168, 236, 236, 0.3);
+  background: rgba(168, 236, 236, 0.1);
+}
+
+.planet-page--uranus .eyebrow::before {
+  background: var(--uranus-color-accent);
+  box-shadow: 0 0 10px var(--uranus-color-accent);
+}
+
+/* === URĀNA NAVIGĀCIJA === */
+.planet-page--uranus .planet-nav__link {
+  border-color: rgba(168, 236, 236, 0.2);
+}
+
+.planet-page--uranus .planet-nav__link:hover {
+  border-color: var(--uranus-color-accent);
+  color: var(--uranus-color-accent);
+  box-shadow: 0 0 20px var(--uranus-color-glow);
+}
+
+/* === URĀNA GRADIENTA TEKSTS === */
+.planet-page--uranus .heading--planet {
+  background: linear-gradient(135deg, var(--uranus-color-accent), var(--uranus-color-primary), var(--uranus-color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--uranus .planet__rings,
+  .planet--uranus .planet__moons::before,
+  .planet--uranus .planet__moons::after {
+    animation: none;
+  }
+}
+
+/* === RESPONSĪVAIS — GREDZENI === */
+@media (max-width: 767px) {
+  .planet--uranus .planet__rings {
+    width: 180%;
+    height: 180%;
+  }
+}

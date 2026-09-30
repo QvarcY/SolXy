@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <!-- ============================================================
+       SolXy · index.html
+       Autors: QvarcY (https://github.com/QvarcY)
+       Licence: MIT
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SolXy — interaktīva Saules sistēmas izpētes platforma, uzbūvēta tikai ar HTML un CSS, bez JavaScript.">
+  <meta name="author" content="QvarcY">
+  <meta name="generator" content="SolXy · Tīrs CSS">
+  <meta name="theme-color" content="#03050d">
+  <meta name="color-scheme" content="dark light">
+  <link rel="author" href="https://github.com/QvarcY">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SolXy — Tīra CSS Saules sistēma">
+  <meta property="og:description" content="Interaktīva Saules sistēmas izpētes platforma. Uzbūvēta tikai ar HTML un CSS, bez JavaScript.">
+  <meta property="og:image" content="assets/og-image.svg">
+  <meta property="og:locale" content="lv_LV">
+
+  <title>SolXy · Saules sistēmas izpēte</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/logo.svg">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/stars.css">
+  <link rel="stylesheet" href="css/sun.css">
+  <link rel="stylesheet" href="css/orbits.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/planets.css">
+  <link rel="stylesheet" href="css/planet-mercury.css">
+  <link rel="stylesheet" href="css/planet-venus.css">
+  <link rel="stylesheet" href="css/planet-earth.css">
+  <link rel="stylesheet" href="css/planet-mars.css">
+  <link rel="stylesheet" href="css/planet-jupiter.css">
+  <link rel="stylesheet" href="css/planet-saturn.css">
+  <link rel="stylesheet" href="css/planet-uranus.css">
+  <link rel="stylesheet" href="css/planet-neptune.css">
+  <link rel="stylesheet" href="css/moons.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/controls.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/animations-extended.css">
+  <link rel="stylesheet" href="css/transitions.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Pāriet uz saturu</a>
+
+  <!-- ZVAIGŽŅU FONS -->
+  <div class="stars" aria-hidden="true">
+    <div class="stars__layer stars__layer--far"></div>
+    <div class="stars__layer stars__layer--mid"></div>
+    <div class="stars__layer stars__layer--near"></div>
+    <span class="stars__sparkle stars__sparkle--1"></span>
+    <span class="stars__sparkle stars__sparkle--2"></span>
+    <span class="stars__sparkle stars__sparkle--3"></span>
+    <span class="stars__sparkle stars__sparkle--4"></span>
+    <span class="stars__sparkle stars__sparkle--5"></span>
+    <span class="stars__sparkle stars__sparkle--6"></span>
+  </div>
+
+  <div class="nebula" aria-hidden="true">
+    <div class="nebula__blob nebula__blob--1"></div>
+    <div class="nebula__blob nebula__blob--2"></div>
+    <div class="nebula__blob nebula__blob--3"></div>
+  </div>
+
+  <!-- GALVENE -->
+  <header class="header">
+    <div class="page__container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo" aria-label="SolXy sākumlapa">
+          <span class="header__logo-mark" aria-hidden="true"></span>
+          <span class="header__logo-text">
+            <span class="header__logo-title">SolXy</span>
+            <span class="header__logo-subtitle">Saules sistēma</span>
+          </span>
+        </a>
+
+        <nav class="header__nav" aria-label="Galvenā navigācija">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="index.html" class="header__nav-link header__nav-link--active" aria-current="page">Sākums</a>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="#planets" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Planētas</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="planets/mercury.html" class="header__dropdown-link">Merkurs</a></li>
+                <li class="header__dropdown-item"><a href="planets/venus.html" class="header__dropdown-link">Venēra</a></li>
+                <li class="header__dropdown-item"><a href="planets/earth.html" class="header__dropdown-link">Zeme</a></li>
+                <li class="header__dropdown-item"><a href="planets/mars.html" class="header__dropdown-link">Marss</a></li>
+                <li class="header__dropdown-item"><a href="planets/jupiter.html" class="header__dropdown-link">Jupiters</a></li>
+                <li class="header__dropdown-item"><a href="planets/saturn.html" class="header__dropdown-link">Saturns</a></li>
+                <li class="header__dropdown-item"><a href="planets/uranus.html" class="header__dropdown-link">Urāns</a></li>
+                <li class="header__dropdown-item"><a href="planets/neptune.html" class="header__dropdown-link">Neptūns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="#moons" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Pavadoņi</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="moons/moon.html" class="header__dropdown-link">Mēness</a></li>
+                <li class="header__dropdown-item"><a href="moons/io.html" class="header__dropdown-link">Io</a></li>
+                <li class="header__dropdown-item"><a href="moons/europa.html" class="header__dropdown-link">Eiropa</a></li>
+                <li class="header__dropdown-item"><a href="moons/ganymede.html" class="header__dropdown-link">Ganimēds</a></li>
+                <li class="header__dropdown-item"><a href="moons/callisto.html" class="header__dropdown-link">Kallisto</a></li>
+                <li class="header__dropdown-item"><a href="moons/titan.html" class="header__dropdown-link">Titāns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="#data" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Dati</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="data/comparison.html" class="header__dropdown-link">Salīdzinājums</a></li>
+                <li class="header__dropdown-item"><a href="data/timeline.html" class="header__dropdown-link">Laika līnija</a></li>
+                <li class="header__dropdown-item"><a href="data/glossary.html" class="header__dropdown-link">Vārdnīca</a></li>
+                <li class="header__dropdown-item"><a href="data/missions.html" class="header__dropdown-link">Misijas</a></li>
+                <li class="header__dropdown-item"><a href="data/exoplanets.html" class="header__dropdown-link">Eksoplanētas</a></li>
+                <li class="header__dropdown-item"><a href="data/star-map.html" class="header__dropdown-link">Zvaigžņu karte</a></li>
+                <li class="header__dropdown-item"><a href="data/sizes.html" class="header__dropdown-link">Izmēri</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="about.html" class="header__nav-link">Par projektu</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="header-progress" aria-hidden="true">
+      <div class="header-progress__bar"></div>
+    </div>
+  </header>
+
+  <!-- GALVENAIS SATURS -->
+  <main id="main" class="page__main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__shimmer" aria-hidden="true"></div>
+      <div class="page__container">
+        <div class="hero__content">
+          <span class="hero__eyebrow">Tīra CSS · 0 JavaScript</span>
+
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__title-gradient">
+              <span class="hero__title-line">SolXy</span>
+            </span>
+            <span class="hero__title-line">Saules sistēmas izpēte</span>
+          </h1>
+
+          <p class="hero__subtitle">
+            Interaktīva Saules sistēmas izpētes platforma —
+            uzbūvēta tikai ar HTML un CSS.
+          </p>
+
+          <p class="hero__description">
+            Izpēti 8 planētas, to pavadoņus, vēsturi un kosmosa misijas.
+            Viss darbojas bez nevienas JavaScript rindas — tikai ar modernām
+            CSS tehnoloģijām.
+          </p>
+
+          <div class="hero__actions">
+            <a href="#solar-system" class="btn btn--primary btn--lg btn--arrow">
+              Sākt izpēti
+            </a>
+            <a href="about.html" class="btn btn--secondary btn--lg">
+              Par projektu
+            </a>
+          </div>
+
+          <div class="hero__stats" role="list">
+            <div class="hero__stat" role="listitem">
+              <span class="hero__stat-value">8</span>
+              <span class="hero__stat-label">Planētas</span>
+            </div>
+            <div class="hero__stat" role="listitem">
+              <span class="hero__stat-value">6</span>
+              <span class="hero__stat-label">Pavadoņi</span>
+            </div>
+            <div class="hero__stat" role="listitem">
+              <span class="hero__stat-value">20K</span>
+              <span class="hero__stat-label">Rindas koda</span>
+            </div>
+            <div class="hero__stat" role="listitem">
+              <span class="hero__stat-value">0</span>
+              <span class="hero__stat-label">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Ritini</span>
+        <span class="hero__scroll-icon"></span>
+      </div>
+    </section>
+
+    <!-- SAULES SISTĒMAS SCĒNA -->
+    <section class="section-layout" id="solar-system" aria-labelledby="solar-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Saules sistēma</span>
+          <h2 class="section-header__title" id="solar-title">
+            Interaktīva Saules sistēmas scēna
+          </h2>
+          <p class="section-header__subtitle">
+            Katra planēta riņķo ap Sauli savā orbītā ar atšķirīgu ātrumu.
+            Viss darbojas ar tīru CSS animāciju palīdzību.
+          </p>
+        </header>
+
+        <div class="solar-system" role="img" aria-label="Saules sistēmas animēta scēna ar 8 planētām">
+
+          <!-- SAULE -->
+          <div class="sun" aria-hidden="true">
+            <div class="sun__rays"></div>
+            <div class="sun__corona"></div>
+            <div class="sun__core"></div>
+            <div class="sun__surface"></div>
+            <div class="sun__granules"></div>
+            <div class="sun__sunspot sun__sunspot--1"></div>
+            <div class="sun__sunspot sun__sunspot--2"></div>
+            <div class="sun__sunspot sun__sunspot--3"></div>
+            <div class="sun__flare"></div>
+            <div class="sun__flare sun__flare--2"></div>
+            <div class="sun__flare sun__flare--3"></div>
+          </div>
+
+          <!-- ORBĪTA 1 — MERKURS -->
+          <div class="orbit orbit--1">
+            <div class="orbit__planet-holder">
+              <a href="planets/mercury.html" class="planet planet--mercury planet--hoverable" aria-label="Merkurs">
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 2 — VENĒRA -->
+          <div class="orbit orbit--2">
+            <div class="orbit__planet-holder">
+              <a href="planets/venus.html" class="planet planet--venus planet--hoverable" aria-label="Venēra">
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 3 — ZEME -->
+          <div class="orbit orbit--3">
+            <div class="orbit__planet-holder">
+              <a href="planets/earth.html" class="planet planet--earth planet--hoverable" aria-label="Zeme">
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 4 — MARSS -->
+          <div class="orbit orbit--4">
+            <div class="orbit__planet-holder">
+              <a href="planets/mars.html" class="planet planet--mars planet--hoverable" aria-label="Marss">
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ASTEROĪDU JOSLA -->
+          <div class="asteroid-belt" aria-hidden="true">
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:66.24%;--asteroid-y:7.63%;--asteroid-size:3.0px;--asteroid-opacity:0.57;--asteroid-tilt:-64deg;--asteroid-ratio:0.62;--asteroid-color:#8b7961;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:64.35%;--asteroid-y:5.00%;--asteroid-size:3.0px;--asteroid-opacity:0.35;--asteroid-tilt:34deg;--asteroid-ratio:0.67;--asteroid-color:#827766;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:3.50%;--asteroid-y:42.34%;--asteroid-size:1.6px;--asteroid-opacity:0.39;--asteroid-tilt:-53deg;--asteroid-ratio:0.93;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:90.08%;--asteroid-y:67.89%;--asteroid-size:2.3px;--asteroid-opacity:0.25;--asteroid-tilt:13deg;--asteroid-ratio:0.89;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:98.11%;--asteroid-y:60.07%;--asteroid-size:2.6px;--asteroid-opacity:0.56;--asteroid-tilt:-75deg;--asteroid-ratio:0.66;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:78.35%;--asteroid-y:13.13%;--asteroid-size:2.6px;--asteroid-opacity:0.26;--asteroid-tilt:-47deg;--asteroid-ratio:0.82;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:39.89%;--asteroid-y:12.61%;--asteroid-size:1.8px;--asteroid-opacity:0.50;--asteroid-tilt:8deg;--asteroid-ratio:0.48;--asteroid-color:#827766;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:85.12%;--asteroid-y:55.20%;--asteroid-size:3.0px;--asteroid-opacity:0.62;--asteroid-tilt:35deg;--asteroid-ratio:0.54;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:40.17%;--asteroid-y:92.42%;--asteroid-size:2.0px;--asteroid-opacity:0.34;--asteroid-tilt:10deg;--asteroid-ratio:0.68;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:93.40%;--asteroid-y:58.91%;--asteroid-size:2.0px;--asteroid-opacity:0.47;--asteroid-tilt:80deg;--asteroid-ratio:0.85;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:30.81%;--asteroid-y:87.49%;--asteroid-size:3.0px;--asteroid-opacity:0.49;--asteroid-tilt:51deg;--asteroid-ratio:0.64;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:4.61%;--asteroid-y:67.75%;--asteroid-size:1.4px;--asteroid-opacity:0.64;--asteroid-tilt:-79deg;--asteroid-ratio:0.54;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:53.83%;--asteroid-y:0.85%;--asteroid-size:1.8px;--asteroid-opacity:0.52;--asteroid-tilt:15deg;--asteroid-ratio:0.52;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:91.49%;--asteroid-y:51.71%;--asteroid-size:1.6px;--asteroid-opacity:0.40;--asteroid-tilt:24deg;--asteroid-ratio:0.71;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:17.45%;--asteroid-y:26.41%;--asteroid-size:1.8px;--asteroid-opacity:0.66;--asteroid-tilt:-71deg;--asteroid-ratio:0.73;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:89.72%;--asteroid-y:66.17%;--asteroid-size:1.6px;--asteroid-opacity:0.62;--asteroid-tilt:17deg;--asteroid-ratio:0.77;--asteroid-color:#8b7961;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:16.95%;--asteroid-y:82.45%;--asteroid-size:2.0px;--asteroid-opacity:0.28;--asteroid-tilt:-59deg;--asteroid-ratio:0.87;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:81.87%;--asteroid-y:14.09%;--asteroid-size:1.0px;--asteroid-opacity:0.44;--asteroid-tilt:26deg;--asteroid-ratio:0.66;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:24.72%;--asteroid-y:9.13%;--asteroid-size:1.0px;--asteroid-opacity:0.60;--asteroid-tilt:-20deg;--asteroid-ratio:0.81;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:23.81%;--asteroid-y:86.81%;--asteroid-size:1.4px;--asteroid-opacity:0.62;--asteroid-tilt:31deg;--asteroid-ratio:0.50;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:98.04%;--asteroid-y:50.84%;--asteroid-size:2.3px;--asteroid-opacity:0.36;--asteroid-tilt:-29deg;--asteroid-ratio:0.90;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:87.07%;--asteroid-y:74.65%;--asteroid-size:2.3px;--asteroid-opacity:0.64;--asteroid-tilt:-1deg;--asteroid-ratio:0.73;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:9.40%;--asteroid-y:33.45%;--asteroid-size:2.6px;--asteroid-opacity:0.52;--asteroid-tilt:-22deg;--asteroid-ratio:0.49;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:29.71%;--asteroid-y:8.91%;--asteroid-size:1.4px;--asteroid-opacity:0.31;--asteroid-tilt:51deg;--asteroid-ratio:0.62;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:92.76%;--asteroid-y:63.68%;--asteroid-size:1.4px;--asteroid-opacity:0.42;--asteroid-tilt:78deg;--asteroid-ratio:0.82;--asteroid-color:#827766;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:70.92%;--asteroid-y:9.59%;--asteroid-size:1.0px;--asteroid-opacity:0.50;--asteroid-tilt:57deg;--asteroid-ratio:0.92;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:19.55%;--asteroid-y:31.65%;--asteroid-size:2.0px;--asteroid-opacity:0.38;--asteroid-tilt:15deg;--asteroid-ratio:0.59;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:25.80%;--asteroid-y:89.29%;--asteroid-size:3.0px;--asteroid-opacity:0.67;--asteroid-tilt:32deg;--asteroid-ratio:0.94;--asteroid-color:#827766;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:37.40%;--asteroid-y:95.75%;--asteroid-size:1.6px;--asteroid-opacity:0.62;--asteroid-tilt:-4deg;--asteroid-ratio:0.75;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:35.94%;--asteroid-y:85.09%;--asteroid-size:3.0px;--asteroid-opacity:0.51;--asteroid-tilt:46deg;--asteroid-ratio:0.89;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:77.61%;--asteroid-y:75.66%;--asteroid-size:2.0px;--asteroid-opacity:0.65;--asteroid-tilt:60deg;--asteroid-ratio:0.54;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:10.50%;--asteroid-y:71.33%;--asteroid-size:1.4px;--asteroid-opacity:0.67;--asteroid-tilt:79deg;--asteroid-ratio:0.90;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:49.50%;--asteroid-y:98.43%;--asteroid-size:1.4px;--asteroid-opacity:0.40;--asteroid-tilt:24deg;--asteroid-ratio:0.57;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:40.71%;--asteroid-y:91.57%;--asteroid-size:2.0px;--asteroid-opacity:0.43;--asteroid-tilt:50deg;--asteroid-ratio:0.66;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:32.30%;--asteroid-y:8.82%;--asteroid-size:2.3px;--asteroid-opacity:0.57;--asteroid-tilt:56deg;--asteroid-ratio:0.63;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:32.41%;--asteroid-y:7.62%;--asteroid-size:1.0px;--asteroid-opacity:0.30;--asteroid-tilt:-53deg;--asteroid-ratio:0.80;--asteroid-color:#827766;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:10.87%;--asteroid-y:25.04%;--asteroid-size:2.6px;--asteroid-opacity:0.62;--asteroid-tilt:-1deg;--asteroid-ratio:0.77;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:72.47%;--asteroid-y:15.09%;--asteroid-size:1.8px;--asteroid-opacity:0.28;--asteroid-tilt:76deg;--asteroid-ratio:0.80;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:9.27%;--asteroid-y:36.22%;--asteroid-size:2.3px;--asteroid-opacity:0.60;--asteroid-tilt:21deg;--asteroid-ratio:0.55;--asteroid-color:#8b7961;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:79.38%;--asteroid-y:12.58%;--asteroid-size:1.2px;--asteroid-opacity:0.33;--asteroid-tilt:0deg;--asteroid-ratio:0.76;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:5.23%;--asteroid-y:42.40%;--asteroid-size:1.4px;--asteroid-opacity:0.47;--asteroid-tilt:-59deg;--asteroid-ratio:0.85;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:43.07%;--asteroid-y:9.59%;--asteroid-size:1.8px;--asteroid-opacity:0.49;--asteroid-tilt:77deg;--asteroid-ratio:0.70;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:9.64%;--asteroid-y:29.67%;--asteroid-size:2.3px;--asteroid-opacity:0.59;--asteroid-tilt:-37deg;--asteroid-ratio:0.68;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:81.13%;--asteroid-y:22.72%;--asteroid-size:1.0px;--asteroid-opacity:0.35;--asteroid-tilt:17deg;--asteroid-ratio:0.61;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:87.61%;--asteroid-y:73.20%;--asteroid-size:1.2px;--asteroid-opacity:0.65;--asteroid-tilt:69deg;--asteroid-ratio:0.51;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:1.79%;--asteroid-y:60.33%;--asteroid-size:1.2px;--asteroid-opacity:0.59;--asteroid-tilt:27deg;--asteroid-ratio:0.93;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:10.57%;--asteroid-y:56.27%;--asteroid-size:1.4px;--asteroid-opacity:0.47;--asteroid-tilt:33deg;--asteroid-ratio:0.82;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:7.45%;--asteroid-y:51.99%;--asteroid-size:1.6px;--asteroid-opacity:0.38;--asteroid-tilt:-14deg;--asteroid-ratio:0.63;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:7.98%;--asteroid-y:60.17%;--asteroid-size:2.6px;--asteroid-opacity:0.42;--asteroid-tilt:75deg;--asteroid-ratio:0.66;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:36.74%;--asteroid-y:93.48%;--asteroid-size:2.3px;--asteroid-opacity:0.33;--asteroid-tilt:-11deg;--asteroid-ratio:0.63;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:68.40%;--asteroid-y:16.15%;--asteroid-size:1.2px;--asteroid-opacity:0.25;--asteroid-tilt:14deg;--asteroid-ratio:0.51;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:87.17%;--asteroid-y:41.96%;--asteroid-size:1.2px;--asteroid-opacity:0.68;--asteroid-tilt:41deg;--asteroid-ratio:0.68;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:57.65%;--asteroid-y:92.41%;--asteroid-size:1.4px;--asteroid-opacity:0.68;--asteroid-tilt:45deg;--asteroid-ratio:0.75;--asteroid-color:#8b7961;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:32.23%;--asteroid-y:9.77%;--asteroid-size:2.6px;--asteroid-opacity:0.43;--asteroid-tilt:39deg;--asteroid-ratio:0.89;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:34.33%;--asteroid-y:12.75%;--asteroid-size:1.6px;--asteroid-opacity:0.58;--asteroid-tilt:40deg;--asteroid-ratio:0.78;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:76.28%;--asteroid-y:91.71%;--asteroid-size:3.0px;--asteroid-opacity:0.48;--asteroid-tilt:-9deg;--asteroid-ratio:0.75;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:72.63%;--asteroid-y:82.45%;--asteroid-size:1.8px;--asteroid-opacity:0.38;--asteroid-tilt:-52deg;--asteroid-ratio:0.82;--asteroid-color:#8b7961;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:68.21%;--asteroid-y:13.50%;--asteroid-size:1.4px;--asteroid-opacity:0.55;--asteroid-tilt:77deg;--asteroid-ratio:0.80;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:5.35%;--asteroid-y:54.13%;--asteroid-size:2.3px;--asteroid-opacity:0.40;--asteroid-tilt:33deg;--asteroid-ratio:0.55;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:19.82%;--asteroid-y:82.62%;--asteroid-size:2.6px;--asteroid-opacity:0.33;--asteroid-tilt:-19deg;--asteroid-ratio:0.80;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:42.53%;--asteroid-y:85.22%;--asteroid-size:2.0px;--asteroid-opacity:0.35;--asteroid-tilt:-14deg;--asteroid-ratio:0.89;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:28.16%;--asteroid-y:87.15%;--asteroid-size:2.0px;--asteroid-opacity:0.56;--asteroid-tilt:-33deg;--asteroid-ratio:0.80;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:78.96%;--asteroid-y:17.42%;--asteroid-size:1.4px;--asteroid-opacity:0.25;--asteroid-tilt:-31deg;--asteroid-ratio:0.83;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:21.24%;--asteroid-y:23.80%;--asteroid-size:1.6px;--asteroid-opacity:0.58;--asteroid-tilt:2deg;--asteroid-ratio:0.76;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:70.88%;--asteroid-y:91.70%;--asteroid-size:3.0px;--asteroid-opacity:0.31;--asteroid-tilt:-38deg;--asteroid-ratio:0.73;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:85.84%;--asteroid-y:29.22%;--asteroid-size:2.0px;--asteroid-opacity:0.55;--asteroid-tilt:43deg;--asteroid-ratio:0.54;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:30.36%;--asteroid-y:9.38%;--asteroid-size:2.6px;--asteroid-opacity:0.50;--asteroid-tilt:-43deg;--asteroid-ratio:0.81;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:76.91%;--asteroid-y:14.92%;--asteroid-size:1.8px;--asteroid-opacity:0.25;--asteroid-tilt:66deg;--asteroid-ratio:0.52;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:62.32%;--asteroid-y:2.26%;--asteroid-size:2.6px;--asteroid-opacity:0.52;--asteroid-tilt:16deg;--asteroid-ratio:0.82;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:82.07%;--asteroid-y:19.32%;--asteroid-size:1.0px;--asteroid-opacity:0.30;--asteroid-tilt:38deg;--asteroid-ratio:0.82;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:73.61%;--asteroid-y:82.41%;--asteroid-size:1.6px;--asteroid-opacity:0.42;--asteroid-tilt:54deg;--asteroid-ratio:0.80;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:57.83%;--asteroid-y:12.41%;--asteroid-size:1.4px;--asteroid-opacity:0.52;--asteroid-tilt:-53deg;--asteroid-ratio:0.82;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:78.22%;--asteroid-y:18.67%;--asteroid-size:1.8px;--asteroid-opacity:0.45;--asteroid-tilt:-21deg;--asteroid-ratio:0.63;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:38.48%;--asteroid-y:91.31%;--asteroid-size:2.3px;--asteroid-opacity:0.45;--asteroid-tilt:32deg;--asteroid-ratio:0.72;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:23.41%;--asteroid-y:14.26%;--asteroid-size:2.6px;--asteroid-opacity:0.49;--asteroid-tilt:8deg;--asteroid-ratio:0.86;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:88.23%;--asteroid-y:29.18%;--asteroid-size:1.4px;--asteroid-opacity:0.68;--asteroid-tilt:-47deg;--asteroid-ratio:0.86;--asteroid-color:#a38a69;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:29.33%;--asteroid-y:13.75%;--asteroid-size:1.6px;--asteroid-opacity:0.43;--asteroid-tilt:-70deg;--asteroid-ratio:0.81;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:24.65%;--asteroid-y:92.28%;--asteroid-size:1.2px;--asteroid-opacity:0.51;--asteroid-tilt:60deg;--asteroid-ratio:0.70;--asteroid-color:#94836d;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:26.87%;--asteroid-y:83.05%;--asteroid-size:1.6px;--asteroid-opacity:0.46;--asteroid-tilt:-45deg;--asteroid-ratio:0.50;--asteroid-color:#615c55;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:7.24%;--asteroid-y:52.58%;--asteroid-size:3.0px;--asteroid-opacity:0.26;--asteroid-tilt:27deg;--asteroid-ratio:0.64;--asteroid-color:#736b5f;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:16.31%;--asteroid-y:71.67%;--asteroid-size:1.0px;--asteroid-opacity:0.29;--asteroid-tilt:2deg;--asteroid-ratio:0.82;--asteroid-color:#6c6964;"></span>
+            <span class="asteroid-belt__asteroid" style="--asteroid-x:16.60%;--asteroid-y:77.62%;--asteroid-size:1.8px;--asteroid-opacity:0.62;--asteroid-tilt:78deg;--asteroid-ratio:0.74;--asteroid-color:#736b5f;"></span>
+          </div>
+
+          <!-- ORBĪTA 5 — JUPITERS -->
+          <div class="orbit orbit--5">
+            <div class="orbit__planet-holder">
+              <a href="planets/jupiter.html" class="planet planet--jupiter planet--hoverable" aria-label="Jupiters">
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 6 — SATURNS -->
+          <div class="orbit orbit--6">
+            <div class="orbit__planet-holder">
+              <a href="planets/saturn.html" class="planet planet--saturn planet--hoverable" aria-label="Saturns">
+                <div class="planet__rings"></div>
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 7 — URĀNS -->
+          <div class="orbit orbit--7">
+            <div class="orbit__planet-holder">
+              <a href="planets/uranus.html" class="planet planet--uranus planet--hoverable" aria-label="Urāns">
+                <div class="planet__rings"></div>
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+
+          <!-- ORBĪTA 8 — NEPTŪNS -->
+          <div class="orbit orbit--8">
+            <div class="orbit__planet-holder">
+              <a href="planets/neptune.html" class="planet planet--neptune planet--hoverable" aria-label="Neptūns">
+                <div class="planet__rings"></div>
+                <div class="planet__surface"></div>
+                <div class="planet__texture"></div>
+                <div class="planet__atmosphere"></div>
+                <div class="planet__shadow"></div>
+                <div class="planet__moons"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANĒTU KATALOGS -->
+    <section class="section-layout section-layout--alt" id="planets" aria-labelledby="planets-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Planētas</span>
+          <h2 class="section-header__title" id="planets-title">
+            8 planētas, katra unikāla
+          </h2>
+          <p class="section-header__subtitle">
+            No mazā Merkura līdz milzīgajam Jupiteram — katrai planētai
+            ir sava lapa ar detalizētu informāciju, statistiku un faktiem.
+          </p>
+        </header>
+
+        <div class="planets-grid">
+          <article class="planet-card">
+            <a href="planets/mercury.html" class="planet-card__link" aria-label="Uzzināt vairāk par Merkuru"></a>
+            <div class="planet-card__preview planet-card__preview--mercury" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Merkurs</h3>
+            <p class="planet-card__text">Mazākā un Saules tuvākā planēta</p>
+            <div class="planet-card__meta">
+              <span>0,39 AU</span><span>·</span><span>88 dienas</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/venus.html" class="planet-card__link" aria-label="Uzzināt vairāk par Venēru"></a>
+            <div class="planet-card__preview planet-card__preview--venus" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Venēra</h3>
+            <p class="planet-card__text">Karstākā planēta Saules sistēmā</p>
+            <div class="planet-card__meta">
+              <span>0,72 AU</span><span>·</span><span>225 dienas</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/earth.html" class="planet-card__link" aria-label="Uzzināt vairāk par Zemi"></a>
+            <div class="planet-card__preview planet-card__preview--earth" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Zeme</h3>
+            <p class="planet-card__text">Mūsu mājas — vienīgā zināmā dzīvības vieta</p>
+            <div class="planet-card__meta">
+              <span>1,00 AU</span><span>·</span><span>365 dienas</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/mars.html" class="planet-card__link" aria-label="Uzzināt vairāk par Marsu"></a>
+            <div class="planet-card__preview planet-card__preview--mars" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Marss</h3>
+            <p class="planet-card__text">Sarkanā planēta ar diviem pavadoņiem</p>
+            <div class="planet-card__meta">
+              <span>1,52 AU</span><span>·</span><span>687 dienas</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/jupiter.html" class="planet-card__link" aria-label="Uzzināt vairāk par Jupiteru"></a>
+            <div class="planet-card__preview planet-card__preview--jupiter" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Jupiters</h3>
+            <p class="planet-card__text">Lielākā planēta ar Lielo Sarkano Plankumu</p>
+            <div class="planet-card__meta">
+              <span>5,20 AU</span><span>·</span><span>12 gadi</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/saturn.html" class="planet-card__link" aria-label="Uzzināt vairāk par Saturnu"></a>
+            <div class="planet-card__preview planet-card__preview--saturn" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Saturns</h3>
+            <p class="planet-card__text">Planēta ar iespaidīgajiem gredzeniem</p>
+            <div class="planet-card__meta">
+              <span>9,58 AU</span><span>·</span><span>29 gadi</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/uranus.html" class="planet-card__link" aria-label="Uzzināt vairāk par Urānu"></a>
+            <div class="planet-card__preview planet-card__preview--uranus" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Urāns</h3>
+            <p class="planet-card__text">Ledus gigants ar vertikāliem gredzeniem</p>
+            <div class="planet-card__meta">
+              <span>19,2 AU</span><span>·</span><span>84 gadi</span>
+            </div>
+          </article>
+
+          <article class="planet-card">
+            <a href="planets/neptune.html" class="planet-card__link" aria-label="Uzzināt vairāk par Neptūnu"></a>
+            <div class="planet-card__preview planet-card__preview--neptune" aria-hidden="true"></div>
+            <h3 class="planet-card__title">Neptūns</h3>
+            <p class="planet-card__text">Vistālākā planēta ar Lielo Tumšo Plankumu</p>
+            <div class="planet-card__meta">
+              <span>30,1 AU</span><span>·</span><span>165 gadi</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAVADOŅI -->
+    <section class="section-layout" id="moons" aria-labelledby="moons-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Pavadoņi</span>
+          <h2 class="section-header__title" id="moons-title">
+            Saules sistēmas brīnumainie pavadoņi
+          </h2>
+          <p class="section-header__subtitle">
+            No mūsu Mēness līdz Jupitera Galilejas pavadoņiem un Saturna
+            miglainajam Titānam — katrai no tām ir sava lapa.
+          </p>
+        </header>
+
+        <div class="moons-grid">
+          <article class="moon-card">
+            <a href="moons/moon.html" class="moon-card__link" aria-label="Uzzināt vairāk par Mēnesi"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--moon moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Mēness</h3>
+            <p class="moon-card__text">Zemes vienīgais dabiskais pavadonis</p>
+          </article>
+
+          <article class="moon-card">
+            <a href="moons/io.html" class="moon-card__link" aria-label="Uzzināt vairāk par Io"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--io moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Io</h3>
+            <p class="moon-card__text">Vulkāniskākais debess ķermenis Saules sistēmā</p>
+          </article>
+
+          <article class="moon-card">
+            <a href="moons/europa.html" class="moon-card__link" aria-label="Uzzināt vairāk par Eiropu"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--europa moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Eiropa</h3>
+            <p class="moon-card__text">Ledus pavadonis ar iespējamu okeānu</p>
+          </article>
+
+          <article class="moon-card">
+            <a href="moons/ganymede.html" class="moon-card__link" aria-label="Uzzināt vairāk par Ganimēdu"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--ganymede moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Ganimēds</h3>
+            <p class="moon-card__text">Lielākais pavadonis Saules sistēmā</p>
+          </article>
+
+          <article class="moon-card">
+            <a href="moons/callisto.html" class="moon-card__link" aria-label="Uzzināt vairāk par Kallisto"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--callisto moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Kallisto</h3>
+            <p class="moon-card__text">Vissenākā virsma Saules sistēmā</p>
+          </article>
+
+          <article class="moon-card">
+            <a href="moons/titan.html" class="moon-card__link" aria-label="Uzzināt vairāk par Titānu"></a>
+            <div class="moon-card__preview" aria-hidden="true">
+              <div class="moon moon--titan moon--md"><div class="moon__surface"></div><div class="moon__shadow"></div></div>
+            </div>
+            <h3 class="moon-card__title">Titāns</h3>
+            <p class="moon-card__text">Pavadonis ar biezu atmosfēru</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATI -->
+    <section class="section-layout section-layout--alt" id="data" aria-labelledby="data-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Dati un resursi</span>
+          <h2 class="section-header__title" id="data-title">
+            Izpēti Saules sistēmu dziļāk
+          </h2>
+        </header>
+
+        <div class="cards-grid">
+          <article class="card card--teal card--gradient">
+            <div class="card__icon" aria-hidden="true">⚖</div>
+            <h3 class="card__title">Salīdzinājums</h3>
+            <p class="card__text">Salīdzini planētu izmērus, attālumus, temperatūras un citus datus.</p>
+            <a href="data/comparison.html" class="btn-link">Skatīt salīdzinājumu</a>
+          </article>
+
+          <article class="card card--violet card--gradient">
+            <div class="card__icon" aria-hidden="true">📅</div>
+            <h3 class="card__title">Laika līnija</h3>
+            <p class="card__text">No Senās Grieķijas līdz mūsdienām — Saules sistēmas izpētes vēsture.</p>
+            <a href="data/timeline.html" class="btn-link">Skatīt laika līniju</a>
+          </article>
+
+          <article class="card card--pink card--gradient">
+            <div class="card__icon" aria-hidden="true">📖</div>
+            <h3 class="card__title">Vārdnīca</h3>
+            <p class="card__text">50+ termini par astronomiju, fiziku un kosmosa izpēti.</p>
+            <a href="data/glossary.html" class="btn-link">Atvērt vārdnīcu</a>
+          </article>
+
+          <article class="card card--blue card--gradient">
+            <div class="card__icon" aria-hidden="true">🚀</div>
+            <h3 class="card__title">Misijas</h3>
+            <p class="card__text">20+ kosmosa misijas no NASA, ESA, Roscosmos un citām aģentūrām.</p>
+            <a href="data/missions.html" class="btn-link">Skatīt misijas</a>
+          </article>
+
+          <article class="card card--amber card--gradient">
+            <div class="card__icon" aria-hidden="true">🪐</div>
+            <h3 class="card__title">Eksoplanētas</h3>
+            <p class="card__text">15+ eksoplanētas ārpus mūsu Saules sistēmas.</p>
+            <a href="data/exoplanets.html" class="btn-link">Skatīt eksoplanētas</a>
+          </article>
+
+          <article class="card card--green card--gradient">
+            <div class="card__icon" aria-hidden="true">⭐</div>
+            <h3 class="card__title">Zvaigžņu karte</h3>
+            <p class="card__text">Interaktīva zvaigžņu karte ar konstelācijām un galvenajām zvaigznēm.</p>
+            <a href="data/star-map.html" class="btn-link">Atvērt karti</a>
+          </article>
+
+          <article class="card card--teal card--gradient">
+            <div class="card__icon" aria-hidden="true">📏</div>
+            <h3 class="card__title">Izmēru salīdzinājums</h3>
+            <p class="card__text">Vizuāls Saules, planētu un to pavadoņu izmēru salīdzinājums.</p>
+            <a href="data/sizes.html" class="btn-link">Skatīt izmērus</a>
+          </article>
+
+          <article class="card card--violet card--gradient">
+            <div class="card__icon" aria-hidden="true">ℹ</div>
+            <h3 class="card__title">Par projektu</h3>
+            <p class="card__text">Uzzini vairāk par SolXy projektu un tā autoru QvarcY.</p>
+            <a href="about.html" class="btn-link">Uzzināt vairāk</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-layout" aria-labelledby="cta-title">
+      <div class="page__container page__container--narrow">
+        <div class="info-block" style="text-align: center; align-items: center;">
+          <span class="eyebrow">Sāc izpēti</span>
+          <h2 class="info-block__title" id="cta-title">
+            Gatavs izpētīt Saules sistēmu?
+          </h2>
+          <p class="info-block__text" style="text-align: center;">
+            Sāc ar mūsu Zemi vai dodies tieši pie Jupitera — katrai planētai
+            ir sava lapa ar detalizētu informāciju.
+          </p>
+          <div class="btn-row btn-row--center" style="margin-top: var(--space-lg);">
+            <a href="planets/earth.html" class="btn btn--primary btn--lg">
+              Sākt ar Zemi
+            </a>
+            <a href="planets/jupiter.html" class="btn btn--secondary btn--lg">
+              Doties pie Jupitera
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a href="#" class="back-to-top" aria-label="Atgriezties pie lapas sākuma"></a>
+
+  <!-- KĀJENE -->
+  <footer class="footer">
+    <div class="footer__decoration" aria-hidden="true"></div>
+    <div class="footer__decoration footer__decoration--violet" aria-hidden="true"></div>
+
+    <div class="page__container">
+      <div class="footer__content">
+        <div class="footer__block footer__block--brand">
+          <a href="index.html" class="footer__brand">
+            <span class="footer__brand-mark" aria-hidden="true"></span>
+            <span>SolXy</span>
+          </a>
+          <p class="footer__text">
+            <strong>SolXy</strong> — Saules sistēmas izpēte bez JavaScript.
+            Uzbūvēts tikai ar HTML un CSS.
+          </p>
+          <a href="https://github.com/QvarcY" class="footer__author" rel="noopener noreferrer" target="_blank">
+            <span class="footer__author-avatar" aria-hidden="true">Q</span>
+            <span class="footer__author-info">
+              <span class="footer__author-name">QvarcY</span>
+              <span class="footer__author-handle">@QvarcY</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Planētas</h3>
+          <ul class="footer__list">
+            <li><a href="planets/mercury.html" class="footer__link">Merkurs</a></li>
+            <li><a href="planets/venus.html" class="footer__link">Venēra</a></li>
+            <li><a href="planets/earth.html" class="footer__link">Zeme</a></li>
+            <li><a href="planets/mars.html" class="footer__link">Marss</a></li>
+            <li><a href="planets/jupiter.html" class="footer__link">Jupiters</a></li>
+            <li><a href="planets/saturn.html" class="footer__link">Saturns</a></li>
+            <li><a href="planets/uranus.html" class="footer__link">Urāns</a></li>
+            <li><a href="planets/neptune.html" class="footer__link">Neptūns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Pavadoņi</h3>
+          <ul class="footer__list">
+            <li><a href="moons/moon.html" class="footer__link">Mēness</a></li>
+            <li><a href="moons/io.html" class="footer__link">Io</a></li>
+            <li><a href="moons/europa.html" class="footer__link">Eiropa</a></li>
+            <li><a href="moons/ganymede.html" class="footer__link">Ganimēds</a></li>
+            <li><a href="moons/callisto.html" class="footer__link">Kallisto</a></li>
+            <li><a href="moons/titan.html" class="footer__link">Titāns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Dati</h3>
+          <ul class="footer__list">
+            <li><a href="data/comparison.html" class="footer__link">Salīdzinājums</a></li>
+            <li><a href="data/timeline.html" class="footer__link">Laika līnija</a></li>
+            <li><a href="data/glossary.html" class="footer__link">Vārdnīca</a></li>
+            <li><a href="data/missions.html" class="footer__link">Misijas</a></li>
+            <li><a href="data/exoplanets.html" class="footer__link">Eksoplanētas</a></li>
+            <li><a href="data/star-map.html" class="footer__link">Zvaigžņu karte</a></li>
+            <li><a href="data/sizes.html" class="footer__link">Izmēri</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 · <a href="https://github.com/QvarcY" rel="noopener noreferrer" target="_blank">QvarcY</a> · MIT Licence
+        </p>
+        <div class="footer__badges">
+          <span class="footer__badge footer__badge--teal">Tīrs CSS</span>
+          <span class="footer__badge footer__badge--violet">0 JS</span>
+          <span class="footer__badge footer__badge--pink">20K rindas</span>
+        </div>
+      </div>
+
+      <a href="#" class="footer__top-link">Uz augšu</a>
+    </div>
+  </footer>
+
+</body>
+</html>

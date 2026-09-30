@@ -1,0 +1,452 @@
+/* ============================================================
+   SolXy · buttons.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === POGAS BĀZE === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: all var(--transition-base) var(--ease-in-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn[aria-disabled="true"] {
+  opacity: var(--opacity-50);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === POGAS IZMĒRI === */
+.btn--xs {
+  padding: var(--space-2xs) var(--space-sm);
+  font-size: var(--fs-xs);
+  gap: var(--space-2xs);
+}
+
+.btn--sm {
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--fs-xs);
+}
+
+.btn--lg {
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--fs-base);
+}
+
+.btn--xl {
+  padding: var(--space-lg) var(--space-3xl);
+  font-size: var(--fs-lg);
+  border-radius: var(--radius-lg);
+}
+
+/* === POGAS — PILNS PLATUMS === */
+.btn--full {
+  width: 100%;
+}
+
+/* ============================================================
+   POGU VARIANTI
+   ============================================================ */
+
+/* === PRIMĀRĀ Poga (Teal) === */
+.btn--primary {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-teal-dark));
+  color: var(--c-text-inverse);
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 4px 16px var(--c-accent-teal-glow);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px var(--c-accent-teal-glow),
+    0 0 40px var(--c-accent-teal-glow);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* === SEKUNDĀRĀ Poga (Outline) === */
+.btn--secondary {
+  background: var(--c-bg-glass);
+  color: var(--c-text-primary);
+  border-color: var(--c-border-default);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+.btn--secondary:hover {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  box-shadow: 0 0 20px var(--c-accent-teal-glow);
+  transform: translateY(-2px);
+}
+
+/* === GHOST Poga === */
+.btn--ghost {
+  background: transparent;
+  color: var(--c-text-secondary);
+  border-color: transparent;
+}
+
+.btn--ghost:hover {
+  color: var(--c-accent-teal);
+  background: var(--c-accent-teal-glass);
+}
+
+/* === DRAUDZĪGĀ Poga (Danger) === */
+.btn--danger {
+  background: linear-gradient(135deg, var(--c-accent-red), var(--c-accent-red-dark));
+  color: var(--c-text-inverse);
+  border-color: var(--c-accent-red);
+  box-shadow: 0 4px 16px var(--c-accent-red-glow);
+}
+
+.btn--danger:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px var(--c-accent-red-glow),
+    0 0 40px var(--c-accent-red-glow);
+}
+
+/* === VEIKSMES Poga (Success) === */
+.btn--success {
+  background: linear-gradient(135deg, var(--c-accent-green), var(--c-accent-green-dark));
+  color: var(--c-text-inverse);
+  border-color: var(--c-accent-green);
+  box-shadow: 0 4px 16px var(--c-accent-green-glow);
+}
+
+.btn--success:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px var(--c-accent-green-glow),
+    0 0 40px var(--c-accent-green-glow);
+}
+
+/* === VIOLET Poga === */
+.btn--violet {
+  background: linear-gradient(135deg, var(--c-accent-violet), var(--c-accent-violet-dark));
+  color: var(--c-text-inverse);
+  border-color: var(--c-accent-violet);
+  box-shadow: 0 4px 16px var(--c-accent-violet-glow);
+}
+
+.btn--violet:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px var(--c-accent-violet-glow),
+    0 0 40px var(--c-accent-violet-glow);
+}
+
+/* === PINK Poga === */
+.btn--pink {
+  background: linear-gradient(135deg, var(--c-accent-pink), var(--c-accent-pink-dark));
+  color: var(--c-text-inverse);
+  border-color: var(--c-accent-pink);
+  box-shadow: 0 4px 16px var(--c-accent-pink-glow);
+}
+
+.btn--pink:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px var(--c-accent-pink-glow),
+    0 0 40px var(--c-accent-pink-glow);
+}
+
+/* === GLASS Poga === */
+.btn--glass {
+  background: var(--c-bg-glass-strong);
+  color: var(--c-text-primary);
+  border-color: var(--c-border-default);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn--glass:hover {
+  border-color: var(--c-accent-teal);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--c-accent-teal-glow);
+  transform: translateY(-2px);
+}
+
+/* === GRADIENTA Poga === */
+.btn--gradient {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-violet), var(--c-accent-pink));
+  background-size: 200% auto;
+  color: var(--c-text-inverse);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(94, 234, 212, 0.3);
+}
+
+.btn--gradient:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 30px rgba(94, 234, 212, 0.4),
+    0 0 50px rgba(167, 139, 250, 0.3);
+}
+
+/* ============================================================
+   POGAS AR IKONU
+   ============================================================ */
+
+.btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+.btn__icon--left {
+  margin-left: calc(var(--space-xs) * -0.5);
+}
+
+.btn__icon--right {
+  margin-right: calc(var(--space-xs) * -0.5);
+}
+
+/* === APAĻA Poga === */
+.btn--icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.btn--icon-sm {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: var(--fs-xs);
+}
+
+.btn--icon-lg {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  font-size: var(--fs-lg);
+}
+
+/* ============================================================
+   POGAS AR MIRGOŠANU
+   ============================================================ */
+
+.btn--shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: left 0.6s var(--ease-out);
+}
+
+.btn--shimmer:hover::before {
+  left: 100%;
+}
+
+/* ============================================================
+   POGAS AR BULTIŅU
+   ============================================================ */
+
+.btn--arrow::after {
+  content: "→";
+  font-family: var(--font-mono);
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.btn--arrow:hover::after {
+  transform: translateX(4px);
+}
+
+.btn--arrow-left::before {
+  content: "←";
+  font-family: var(--font-mono);
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.btn--arrow-left:hover::before {
+  transform: translateX(-4px);
+}
+
+/* ============================================================
+   POGU GRUPAS
+   ============================================================ */
+
+.btn-group {
+  display: inline-flex;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--c-border-default);
+}
+
+.btn-group .btn {
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid var(--c-border-default);
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  border-right: none;
+}
+
+.btn-group .btn:hover {
+  z-index: 2;
+}
+
+/* ============================================================
+   POGU RINDA
+   ============================================================ */
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+.btn-row--center {
+  justify-content: center;
+}
+
+.btn-row--end {
+  justify-content: flex-end;
+}
+
+/* ============================================================
+   SAITES KĀ POGAS
+   ============================================================ */
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--c-accent-teal);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-sm);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+.btn-link::after {
+  content: "→";
+  transition: transform var(--transition-fast) var(--ease-out);
+}
+
+.btn-link:hover {
+  color: var(--c-accent-teal-light);
+  border-bottom-color: var(--c-accent-teal);
+}
+
+.btn-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn:hover,
+  .btn__icon,
+  .btn--arrow::after,
+  .btn--arrow-left::before,
+  .btn-link::after {
+    transform: none;
+    transition: none;
+  }
+
+  .btn--shimmer::before {
+    display: none;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .btn--lg,
+  .btn--xl {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--fs-sm);
+  }
+
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-row .btn {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   FORCED COLORS
+   ============================================================ */
+
+@media (forced-colors: active) {
+  .btn {
+    border: 1px solid ButtonText;
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    border: 2px solid Highlight;
+  }
+}

@@ -1,0 +1,716 @@
+/* ============================================================
+   SolXy · typography.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === FONTU IELĀDE === */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+/* === PAMATA TEKSTS === */
+.text {
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+}
+
+/* === TEKSTS — IZMĒRI === */
+.text--xs {
+  font-size: var(--fs-xs);
+}
+
+.text--sm {
+  font-size: var(--fs-sm);
+}
+
+.text--base {
+  font-size: var(--fs-base);
+}
+
+.text--md {
+  font-size: var(--fs-md);
+}
+
+.text--lg {
+  font-size: var(--fs-lg);
+}
+
+.text--xl {
+  font-size: var(--fs-xl);
+}
+
+.text--2xl {
+  font-size: var(--fs-2xl);
+}
+
+.text--3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text--4xl {
+  font-size: var(--fs-4xl);
+}
+
+.text--5xl {
+  font-size: var(--fs-5xl);
+}
+
+.text--6xl {
+  font-size: var(--fs-6xl);
+}
+
+/* === TEKSTS — SVARS === */
+.text--thin {
+  font-weight: var(--fw-thin);
+}
+
+.text--light {
+  font-weight: var(--fw-light);
+}
+
+.text--regular {
+  font-weight: var(--fw-regular);
+}
+
+.text--medium {
+  font-weight: var(--fw-medium);
+}
+
+.text--semibold {
+  font-weight: var(--fw-semibold);
+}
+
+.text--bold {
+  font-weight: var(--fw-bold);
+}
+
+.text--extrabold {
+  font-weight: var(--fw-extrabold);
+}
+
+.text--black {
+  font-weight: var(--fw-black);
+}
+
+/* === TEKSTS — KRĀSAS === */
+.text--primary {
+  color: var(--c-text-primary);
+}
+
+.text--secondary {
+  color: var(--c-text-secondary);
+}
+
+.text--tertiary {
+  color: var(--c-text-tertiary);
+}
+
+.text--muted {
+  color: var(--c-text-muted);
+}
+
+.text--teal {
+  color: var(--c-accent-teal);
+}
+
+.text--violet {
+  color: var(--c-accent-violet);
+}
+
+.text--pink {
+  color: var(--c-accent-pink);
+}
+
+.text--amber {
+  color: var(--c-accent-amber);
+}
+
+.text--blue {
+  color: var(--c-accent-blue);
+}
+
+.text--green {
+  color: var(--c-accent-green);
+}
+
+.text--red {
+  color: var(--c-accent-red);
+}
+
+/* === TEKSTS — LĪDZINĀJUMS === */
+.text--left {
+  text-align: left;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--right {
+  text-align: right;
+}
+
+.text--justify {
+  text-align: justify;
+}
+
+/* === TEKSTS — PĀRVEIDOŠANA === */
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.text--lowercase {
+  text-transform: lowercase;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.text--normal-case {
+  text-transform: none;
+}
+
+/* === TEKSTS — DEKORĀCIJA === */
+.text--underline {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.text--line-through {
+  text-decoration: line-through;
+}
+
+.text--no-decoration {
+  text-decoration: none;
+}
+
+/* === TEKSTS — STILS === */
+.text--italic {
+  font-style: italic;
+}
+
+.text--not-italic {
+  font-style: normal;
+}
+
+/* === TEKSTS — BURTU ATSTARPES === */
+.text--tracking-tighter {
+  letter-spacing: var(--ls-tighter);
+}
+
+.text--tracking-tight {
+  letter-spacing: var(--ls-tight);
+}
+
+.text--tracking-normal {
+  letter-spacing: var(--ls-normal);
+}
+
+.text--tracking-wide {
+  letter-spacing: var(--ls-wide);
+}
+
+.text--tracking-wider {
+  letter-spacing: var(--ls-wider);
+}
+
+.text--tracking-widest {
+  letter-spacing: var(--ls-widest);
+}
+
+/* === TEKSTS — RINDAS AUGSTUMS === */
+.text--leading-tight {
+  line-height: var(--lh-tight);
+}
+
+.text--leading-snug {
+  line-height: var(--lh-snug);
+}
+
+.text--leading-normal {
+  line-height: var(--lh-normal);
+}
+
+.text--leading-relaxed {
+  line-height: var(--lh-relaxed);
+}
+
+.text--leading-loose {
+  line-height: var(--lh-loose);
+}
+
+/* === TEKSTS — PĀRPLŪDE === */
+.text--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text--clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text--clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text--clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text--clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text--clamp-5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* === VIRSR AKSTI === */
+.heading {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+}
+
+.heading--display {
+  font-size: var(--fs-6xl);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--ls-tighter);
+  line-height: var(--lh-tight);
+}
+
+.heading--h1 {
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--ls-tighter);
+}
+
+.heading--h2 {
+  font-size: var(--fs-4xl);
+}
+
+.heading--h3 {
+  font-size: var(--fs-3xl);
+}
+
+.heading--h4 {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+}
+
+.heading--h5 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+}
+
+.heading--h6 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+}
+
+/* === VIRSR AKSTI — GRADIENTI === */
+.heading--gradient {
+  background: linear-gradient(135deg, var(--c-accent-teal), var(--c-accent-violet), var(--c-accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heading--gradient-teal {
+  background: linear-gradient(135deg, var(--c-accent-teal-light), var(--c-accent-teal), var(--c-accent-teal-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heading--gradient-violet {
+  background: linear-gradient(135deg, var(--c-accent-violet-light), var(--c-accent-violet), var(--c-accent-violet-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heading--gradient-pink {
+  background: linear-gradient(135deg, var(--c-accent-pink-light), var(--c-accent-pink), var(--c-accent-pink-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.heading--gradient-space {
+  background: linear-gradient(135deg, #e8eefc 0%, #5eead4 30%, #a78bfa 60%, #f472b6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === VIRSR AKSTI — GLOW === */
+.heading--glow {
+  text-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+.heading--glow-violet {
+  text-shadow: 0 0 20px var(--c-accent-violet-glow);
+}
+
+.heading--glow-pink {
+  text-shadow: 0 0 20px var(--c-accent-pink-glow);
+}
+
+/* === META TEKSTS === */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-mega);
+  text-transform: uppercase;
+  color: var(--c-accent-teal);
+  padding: var(--space-2xs) var(--space-sm);
+  border: 1px solid var(--c-accent-teal-glass);
+  border-radius: var(--radius-full);
+  background: var(--c-accent-teal-glass);
+  backdrop-filter: blur(var(--blur-sm));
+  -webkit-backdrop-filter: blur(var(--blur-sm));
+}
+
+.eyebrow--violet {
+  color: var(--c-accent-violet);
+  border-color: var(--c-accent-violet-glass);
+  background: var(--c-accent-violet-glass);
+}
+
+.eyebrow--pink {
+  color: var(--c-accent-pink);
+  border-color: var(--c-accent-pink-glass);
+  background: var(--c-accent-pink-glass);
+}
+
+.eyebrow--amber {
+  color: var(--c-accent-amber);
+  border-color: rgba(251, 191, 36, 0.15);
+  background: rgba(251, 191, 36, 0.15);
+}
+
+/* === LEAD === */
+.lead {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  font-weight: var(--fw-regular);
+  max-width: 65ch;
+}
+
+.lead--center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* === KODS — INLINE === */
+.code-inline {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  font-weight: var(--fw-medium);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  color: var(--c-accent-teal);
+  white-space: nowrap;
+}
+
+/* === KODS — BLOKS === */
+.code-block {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  color: var(--c-text-primary);
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-sm);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+}
+
+/* === MARĶĒJUMS === */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--c-text-secondary);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  border-radius: var(--radius-full);
+}
+
+.tag--teal {
+  color: var(--c-accent-teal);
+  border-color: var(--c-accent-teal-glass);
+  background: var(--c-accent-teal-glass);
+}
+
+.tag--violet {
+  color: var(--c-accent-violet);
+  border-color: var(--c-accent-violet-glass);
+  background: var(--c-accent-violet-glass);
+}
+
+.tag--pink {
+  color: var(--c-accent-pink);
+  border-color: var(--c-accent-pink-glass);
+  background: var(--c-accent-pink-glass);
+}
+
+/* === NUMURU TEKSTS === */
+.numeric {
+  font-family: var(--font-mono);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.numeric--lg {
+  font-size: var(--fs-3xl);
+}
+
+.numeric--xl {
+  font-size: var(--fs-4xl);
+}
+
+.numeric--2xl {
+  font-size: var(--fs-5xl);
+}
+
+.numeric--glow {
+  text-shadow: 0 0 30px var(--c-accent-teal-glow);
+}
+
+/* === VIENĪBAS === */
+.unit {
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  font-weight: var(--fw-regular);
+  color: var(--c-text-tertiary);
+  margin-left: 0.25em;
+  letter-spacing: var(--ls-normal);
+}
+
+/* === ATZĪMES === */
+.note {
+  font-size: var(--fs-sm);
+  color: var(--c-text-tertiary);
+  font-style: italic;
+  line-height: var(--lh-normal);
+}
+
+/* === TEKSTS — SHIMMER === */
+.text--shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--c-text-primary) 0%,
+    var(--c-accent-teal) 50%,
+    var(--c-text-primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: text-shimmer 3s linear infinite;
+}
+
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text--shimmer {
+    animation: none;
+    background: var(--c-text-primary);
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--c-text-primary);
+  }
+}
+
+/* === BILANCĒTS TEKSTS === */
+.text--balance {
+  text-wrap: balance;
+}
+
+.text--pretty {
+  text-wrap: pretty;
+}
+
+/* === NOWRAP === */
+.text--nowrap {
+  white-space: nowrap;
+}
+
+/* === TEKSTS — RAKSTĪŠANAS EFEKTS === */
+.text--typed {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid var(--c-accent-teal);
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end) 1s 1 normal both,
+             blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--c-accent-teal);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text--typed {
+    animation: none;
+    border-right: none;
+    width: auto;
+  }
+}
+
+/* === CITĀTS === */
+.pullquote {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-primary);
+  padding: var(--space-lg) 0 var(--space-lg) var(--space-2xl);
+  border-left: 3px solid var(--c-accent-teal);
+  margin: var(--space-xl) 0;
+  font-style: italic;
+}
+
+.pullquote::before {
+  content: "\201C";
+  position: absolute;
+  left: var(--space-sm);
+  top: 0;
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--c-accent-teal);
+  opacity: 0.3;
+}
+
+.pullquote cite {
+  display: block;
+  margin-top: var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-style: normal;
+  color: var(--c-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* === ATZĪMĒTS TEKSTS === */
+mark {
+  background: var(--c-accent-teal-glass);
+  color: var(--c-text-primary);
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-xs);
+}
+
+/* === ABBR === */
+abbr[title] {
+  text-decoration: underline dotted;
+  text-underline-offset: 0.2em;
+  cursor: help;
+}
+
+/* === SMALL === */
+small {
+  font-size: 0.85em;
+  color: var(--c-text-tertiary);
+}
+
+/* === SUP/SUB === */
+sup,
+sub {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

@@ -1,0 +1,25 @@
+# ============================================================
+# SolXy · assets/fonts/.gitkeep
+# Autors: QvarcY (https://github.com/QvarcY)
+# Licence: MIT
+# ============================================================
+#
+# Šis fails ir tukšs un kalpo tikai tāpēc, lai Git saglabātu
+# mapi "fonts/" pat tad, ja tajā nav citu failu.
+#
+# SolXy izmanto Google Fonts (Space Grotesk, Inter,
+# JetBrains Mono), kas tiek ielādēti no CDN.
+#
+# Ja vēlies izmantot lokālos fontus (privātumam vai
+# ātrdarbībai), lejupielādē tos šeit un atjaunini
+# css/typography.css @import direktīvu.
+#
+# Ieteiktie fonti:
+# - Space Grotesk (virsrakstiem)
+#   https://fonts.google.com/specimen/Space+Grotesk
+# - Inter (pamata tekstam)
+#   https://fonts.google.com/specimen/Inter
+# - JetBrains Mono (kodam, datiem, marķējumiem)
+#   https://fonts.google.com/specimen/JetBrains+Mono
+#
+# Failu formāti: .woff2 (ieteikts), .woff, .ttf

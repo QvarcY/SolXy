@@ -1,0 +1,584 @@
+/* ============================================================
+   SolXy · variables.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === SAKNE === */
+:root {
+  /* ============================================================
+     KRĀSU PALETE — FONS
+     ============================================================ */
+  --c-bg-primary: #03050d;
+  --c-bg-secondary: #070b1a;
+  --c-bg-tertiary: #0d1428;
+  --c-bg-elevated: #131a35;
+  --c-bg-overlay: rgba(3, 5, 13, 0.85);
+  --c-bg-glass: rgba(13, 20, 40, 0.6);
+  --c-bg-glass-light: rgba(13, 20, 40, 0.4);
+  --c-bg-glass-strong: rgba(13, 20, 40, 0.8);
+
+  /* ============================================================
+     KRĀSU PALETE — TEKSTS
+     ============================================================ */
+  --c-text-primary: #e8eefc;
+  --c-text-secondary: #9aa8c8;
+  --c-text-tertiary: #5a6788;
+  --c-text-muted: #3d4560;
+  --c-text-inverse: #03050d;
+
+  /* ============================================================
+     KRĀSU PALETE — AKCENTI
+     ============================================================ */
+  --c-accent-teal: #5eead4;
+  --c-accent-teal-dark: #14b8a6;
+  --c-accent-teal-light: #99f6e4;
+  --c-accent-teal-glow: rgba(94, 234, 212, 0.4);
+  --c-accent-teal-glass: rgba(94, 234, 212, 0.15);
+
+  --c-accent-violet: #a78bfa;
+  --c-accent-violet-dark: #8b5cf6;
+  --c-accent-violet-light: #c4b5fd;
+  --c-accent-violet-glow: rgba(167, 139, 250, 0.4);
+  --c-accent-violet-glass: rgba(167, 139, 250, 0.15);
+
+  --c-accent-pink: #f472b6;
+  --c-accent-pink-dark: #ec4899;
+  --c-accent-pink-light: #f9a8d4;
+  --c-accent-pink-glow: rgba(244, 114, 182, 0.4);
+  --c-accent-pink-glass: rgba(244, 114, 182, 0.15);
+
+  --c-accent-amber: #fbbf24;
+  --c-accent-amber-dark: #f59e0b;
+  --c-accent-amber-glow: rgba(251, 191, 36, 0.4);
+
+  --c-accent-blue: #60a5fa;
+  --c-accent-blue-dark: #3b82f6;
+  --c-accent-blue-glow: rgba(96, 165, 250, 0.4);
+
+  --c-accent-green: #4ade80;
+  --c-accent-green-dark: #22c55e;
+  --c-accent-green-glow: rgba(74, 222, 128, 0.4);
+
+  --c-accent-red: #f87171;
+  --c-accent-red-dark: #ef4444;
+  --c-accent-red-glow: rgba(248, 113, 113, 0.4);
+
+  /* ============================================================
+     KRĀSU PALETE — ROBEŽAS
+     ============================================================ */
+  --c-border-subtle: rgba(232, 238, 252, 0.06);
+  --c-border-default: rgba(232, 238, 252, 0.12);
+  --c-border-strong: rgba(232, 238, 252, 0.2);
+  --c-border-accent: rgba(94, 234, 212, 0.4);
+
+  /* ============================================================
+     KRĀSU PALETE — STĀVOKĻI
+     ============================================================ */
+  --c-success: #4ade80;
+  --c-warning: #fbbf24;
+  --c-error: #f87171;
+  --c-info: #60a5fa;
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — MERKURS
+     ============================================================ */
+  --mercury-primary: #8c8074;
+  --mercury-secondary: #5c544a;
+  --mercury-accent: #b8a99a;
+  --mercury-glow: rgba(140, 128, 116, 0.5);
+  --mercury-gradient: radial-gradient(circle at 30% 30%, #b8a99a, #8c8074 40%, #5c544a 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — VENĒRA
+     ============================================================ */
+  --venus-primary: #e8b960;
+  --venus-secondary: #c9944a;
+  --venus-accent: #f5d896;
+  --venus-glow: rgba(232, 185, 96, 0.5);
+  --venus-gradient: radial-gradient(circle at 30% 30%, #f5d896, #e8b960 40%, #c9944a 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — ZEME
+     ============================================================ */
+  --earth-primary: #4a90d9;
+  --earth-secondary: #2d5f99;
+  --earth-accent: #6bb6ff;
+  --earth-land: #4ade80;
+  --earth-glow: rgba(74, 144, 217, 0.5);
+  --earth-gradient: radial-gradient(circle at 30% 30%, #6bb6ff, #4a90d9 40%, #2d5f99 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — MARSS
+     ============================================================ */
+  --mars-primary: #d1603d;
+  --mars-secondary: #a13f22;
+  --mars-accent: #f08d68;
+  --mars-glow: rgba(209, 96, 61, 0.5);
+  --mars-gradient: radial-gradient(circle at 30% 30%, #f08d68, #d1603d 40%, #a13f22 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — JUPITERS
+     ============================================================ */
+  --jupiter-primary: #d4a373;
+  --jupiter-secondary: #a87e56;
+  --jupiter-accent: #f0c896;
+  --jupiter-storm: #c1502e;
+  --jupiter-glow: rgba(212, 163, 115, 0.5);
+  --jupiter-gradient: radial-gradient(circle at 30% 30%, #f0c896, #d4a373 40%, #a87e56 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — SATURNS
+     ============================================================ */
+  --saturn-primary: #e6c989;
+  --saturn-secondary: #b89a5e;
+  --saturn-accent: #f5e0a8;
+  --saturn-ring: #d4b679;
+  --saturn-glow: rgba(230, 201, 137, 0.5);
+  --saturn-gradient: radial-gradient(circle at 30% 30%, #f5e0a8, #e6c989 40%, #b89a5e 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — URĀNS
+     ============================================================ */
+  --uranus-primary: #7dd3d3;
+  --uranus-secondary: #4a9d9d;
+  --uranus-accent: #a8ecec;
+  --uranus-ring: #6bc2c2;
+  --uranus-glow: rgba(125, 211, 211, 0.5);
+  --uranus-gradient: radial-gradient(circle at 30% 30%, #a8ecec, #7dd3d3 40%, #4a9d9d 100%);
+
+  /* ============================================================
+     PLANĒTU KRĀSAS — NEPTŪNS
+     ============================================================ */
+  --neptune-primary: #4a6fd9;
+  --neptune-secondary: #2e4a9e;
+  --neptune-accent: #7d9cf0;
+  --neptune-glow: rgba(74, 111, 217, 0.5);
+  --neptune-gradient: radial-gradient(circle at 30% 30%, #7d9cf0, #4a6fd9 40%, #2e4a9e 100%);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — MĒNESS
+     ============================================================ */
+  --moon-primary: #b8b8b8;
+  --moon-secondary: #808080;
+  --moon-accent: #e0e0e0;
+  --moon-glow: rgba(184, 184, 184, 0.4);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — IO
+     ============================================================ */
+  --io-primary: #f5e050;
+  --io-secondary: #c9b83c;
+  --io-accent: #fff088;
+  --io-glow: rgba(245, 224, 80, 0.5);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — EIROPA
+     ============================================================ */
+  --europa-primary: #e8dcc8;
+  --europa-secondary: #b8ac98;
+  --europa-accent: #fff5e0;
+  --europa-glow: rgba(232, 220, 200, 0.5);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — GANIMĒDS
+     ============================================================ */
+  --ganymede-primary: #a89880;
+  --ganymede-secondary: #786858;
+  --ganymede-accent: #d4c4a8;
+  --ganymede-glow: rgba(168, 152, 128, 0.5);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — KALLISTO
+     ============================================================ */
+  --callisto-primary: #6b5d4f;
+  --callisto-secondary: #453a2e;
+  --callisto-accent: #a89880;
+  --callisto-glow: rgba(107, 93, 79, 0.5);
+
+  /* ============================================================
+     PAVADOŅU KRĀSAS — TITĀNS
+     ============================================================ */
+  --titan-primary: #e8a04c;
+  --titan-secondary: #b87a30;
+  --titan-accent: #ffc880;
+  --titan-glow: rgba(232, 160, 76, 0.5);
+
+  /* ============================================================
+     SAULES KRĀSAS
+     ============================================================ */
+  --sun-core: #fff8e0;
+  --sun-primary: #ffcc44;
+  --sun-secondary: #ff9922;
+  --sun-corona: #ff6600;
+  --sun-glow-inner: rgba(255, 204, 68, 0.8);
+  --sun-glow-mid: rgba(255, 153, 34, 0.5);
+  --sun-glow-outer: rgba(255, 102, 0, 0.2);
+  --sun-gradient: radial-gradient(circle at 50% 50%, #fff8e0, #ffcc44 30%, #ff9922 70%, #ff6600 100%);
+
+  /* ============================================================
+     TIPOGRĀFIJA — ĢIMENES
+     ============================================================ */
+  --font-display: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
+
+  /* ============================================================
+     TIPOGRĀFIJA — IZMĒRI (FLUID)
+     ============================================================ */
+  --fs-xs: clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+  --fs-sm: clamp(0.8rem, 0.75rem + 0.25vw, 0.9rem);
+  --fs-base: clamp(0.95rem, 0.9rem + 0.25vw, 1.05rem);
+  --fs-md: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+  --fs-lg: clamp(1.15rem, 1.05rem + 0.5vw, 1.35rem);
+  --fs-xl: clamp(1.35rem, 1.2rem + 0.75vw, 1.65rem);
+  --fs-2xl: clamp(1.6rem, 1.4rem + 1vw, 2rem);
+  --fs-3xl: clamp(1.9rem, 1.6rem + 1.5vw, 2.6rem);
+  --fs-4xl: clamp(2.3rem, 1.9rem + 2vw, 3.4rem);
+  --fs-5xl: clamp(2.8rem, 2.2rem + 3vw, 4.5rem);
+  --fs-6xl: clamp(3.4rem, 2.6rem + 4vw, 6rem);
+
+  /* ============================================================
+     TIPOGRĀFIJA — SVARS
+     ============================================================ */
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+
+  /* ============================================================
+     TIPOGRĀFIJA — RINDAS AUGSTUMS
+     ============================================================ */
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.65;
+  --lh-loose: 1.85;
+
+  /* ============================================================
+     TIPOGRĀFIJA — BURTU ATSTARPES
+     ============================================================ */
+  --ls-tighter: -0.05em;
+  --ls-tight: -0.025em;
+  --ls-normal: 0;
+  --ls-wide: 0.025em;
+  --ls-wider: 0.05em;
+  --ls-widest: 0.1em;
+  --ls-mega: 0.2em;
+
+  /* ============================================================
+     ATSTARPES (SPACING)
+     ============================================================ */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+  --space-6xl: 12rem;
+
+  /* ============================================================
+     ATSTARPES — FLUID (sekcijām)
+     ============================================================ */
+  --space-section: clamp(3rem, 5vw + 1rem, 8rem);
+  --space-section-sm: clamp(2rem, 3vw + 1rem, 5rem);
+  --space-container: clamp(1rem, 3vw, 3rem);
+
+  /* ============================================================
+     IZKĀRTOJUMS — KONTEINERIS
+     ============================================================ */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  --container-max: 1440px;
+
+  /* ============================================================
+     RĀDIUSI
+     ============================================================ */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+  --radius-full: 9999px;
+  --radius-circle: 50%;
+
+  /* ============================================================
+     ĒNAS
+     ============================================================ */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.6);
+  --shadow-2xl: 0 24px 48px rgba(0, 0, 0, 0.7);
+  --shadow-inner: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+
+  /* ============================================================
+     ĒNAS — GLOW
+     ============================================================ */
+  --glow-teal-sm: 0 0 10px rgba(94, 234, 212, 0.4);
+  --glow-teal-md: 0 0 20px rgba(94, 234, 212, 0.5);
+  --glow-teal-lg: 0 0 40px rgba(94, 234, 212, 0.6);
+  --glow-teal-xl: 0 0 80px rgba(94, 234, 212, 0.4);
+
+  --glow-violet-sm: 0 0 10px rgba(167, 139, 250, 0.4);
+  --glow-violet-md: 0 0 20px rgba(167, 139, 250, 0.5);
+  --glow-violet-lg: 0 0 40px rgba(167, 139, 250, 0.6);
+  --glow-violet-xl: 0 0 80px rgba(167, 139, 250, 0.4);
+
+  --glow-pink-sm: 0 0 10px rgba(244, 114, 182, 0.4);
+  --glow-pink-md: 0 0 20px rgba(244, 114, 182, 0.5);
+  --glow-pink-lg: 0 0 40px rgba(244, 114, 182, 0.6);
+  --glow-pink-xl: 0 0 80px rgba(244, 114, 182, 0.4);
+
+  --glow-amber-sm: 0 0 10px rgba(251, 191, 36, 0.4);
+  --glow-amber-md: 0 0 20px rgba(251, 191, 36, 0.5);
+  --glow-amber-lg: 0 0 40px rgba(251, 191, 36, 0.6);
+  --glow-amber-xl: 0 0 80px rgba(251, 191, 36, 0.4);
+
+  --glow-blue-sm: 0 0 10px rgba(96, 165, 250, 0.4);
+  --glow-blue-md: 0 0 20px rgba(96, 165, 250, 0.5);
+  --glow-blue-lg: 0 0 40px rgba(96, 165, 250, 0.6);
+  --glow-blue-xl: 0 0 80px rgba(96, 165, 250, 0.4);
+
+  /* ============================================================
+     BLUR
+     ============================================================ */
+  --blur-xs: 2px;
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 12px;
+  --blur-xl: 20px;
+  --blur-2xl: 32px;
+  --blur-3xl: 48px;
+
+  /* ============================================================
+     CAURSPĪDĪBA
+     ============================================================ */
+  --opacity-0: 0;
+  --opacity-5: 0.05;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+
+  /* ============================================================
+     Z-INDEX
+     ============================================================ */
+  --z-below: -1;
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-banner: 300;
+  --z-overlay: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
+  --z-max: 9999;
+
+  /* ============================================================
+     PĀREJAS (TRANSITIONS)
+     ============================================================ */
+  --transition-instant: 0s;
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 400ms;
+  --transition-slower: 700ms;
+  --transition-slowest: 1000ms;
+
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.5, 1.5, 0.5, 1);
+
+  --transition-base-all: all var(--transition-base) var(--ease-in-out);
+  --transition-colors: color var(--transition-base) var(--ease-in-out),
+                       background-color var(--transition-base) var(--ease-in-out),
+                       border-color var(--transition-base) var(--ease-in-out);
+  --transition-transform: transform var(--transition-base) var(--ease-out);
+  --transition-opacity: opacity var(--transition-base) var(--ease-in-out);
+
+  /* ============================================================
+     KUSTĪBA — ORBĪTAS
+     ============================================================ */
+  --orbit-duration-mercury: 12s;
+  --orbit-duration-venus: 20s;
+  --orbit-duration-earth: 30s;
+  --orbit-duration-mars: 45s;
+  --orbit-duration-jupiter: 80s;
+  --orbit-duration-saturn: 120s;
+  --orbit-duration-uranus: 180s;
+  --orbit-duration-neptune: 240s;
+
+  /* ============================================================
+     KUSTĪBA — ROTĀCIJA
+     ============================================================ */
+  --rotate-duration-sun: 60s;
+  --rotate-duration-planet-slow: 20s;
+  --rotate-duration-planet-base: 10s;
+  --rotate-duration-planet-fast: 5s;
+
+  /* ============================================================
+     KUSTĪBA — ZVAIGZNES
+     ============================================================ */
+  --stars-duration-slow: 200s;
+  --stars-duration-base: 120s;
+  --stars-duration-fast: 60s;
+
+  /* ============================================================
+     IZMĒRI — SAULES SISTĒMA
+     ============================================================ */
+  --sun-size: clamp(80px, 12vw, 160px);
+  --orbit-1-size: clamp(180px, 24vw, 320px);
+  --orbit-2-size: clamp(240px, 32vw, 420px);
+  --orbit-3-size: clamp(300px, 40vw, 520px);
+  --orbit-4-size: clamp(360px, 48vw, 620px);
+  --orbit-5-size: clamp(440px, 60vw, 780px);
+  --orbit-6-size: clamp(520px, 72vw, 940px);
+  --orbit-7-size: clamp(600px, 84vw, 1100px);
+  --orbit-8-size: clamp(680px, 96vw, 1260px);
+
+  --planet-size-mercury: clamp(8px, 1vw, 14px);
+  --planet-size-venus: clamp(12px, 1.5vw, 20px);
+  --planet-size-earth: clamp(13px, 1.6vw, 22px);
+  --planet-size-mars: clamp(10px, 1.2vw, 16px);
+  --planet-size-jupiter: clamp(30px, 4vw, 56px);
+  --planet-size-saturn: clamp(26px, 3.5vw, 48px);
+  --planet-size-uranus: clamp(18px, 2.4vw, 32px);
+  --planet-size-neptune: clamp(17px, 2.2vw, 30px);
+
+  /* ============================================================
+     KONKRĒTI — FOKUSA Gredzens
+     ============================================================ */
+  --focus-ring-color: var(--c-accent-teal);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  --focus-ring-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color),
+                       0 0 0 calc(var(--focus-ring-width) + 2px) rgba(94, 234, 212, 0.2);
+
+  /* ============================================================
+     HTML — PAMATA
+     ============================================================ */
+  color-scheme: dark light;
+  accent-color: var(--c-accent-teal);
+}
+
+/* === GAISMAS SHĒMA === */
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-bg-primary: #f8fafc;
+    --c-bg-secondary: #f1f5f9;
+    --c-bg-tertiary: #e2e8f0;
+    --c-bg-elevated: #ffffff;
+    --c-bg-overlay: rgba(248, 250, 252, 0.9);
+    --c-bg-glass: rgba(255, 255, 255, 0.6);
+    --c-bg-glass-light: rgba(255, 255, 255, 0.4);
+    --c-bg-glass-strong: rgba(255, 255, 255, 0.85);
+
+    --c-text-primary: #0f172a;
+    --c-text-secondary: #475569;
+    --c-text-tertiary: #94a3b8;
+    --c-text-muted: #cbd5e1;
+    --c-text-inverse: #f8fafc;
+
+    --c-accent-teal: #0d9488;
+    --c-accent-teal-dark: #0f766e;
+    --c-accent-teal-light: #14b8a6;
+    --c-accent-teal-glow: rgba(13, 148, 136, 0.3);
+    --c-accent-teal-glass: rgba(13, 148, 136, 0.1);
+
+    --c-accent-violet: #7c3aed;
+    --c-accent-violet-dark: #6d28d9;
+    --c-accent-violet-light: #8b5cf6;
+    --c-accent-violet-glow: rgba(124, 58, 237, 0.3);
+    --c-accent-violet-glass: rgba(124, 58, 237, 0.1);
+
+    --c-accent-pink: #db2777;
+    --c-accent-pink-dark: #be185d;
+    --c-accent-pink-light: #ec4899;
+    --c-accent-pink-glow: rgba(219, 39, 119, 0.3);
+    --c-accent-pink-glass: rgba(219, 39, 119, 0.1);
+
+    --c-border-subtle: rgba(15, 23, 42, 0.06);
+    --c-border-default: rgba(15, 23, 42, 0.12);
+    --c-border-strong: rgba(15, 23, 42, 0.2);
+    --c-border-accent: rgba(13, 148, 136, 0.4);
+  }
+}
+
+/* === AUGSTS KONTRASTS === */
+@media (prefers-contrast: more) {
+  :root {
+    --c-text-primary: #ffffff;
+    --c-text-secondary: #d0d8e8;
+    --c-text-tertiary: #a0a8c8;
+    --c-border-subtle: rgba(232, 238, 252, 0.15);
+    --c-border-default: rgba(232, 238, 252, 0.3);
+    --c-border-strong: rgba(232, 238, 252, 0.5);
+    --focus-ring-width: 3px;
+  }
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.01ms;
+    --transition-base: 0.01ms;
+    --transition-slow: 0.01ms;
+    --transition-slower: 0.01ms;
+    --transition-slowest: 0.01ms;
+
+    --orbit-duration-mercury: 0s;
+    --orbit-duration-venus: 0s;
+    --orbit-duration-earth: 0s;
+    --orbit-duration-mars: 0s;
+    --orbit-duration-jupiter: 0s;
+    --orbit-duration-saturn: 0s;
+    --orbit-duration-uranus: 0s;
+    --orbit-duration-neptune: 0s;
+
+    --rotate-duration-sun: 0s;
+    --rotate-duration-planet-slow: 0s;
+    --rotate-duration-planet-base: 0s;
+    --rotate-duration-planet-fast: 0s;
+
+    --stars-duration-slow: 0s;
+    --stars-duration-base: 0s;
+    --stars-duration-fast: 0s;
+  }
+}
+
+/* === FORCED COLORS === */
+@media (forced-colors: active) {
+  :root {
+    --focus-ring-color: Highlight;
+    --c-border-accent: Highlight;
+  }
+}

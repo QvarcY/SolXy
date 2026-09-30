@@ -1,0 +1,611 @@
+/* ============================================================
+   SolXy · cards.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === UNIVERSĀLĀ KARTĪTE === */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  border-radius: var(--radius-xl);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  transition: all var(--transition-base) var(--ease-in-out);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-border-accent);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    var(--glow-teal-sm);
+}
+
+/* === KARTĪTES AR GRADIENTA ROBEŽU === */
+.card--gradient {
+  position: relative;
+}
+
+.card--gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    var(--c-accent-teal) 50%,
+    var(--c-accent-violet) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-base) var(--ease-in-out);
+}
+
+.card--gradient:hover::before {
+  opacity: 1;
+}
+
+/* === KARTĪTES AR GLOW === */
+.card--glow {
+  box-shadow: 0 0 20px var(--c-accent-teal-glow);
+}
+
+.card--glow:hover {
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    var(--glow-teal-lg);
+}
+
+/* === KARTĪTES AR STIKLU === */
+.card--glass {
+  background: var(--c-bg-glass-strong);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+}
+
+/* === KARTĪTES AR TUMŠU FONU === */
+.card--dark {
+  background: var(--c-bg-tertiary);
+  border-color: var(--c-border-default);
+}
+
+/* === KARTĪTES AR IZCELŠANU === */
+.card--featured {
+  border-color: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-md);
+}
+
+.card--featured::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--c-accent-teal),
+    transparent
+  );
+}
+
+/* === KARTĪTES VIRSR AKSTS === */
+.card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--c-text-primary);
+  letter-spacing: var(--ls-tight);
+  margin: 0;
+  line-height: var(--lh-snug);
+}
+
+/* === KARTĪTES APAKŠVIRSR AKSTS === */
+.card__subtitle {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* === KARTĪTES TEKSTS === */
+.card__text {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  margin: 0;
+}
+
+/* === KARTĪTES SATURS === */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+/* === KARTĪTES KĀJENE === */
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--c-border-subtle);
+}
+
+/* === KARTĪTES SAITE === */
+.card__link {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-raised);
+  border-radius: inherit;
+}
+
+.card__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* === KARTĪTES AR ATTĒLU === */
+.card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin: calc(var(--space-lg) * -1) calc(var(--space-lg) * -1) 0;
+  width: calc(100% + var(--space-lg) * 2);
+}
+
+.card__media--square {
+  aspect-ratio: 1 / 1;
+}
+
+.card__media--wide {
+  aspect-ratio: 21 / 9;
+}
+
+/* === KARTĪTES AR IKONU === */
+.card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-lg);
+  color: var(--c-accent-teal);
+  flex-shrink: 0;
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.card:hover .card__icon {
+  border-color: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-sm);
+}
+
+.card__icon--lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--fs-2xl);
+}
+
+/* === KARTĪTES AR TAG === */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+/* === KARTĪTES AR STATUSU === */
+.card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+}
+
+.card__status::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.card__status--active {
+  color: var(--c-accent-green);
+}
+
+.card__status--pending {
+  color: var(--c-accent-amber);
+}
+
+.card__status--inactive {
+  color: var(--c-text-tertiary);
+}
+
+/* === KARTĪTES AR SKAITLI === */
+.card__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.card__stat-value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--c-accent-teal);
+  line-height: 1;
+  letter-spacing: var(--ls-tight);
+}
+
+.card__stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-tertiary);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   KARTĪTES AR HORIZONTĀLU IZKĀRTOJUMU
+   ============================================================ */
+
+.card--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.card--horizontal .card__body {
+  flex: 1;
+}
+
+/* ============================================================
+   KARTĪTES AR KOMPAKTU IZKĀRTOJUMU
+   ============================================================ */
+
+.card--compact {
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.card--compact .card__title {
+  font-size: var(--fs-base);
+}
+
+/* ============================================================
+   KARTĪTES AR LIELU IZKĀRTOJUMU
+   ============================================================ */
+
+.card--spacious {
+  padding: var(--space-2xl);
+  gap: var(--space-lg);
+}
+
+.card--spacious .card__title {
+  font-size: var(--fs-2xl);
+}
+
+/* ============================================================
+   KARTĪTES AR KRĀSU AKCENTU
+   ============================================================ */
+
+.card--teal {
+  --card-accent: var(--c-accent-teal);
+  --card-accent-glow: var(--c-accent-teal-glow);
+}
+
+.card--violet {
+  --card-accent: var(--c-accent-violet);
+  --card-accent-glow: var(--c-accent-violet-glow);
+}
+
+.card--pink {
+  --card-accent: var(--c-accent-pink);
+  --card-accent-glow: var(--c-accent-pink-glow);
+}
+
+.card--amber {
+  --card-accent: var(--c-accent-amber);
+  --card-accent-glow: var(--c-accent-amber-glow);
+}
+
+.card--blue {
+  --card-accent: var(--c-accent-blue);
+  --card-accent-glow: var(--c-accent-blue-glow);
+}
+
+.card--green {
+  --card-accent: var(--c-accent-green);
+  --card-accent-glow: var(--c-accent-green-glow);
+}
+
+.card[class*="card--"] {
+  --card-accent: var(--c-accent-teal);
+  --card-accent-glow: var(--c-accent-teal-glow);
+}
+
+.card--teal .card__icon,
+.card--violet .card__icon,
+.card--pink .card__icon,
+.card--amber .card__icon,
+.card--blue .card__icon,
+.card--green .card__icon {
+  color: var(--card-accent);
+}
+
+.card--teal:hover,
+.card--violet:hover,
+.card--pink:hover,
+.card--amber:hover,
+.card--blue:hover,
+.card--green:hover {
+  border-color: var(--card-accent);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--card-accent-glow);
+}
+
+.card--teal .card__stat-value,
+.card--violet .card__stat-value,
+.card--pink .card__stat-value,
+.card--amber .card__stat-value,
+.card--blue .card__stat-value,
+.card--green .card__stat-value {
+  color: var(--card-accent);
+}
+
+/* ============================================================
+   KARTĪTES AR SKAITĻA INDIKATORU
+   ============================================================ */
+
+.card__number {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+  letter-spacing: var(--ls-wide);
+}
+
+/* ============================================================
+   KARTĪTES AR BILDES PRIEKŠSKATĪJUMU
+   ============================================================ */
+
+.card__preview {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-md);
+  background: var(--c-bg-tertiary);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================
+   KARTĪTES AR BADGE
+   ============================================================ */
+
+.card__badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  padding: var(--space-2xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  background: var(--c-accent-teal-glass);
+  border: 1px solid var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  z-index: var(--z-raised);
+}
+
+/* ============================================================
+   KARTĪTES AR MIRGOŠANU
+   ============================================================ */
+
+.card--shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card--shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  animation: card-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes card-shimmer {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+/* ============================================================
+   KARTĪTES AR "LOADING" STĀVOKLI
+   ============================================================ */
+
+.card--loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.card--loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(94, 234, 212, 0.1) 50%,
+      transparent 100%
+    );
+  background-size: 200% 100%;
+  animation: card-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes card-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ============================================================
+   KARTĪTES AR HOVER EFEKTIEM
+   ============================================================ */
+
+.card--lift:hover {
+  transform: translateY(-8px);
+}
+
+.card--scale:hover {
+  transform: scale(1.02);
+}
+
+.card--rotate:hover {
+  transform: rotate(-1deg) translateY(-4px);
+}
+
+.card--tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* ============================================================
+   KARTĪTES GRIDS
+   ============================================================ */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-lg);
+}
+
+.cards-grid--sm {
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+}
+
+.cards-grid--lg {
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transform: none;
+  }
+
+  .card--shimmer::after,
+  .card--loading::after {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .card {
+    padding: var(--space-md);
+  }
+
+  .card--spacious {
+    padding: var(--space-lg);
+  }
+
+  .card--horizontal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card__media {
+    margin: calc(var(--space-md) * -1) calc(var(--space-md) * -1) 0;
+    width: calc(100% + var(--space-md) * 2);
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  .card {
+    border: 1px solid #ccc;
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .card__link::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}

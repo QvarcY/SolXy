@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ============================================================
+     SolXy · assets/logo.svg
+     Autors: QvarcY (https://github.com/QvarcY)
+     Licence: MIT
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100" role="img" aria-label="SolXy logo">
+  <title>SolXy</title>
+  <desc>SolXy logotips — Saules sistēmas izpētes platforma</desc>
+
+  <defs>
+    <!-- Saules gradients -->
+    <radialGradient id="logoSunGradient" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fff8e0"/>
+      <stop offset="30%" stop-color="#ffcc44"/>
+      <stop offset="70%" stop-color="#ff9922"/>
+      <stop offset="100%" stop-color="#ff6600"/>
+    </radialGradient>
+
+    <!-- Teksta gradients -->
+    <linearGradient id="logoTextGradient" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#e8eefc"/>
+      <stop offset="50%" stop-color="#5eead4"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+
+    <!-- Orbitas gradients -->
+    <linearGradient id="logoOrbitGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5eead4" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Spīduma filtrs -->
+    <filter id="logoSunGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Teksta ēna -->
+    <filter id="logoTextGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============================================================
+       IKONA (Saules sistēma) — kreisajā pusē
+       ============================================================ -->
+  <g transform="translate(10, 10)">
+
+    <!-- Orbītas gredzeni -->
+    <ellipse
+      cx="40"
+      cy="40"
+      rx="32"
+      ry="12"
+      fill="none"
+      stroke="url(#logoOrbitGradient)"
+      stroke-width="1"
+      opacity="0.5"
+      transform="rotate(-25 40 40)"
+    />
+    <ellipse
+      cx="40"
+      cy="40"
+      rx="24"
+      ry="8"
+      fill="none"
+      stroke="#5eead4"
+      stroke-width="0.8"
+      opacity="0.4"
+      transform="rotate(-25 40 40)"
+    />
+
+    <!-- Saule -->
+    <circle cx="40" cy="40" r="12" fill="url(#logoSunGradient)" filter="url(#logoSunGlow)"/>
+
+    <!-- Saules spīdums -->
+    <circle cx="36" cy="36" r="4" fill="#ffffff" opacity="0.5"/>
+
+    <!-- Planētas uz orbītām -->
+    <circle cx="72" cy="34" r="2.5" fill="#5eead4"/>
+    <circle cx="18" cy="46" r="1.8" fill="#a78bfa"/>
+    <circle cx="52" cy="58" r="1.5" fill="#f472b6"/>
+
+    <!-- Zvaigznes -->
+    <circle cx="10" cy="14" r="0.8" fill="#e8eefc" opacity="0.7"/>
+    <circle cx="72" cy="10" r="0.6" fill="#e8eefc" opacity="0.5"/>
+    <circle cx="8" cy="66" r="0.7" fill="#5eead4" opacity="0.6"/>
+  </g>
+
+  <!-- ============================================================
+       TEKSTS "SolXy"
+       ============================================================ -->
+  <g filter="url(#logoTextGlow)">
+    <text
+      x="110"
+      y="52"
+      font-family="'Space Grotesk', 'Inter', system-ui, sans-serif"
+      font-size="38"
+      font-weight="700"
+      letter-spacing="-1"
+      fill="url(#logoTextGradient)"
+    >SolXy</text>
+
+    <!-- Apakšvirsraksts -->
+    <text
+      x="112"
+      y="72"
+      font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace"
+      font-size="11"
+      font-weight="500"
+      letter-spacing="3"
+      fill="#9aa8c8"
+      opacity="0.85"
+    >SAULES SISTĒMA</text>
+  </g>
+
+  <!-- Akcenta līnija zem virsraksta -->
+  <rect
+    x="112"
+    y="78"
+    width="120"
+    height="1.5"
+    rx="0.75"
+    fill="url(#logoOrbitGradient)"
+    opacity="0.6"
+  />
+</svg>

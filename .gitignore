@@ -1,0 +1,79 @@
+# ============================================================
+# SolXy · .gitignore
+# Autors: QvarcY (https://github.com/QvarcY)
+# Licence: MIT
+# ============================================================
+
+# === OPERĒTĀJSISTĒMAS ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# === REDAKTORI / IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# === LOGI ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# === ATKARĪBAS (ja kādreiz parādās) ===
+node_modules/
+bower_components/
+vendor/
+
+# === BŪVĒŠANAS REZULTĀTI ===
+dist/
+build/
+.cache/
+.parcel-cache/
+.temp/
+
+# === VIDES FAILI ===
+.env
+.env.local
+.env.*.local
+
+# === PAGAIDU FAILI ===
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# === PĀRBAUDES ===
+coverage/
+.nyc_output/
+*.lcov
+
+# === AI GENERĒTI ===
+*.ai
+*.generated
+
+# === KARTOTĒJUMA FAILI ===
+*.map
+
+# === FONTU LEJUPIELĀDES ===
+assets/fonts/*
+!assets/fonts/.gitkeep
+
+# === NETO ===
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z

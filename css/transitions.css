@@ -1,0 +1,548 @@
+/* ============================================================
+   SolXy · transitions.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === VISPĀRĪGĀS PĀREJAS === */
+.transition-none {
+  transition: none;
+}
+
+.transition-all {
+  transition: all var(--transition-base) var(--ease-in-out);
+}
+
+.transition-colors {
+  transition:
+    color var(--transition-base) var(--ease-in-out),
+    background-color var(--transition-base) var(--ease-in-out),
+    border-color var(--transition-base) var(--ease-in-out);
+}
+
+.transition-transform {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.transition-opacity {
+  transition: opacity var(--transition-base) var(--ease-in-out);
+}
+
+.transition-shadow {
+  transition: box-shadow var(--transition-base) var(--ease-in-out);
+}
+
+.transition-filter {
+  transition: filter var(--transition-base) var(--ease-in-out);
+}
+
+.transition-backdrop {
+  transition: backdrop-filter var(--transition-base) var(--ease-in-out),
+              -webkit-backdrop-filter var(--transition-base) var(--ease-in-out);
+}
+
+/* === PĀREJU ILGUMI === */
+.transition-fast {
+  transition-duration: var(--transition-fast);
+}
+
+.transition-base {
+  transition-duration: var(--transition-base);
+}
+
+.transition-slow {
+  transition-duration: var(--transition-slow);
+}
+
+.transition-slower {
+  transition-duration: var(--transition-slower);
+}
+
+/* === PĀREJU AIZTIESTĀS FUNKCIJAS === */
+.ease-linear { transition-timing-function: var(--ease-linear); }
+.ease-in { transition-timing-function: var(--ease-in); }
+.ease-out { transition-timing-function: var(--ease-out); }
+.ease-in-out { transition-timing-function: var(--ease-in-out); }
+.ease-smooth { transition-timing-function: var(--ease-smooth); }
+.ease-bounce { transition-timing-function: var(--ease-bounce); }
+.ease-elastic { transition-timing-function: var(--ease-elastic); }
+
+/* ============================================================
+   HOVER UN FOCUS PĀREJAS
+   ============================================================ */
+
+/* === SAITES === */
+.link-transition {
+  transition:
+    color var(--transition-fast) var(--ease-in-out),
+    border-color var(--transition-fast) var(--ease-in-out),
+    background-color var(--transition-fast) var(--ease-in-out);
+}
+
+/* === POGAS === */
+.btn-transition {
+  transition:
+    transform var(--transition-base) var(--ease-out),
+    box-shadow var(--transition-base) var(--ease-in-out),
+    background-color var(--transition-base) var(--ease-in-out),
+    border-color var(--transition-base) var(--ease-in-out),
+    color var(--transition-base) var(--ease-in-out);
+}
+
+/* === KARTĪTES === */
+.card-transition {
+  transition:
+    transform var(--transition-base) var(--ease-out),
+    box-shadow var(--transition-base) var(--ease-in-out),
+    border-color var(--transition-base) var(--ease-in-out);
+}
+
+/* ============================================================
+   LAPU PĀREJAS
+   ============================================================ */
+
+.page-transition-enter {
+  animation: page-enter var(--transition-slow) var(--ease-out) both;
+}
+
+.page-transition-exit {
+  animation: page-exit var(--transition-slow) var(--ease-in) both;
+}
+
+/* === SATURA PARĀDĪŠANĀS AR AIZTIESTI === */
+.content-reveal {
+  animation: content-reveal var(--transition-slower) var(--ease-out) both;
+}
+
+@keyframes content-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SATURA PARĀDĪŠANĀS AR AIZTIESTI PA SOĻIEM === */
+.content-reveal-stagger > * {
+  animation: content-reveal var(--transition-slower) var(--ease-out) both;
+}
+
+.content-reveal-stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.content-reveal-stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.content-reveal-stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.content-reveal-stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.content-reveal-stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.content-reveal-stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.content-reveal-stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.content-reveal-stagger > *:nth-child(8) { animation-delay: 0.4s; }
+.content-reveal-stagger > *:nth-child(9) { animation-delay: 0.45s; }
+.content-reveal-stagger > *:nth-child(10) { animation-delay: 0.5s; }
+
+/* ============================================================
+   SCROLL PĀREJAS
+   ============================================================ */
+
+.scroll-fade {
+  animation: scroll-fade linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+.scroll-slide-up {
+  animation: scroll-slide-up linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+.scroll-slide-down {
+  animation: scroll-slide-down linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+.scroll-scale {
+  animation: scroll-scale linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
+}
+
+@keyframes scroll-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scroll-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
+   STĀVOKĻU PĀREJAS
+   ============================================================ */
+
+/* === AKTĪVAIS STĀVOKLIS === */
+.state-active {
+  transition:
+    background-color var(--transition-fast) var(--ease-in-out),
+    color var(--transition-fast) var(--ease-in-out),
+    box-shadow var(--transition-fast) var(--ease-in-out);
+}
+
+/* === IELĀDES STĀVOKLIS === */
+.state-loading {
+  pointer-events: none;
+  opacity: 0.6;
+  transition: opacity var(--transition-base) var(--ease-in-out);
+}
+
+.state-loading * {
+  transition: none;
+}
+
+/* === ATSPĒJOTS === */
+.state-disabled {
+  opacity: var(--opacity-50);
+  pointer-events: none;
+  transition: opacity var(--transition-base) var(--ease-in-out);
+}
+
+/* === REDZAMS / PASLĒPTS === */
+.state-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--transition-base) var(--ease-in-out),
+    visibility var(--transition-base) var(--ease-in-out);
+}
+
+.state-visible {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity var(--transition-base) var(--ease-in-out),
+    visibility 0s;
+}
+
+/* ============================================================
+   MĒRĶA PĀREJAS
+   ============================================================ */
+
+.target-highlight {
+  animation: target-highlight 2s var(--ease-out) both;
+}
+
+@keyframes target-highlight {
+  0% {
+    background: var(--c-accent-teal-glass);
+    box-shadow: 0 0 0 4px var(--c-accent-teal-glow);
+  }
+  100% {
+    background: transparent;
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* ============================================================
+   PĀREJAS — MĀKONIS / TUMŠS
+   ============================================================ */
+
+.fade-in {
+  animation: fade-in-simple var(--transition-base) var(--ease-out) both;
+}
+
+.fade-out {
+  animation: fade-out-simple var(--transition-base) var(--ease-in) both;
+}
+
+@keyframes fade-in-simple {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out-simple {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* ============================================================
+   PĀREJAS — AUGŠUP / LEJUP
+   ============================================================ */
+
+.slide-up-sm {
+  animation: slide-up-sm var(--transition-base) var(--ease-out) both;
+}
+
+.slide-up-md {
+  animation: slide-up-md var(--transition-slow) var(--ease-out) both;
+}
+
+.slide-down-sm {
+  animation: slide-down-sm var(--transition-base) var(--ease-out) both;
+}
+
+.slide-down-md {
+  animation: slide-down-md var(--transition-slow) var(--ease-out) both;
+}
+
+@keyframes slide-up-sm {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up-md {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-sm {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down-md {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   PĀREJAS — PAKĀPENISKI
+   ============================================================ */
+
+.transition-stagger > * {
+  transition: all var(--transition-base) var(--ease-out);
+}
+
+.transition-stagger:hover > *:nth-child(1) { transition-delay: 0s; }
+.transition-stagger:hover > *:nth-child(2) { transition-delay: 0.05s; }
+.transition-stagger:hover > *:nth-child(3) { transition-delay: 0.1s; }
+.transition-stagger:hover > *:nth-child(4) { transition-delay: 0.15s; }
+.transition-stagger:hover > *:nth-child(5) { transition-delay: 0.2s; }
+.transition-stagger:hover > *:nth-child(6) { transition-delay: 0.25s; }
+
+/* ============================================================
+   MIKRO-INTERAKCIJAS
+   ============================================================ */
+
+/* === UZKLIKŠĶIS === */
+.click-feedback {
+  transition: transform var(--transition-fast) var(--ease-out);
+}
+
+.click-feedback:active {
+  transform: scale(0.97);
+}
+
+/* === HOVER LIFT === */
+.hover-lift {
+  transition:
+    transform var(--transition-base) var(--ease-out),
+    box-shadow var(--transition-base) var(--ease-in-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* === HOVER GLOW === */
+.hover-glow {
+  transition:
+    box-shadow var(--transition-base) var(--ease-in-out),
+    border-color var(--transition-base) var(--ease-in-out);
+}
+
+.hover-glow:hover {
+  box-shadow: var(--glow-teal-md);
+  border-color: var(--c-accent-teal);
+}
+
+/* === HOVER SCALE === */
+.hover-scale {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* === HOVER ROTATE === */
+.hover-rotate {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.hover-rotate:hover {
+  transform: rotate(-2deg);
+}
+
+/* === HOVER TILT === */
+.hover-tilt {
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.hover-tilt:hover {
+  transform: perspective(1000px) rotateX(3deg) rotateY(-3deg);
+}
+
+/* ============================================================
+   KARTOŠANAS / FILTRĒŠANAS PĀREJAS
+   ============================================================ */
+
+.filter-transition {
+  transition:
+    opacity var(--transition-base) var(--ease-in-out),
+    transform var(--transition-base) var(--ease-out),
+    filter var(--transition-base) var(--ease-in-out);
+}
+
+.filter-item--hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+.filter-item--visible {
+  opacity: 1;
+  transform: scale(1);
+  visibility: visible;
+}
+
+/* ============================================================
+   SKAŅAS / GAISMAS PĀREJAS
+   ============================================================ */
+
+.dim-transition {
+  transition: filter var(--transition-base) var(--ease-in-out),
+              opacity var(--transition-base) var(--ease-in-out);
+}
+
+.dim-transition:hover {
+  filter: brightness(1.1);
+}
+
+.brighten-transition {
+  transition: filter var(--transition-base) var(--ease-in-out);
+}
+
+.brighten-transition:hover {
+  filter: brightness(1.15) saturate(1.1);
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition-enter,
+  .page-transition-exit,
+  .content-reveal,
+  .content-reveal-stagger > *,
+  .scroll-fade,
+  .scroll-slide-up,
+  .scroll-slide-down,
+  .scroll-scale,
+  .target-highlight,
+  .fade-in,
+  .fade-out,
+  .slide-up-sm,
+  .slide-up-md,
+  .slide-down-sm,
+  .slide-down-md {
+    animation: none;
+  }
+
+  .transition-all,
+  .transition-colors,
+  .transition-transform,
+  .transition-opacity,
+  .transition-shadow,
+  .transition-filter,
+  .link-transition,
+  .btn-transition,
+  .card-transition,
+  .click-feedback,
+  .hover-lift,
+  .hover-glow,
+  .hover-scale,
+  .hover-rotate,
+  .hover-tilt,
+  .filter-transition,
+  .dim-transition,
+  .brighten-transition {
+    transition: none;
+  }
+
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .hover-rotate:hover,
+  .hover-tilt:hover {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+
+@media print {
+  * {
+    animation: none;
+    transition: none;
+  }
+}

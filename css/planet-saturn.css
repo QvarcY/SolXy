@@ -1,0 +1,301 @@
+/* ============================================================
+   SolXy · planet-saturn.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === SATURNA MAINĪGIE === */
+:root {
+  --saturn-color-primary: #e6c989;
+  --saturn-color-secondary: #b89a5e;
+  --saturn-color-accent: #f5e0a8;
+  --saturn-color-dark: #6e5a34;
+  --saturn-color-band-light: #f0d9a0;
+  --saturn-color-band-dark: #c4a86a;
+  --saturn-color-ring-primary: #d4b679;
+  --saturn-color-ring-secondary: #a88a4e;
+  --saturn-color-ring-dark: #6e5a34;
+  --saturn-color-glow: rgba(230, 201, 137, 0.5);
+  --saturn-color-atmosphere: rgba(245, 224, 168, 0.25);
+}
+
+/* === SATURNA VIRSMA === */
+.planet--saturn .planet__surface {
+  background:
+    radial-gradient(circle at 30% 25%, var(--saturn-color-accent), transparent 40%),
+    radial-gradient(circle at 70% 65%, var(--saturn-color-primary), transparent 50%),
+    radial-gradient(circle at 45% 85%, var(--saturn-color-secondary), transparent 40%),
+    linear-gradient(135deg, var(--saturn-color-primary), var(--saturn-color-secondary));
+}
+
+/* === SATURNA JOSLAS (BANDS) === */
+.planet--saturn .planet__texture {
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--saturn-color-band-light) 0%,
+    var(--saturn-color-band-light) 8%,
+    var(--saturn-color-band-dark) 8%,
+    var(--saturn-color-band-dark) 12%,
+    var(--saturn-color-band-light) 12%,
+    var(--saturn-color-band-light) 22%,
+    var(--saturn-color-band-dark) 22%,
+    var(--saturn-color-band-dark) 26%,
+    var(--saturn-color-primary) 26%,
+    var(--saturn-color-primary) 34%,
+    var(--saturn-color-band-dark) 34%,
+    var(--saturn-color-band-dark) 38%,
+    var(--saturn-color-band-light) 38%,
+    var(--saturn-color-band-light) 48%,
+    var(--saturn-color-primary) 48%,
+    var(--saturn-color-primary) 56%,
+    var(--saturn-color-band-dark) 56%,
+    var(--saturn-color-band-dark) 60%,
+    var(--saturn-color-band-light) 60%,
+    var(--saturn-color-band-light) 70%,
+    var(--saturn-color-band-dark) 70%,
+    var(--saturn-color-band-dark) 74%,
+    var(--saturn-color-primary) 74%,
+    var(--saturn-color-primary) 82%,
+    var(--saturn-color-band-light) 82%,
+    var(--saturn-color-band-light) 90%,
+    var(--saturn-color-band-dark) 90%,
+    var(--saturn-color-band-dark) 94%,
+    var(--saturn-color-band-light) 94%,
+    var(--saturn-color-band-light) 100%
+  );
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* === SATURNA ATMOSFĒRA === */
+.planet--saturn .planet__atmosphere {
+  box-shadow:
+    0 0 20px var(--saturn-color-glow),
+    0 0 40px rgba(245, 224, 168, 0.2),
+    inset 0 0 20px rgba(245, 224, 168, 0.25);
+}
+
+/* === SATURNA GLOW === */
+.planet--saturn {
+  box-shadow: 0 0 30px var(--saturn-color-glow);
+}
+
+.planet--saturn:hover {
+  box-shadow: 0 0 50px var(--saturn-color-glow),
+              0 0 100px rgba(245, 224, 168, 0.35);
+}
+
+/* === SATURNA GREDZENI === */
+.planet--saturn .planet__rings {
+  width: 220%;
+  height: 220%;
+  background:
+    radial-gradient(
+      circle,
+      transparent 0%,
+      transparent 38%,
+      rgba(110, 90, 52, 0.3) 38%,
+      rgba(110, 90, 52, 0.4) 40%,
+      transparent 41%,
+      transparent 44%,
+      var(--saturn-color-ring-primary) 44%,
+      var(--saturn-color-ring-secondary) 46%,
+      var(--saturn-color-ring-primary) 48%,
+      rgba(110, 90, 52, 0.5) 50%,
+      transparent 51%,
+      transparent 54%,
+      var(--saturn-color-ring-secondary) 54%,
+      var(--saturn-color-ring-primary) 56%,
+      rgba(110, 90, 52, 0.4) 58%,
+      transparent 59%,
+      transparent 61%,
+      var(--saturn-color-ring-primary) 61%,
+      rgba(168, 138, 78, 0.5) 63%,
+      transparent 64%,
+      transparent 66%,
+      rgba(110, 90, 52, 0.3) 66%,
+      transparent 68%
+    );
+  box-shadow:
+    0 0 20px var(--saturn-color-glow),
+    0 0 40px rgba(230, 201, 137, 0.3);
+  opacity: 0.95;
+  animation: saturn-rings-glow 8s ease-in-out infinite;
+}
+
+/* === SATURNA GREDZENU MIRGOŠANA === */
+@keyframes saturn-rings-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.15);
+  }
+}
+
+/* === SATURNA GREDZENU ĒNA === */
+.planet--saturn .planet__rings::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 45%,
+    rgba(0, 0, 0, 0.4) 55%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* === SATURNA TITĀNA PAVADONIS === */
+.planet--saturn .planet__moons::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--titan-primary);
+  box-shadow: 0 0 4px var(--titan-glow);
+  top: -38px;
+  left: 50%;
+  animation: saturn-moon-orbit 20s linear infinite;
+}
+
+@keyframes saturn-moon-orbit {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(38px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(38px) rotate(-360deg);
+  }
+}
+
+/* === SATURNA SEŠSTŪRAIS POLS (Hexagon) === */
+.planet--saturn .planet__surface::before {
+  content: "";
+  position: absolute;
+  top: -8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 20%;
+  background: radial-gradient(ellipse, var(--saturn-color-dark), transparent 70%);
+  filter: blur(3px);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: saturn-hexagon 30s linear infinite;
+}
+
+@keyframes saturn-hexagon {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+/* === SATURNA LAPA === */
+.planet-page--saturn {
+  --planet-page-accent: var(--saturn-color-accent);
+  --planet-page-primary: var(--saturn-color-primary);
+  --planet-page-glow: var(--saturn-color-glow);
+}
+
+/* === SATURNA HERO === */
+.planet-page--saturn .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--saturn-color-glow), transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(230, 201, 137, 0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === SATURNA STATISTIKAS KARTĪTES === */
+.planet-page--saturn .stat-card {
+  border-color: rgba(245, 224, 168, 0.2);
+}
+
+.planet-page--saturn .stat-card:hover {
+  border-color: var(--saturn-color-accent);
+  box-shadow: 0 0 20px var(--saturn-color-glow);
+}
+
+.planet-page--saturn .stat-card__value {
+  color: var(--saturn-color-accent);
+  text-shadow: 0 0 10px var(--saturn-color-glow);
+}
+
+/* === SATURNA FAKTU KARTĪTES === */
+.planet-page--saturn .fact-card {
+  border-color: rgba(245, 224, 168, 0.2);
+}
+
+.planet-page--saturn .fact-card__number {
+  color: var(--saturn-color-accent);
+}
+
+.planet-page--saturn .fact-card:hover {
+  border-color: var(--saturn-color-accent);
+}
+
+/* === SATURNA ORBĪTAS IZCELŠANA === */
+.planet-page--saturn .planet-page__orbit {
+  border-color: var(--saturn-color-accent);
+  box-shadow: 0 0 20px var(--saturn-color-glow);
+}
+
+/* === SATURNA KRĀSU AKCENTI === */
+.planet-page--saturn .eyebrow {
+  color: var(--saturn-color-accent);
+  border-color: rgba(245, 224, 168, 0.3);
+  background: rgba(245, 224, 168, 0.1);
+}
+
+.planet-page--saturn .eyebrow::before {
+  background: var(--saturn-color-accent);
+  box-shadow: 0 0 10px var(--saturn-color-accent);
+}
+
+/* === SATURNA NAVIGĀCIJA === */
+.planet-page--saturn .planet-nav__link {
+  border-color: rgba(245, 224, 168, 0.2);
+}
+
+.planet-page--saturn .planet-nav__link:hover {
+  border-color: var(--saturn-color-accent);
+  color: var(--saturn-color-accent);
+  box-shadow: 0 0 20px var(--saturn-color-glow);
+}
+
+/* === SATURNA GRADIENTA TEKSTS === */
+.planet-page--saturn .heading--planet {
+  background: linear-gradient(135deg, var(--saturn-color-accent), var(--saturn-color-primary), var(--saturn-color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--saturn .planet__rings,
+  .planet--saturn .planet__moons::before,
+  .planet--saturn .planet__surface::before {
+    animation: none;
+  }
+}
+
+/* === RESPONSĪVAIS — GREDZENI === */
+@media (max-width: 767px) {
+  .planet--saturn .planet__rings {
+    width: 200%;
+    height: 200%;
+  }
+}

@@ -1,0 +1,213 @@
+/* ============================================================
+   SolXy · planet-mars.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === MARSA MAINĪGIE === */
+:root {
+  --mars-color-primary: #d1603d;
+  --mars-color-secondary: #a13f22;
+  --mars-color-accent: #f08d68;
+  --mars-color-dark: #6b2411;
+  --mars-color-ice: #f5e8d8;
+  --mars-color-glow: rgba(209, 96, 61, 0.5);
+  --mars-color-atmosphere: rgba(240, 141, 104, 0.2);
+}
+
+/* === MARSA VIRSMA === */
+.planet--mars .planet__surface {
+  background:
+    radial-gradient(circle at 30% 25%, var(--mars-color-accent), transparent 40%),
+    radial-gradient(circle at 70% 65%, var(--mars-color-primary), transparent 50%),
+    radial-gradient(circle at 45% 85%, var(--mars-color-secondary), transparent 40%),
+    radial-gradient(circle at 20% 55%, var(--mars-color-dark), transparent 35%),
+    linear-gradient(135deg, var(--mars-color-primary), var(--mars-color-secondary));
+}
+
+/* === MARSA VIRSMAS STRUKTŪRA === */
+.planet--mars .planet__texture {
+  background-image:
+    /* Tumšie apgabali (Syrtis Major) */
+    radial-gradient(ellipse 20% 15% at 35% 40%, var(--mars-color-dark) 40%, transparent 65%),
+    radial-gradient(ellipse 15% 12% at 65% 55%, var(--mars-color-dark) 40%, transparent 65%),
+    radial-gradient(ellipse 12% 10% at 55% 25%, rgba(107, 36, 17, 0.7) 40%, transparent 65%),
+    /* Gaišie apgabali */
+    radial-gradient(ellipse 18% 14% at 20% 30%, rgba(240, 141, 104, 0.5) 40%, transparent 65%),
+    radial-gradient(ellipse 22% 16% at 75% 35%, rgba(240, 141, 104, 0.4) 40%, transparent 65%),
+    radial-gradient(ellipse 16% 12% at 50% 75%, rgba(240, 141, 104, 0.45) 40%, transparent 65%),
+    /* Krāteri */
+    radial-gradient(circle at 45% 50%, rgba(107, 36, 17, 0.6) 2%, transparent 4%),
+    radial-gradient(circle at 60% 40%, rgba(107, 36, 17, 0.5) 2%, transparent 4%),
+    radial-gradient(circle at 30% 65%, rgba(107, 36, 17, 0.5) 1.5%, transparent 3%),
+    radial-gradient(circle at 75% 70%, rgba(107, 36, 17, 0.4) 2%, transparent 4%);
+  opacity: 0.85;
+}
+
+/* === MARSA POLĀRIE LEDĀJI === */
+.planet--mars .planet__surface::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(ellipse 35% 10% at 50% 4%, var(--mars-color-ice), transparent 70%),
+    radial-gradient(ellipse 30% 8% at 50% 96%, var(--mars-color-ice), transparent 70%);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* === MARSA ATMOSFĒRA === */
+.planet--mars .planet__atmosphere {
+  box-shadow:
+    0 0 15px var(--mars-color-glow),
+    0 0 30px rgba(240, 141, 104, 0.2),
+    inset 0 0 15px rgba(240, 141, 104, 0.25);
+}
+
+/* === MARSA GLOW === */
+.planet--mars {
+  box-shadow: 0 0 25px var(--mars-color-glow);
+}
+
+.planet--mars:hover {
+  box-shadow: 0 0 40px var(--mars-color-glow),
+              0 0 80px rgba(240, 141, 104, 0.3);
+}
+
+/* === MARSA PAVADOŅI — FOBOSS UN DEIMOSS === */
+.planet--mars .planet__moons::before,
+.planet--mars .planet__moons::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: var(--mars-color-dark);
+  box-shadow: 0 0 4px rgba(107, 36, 17, 0.6);
+}
+
+.planet--mars .planet__moons::before {
+  width: 3px;
+  height: 3px;
+  top: -18px;
+  left: 50%;
+  animation: mars-moon-phobos 4s linear infinite;
+}
+
+.planet--mars .planet__moons::after {
+  width: 2px;
+  height: 2px;
+  top: -22px;
+  left: 50%;
+  animation: mars-moon-deimos 6s linear infinite reverse;
+}
+
+@keyframes mars-moon-phobos {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(18px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(18px) rotate(-360deg);
+  }
+}
+
+@keyframes mars-moon-deimos {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(22px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(22px) rotate(-360deg);
+  }
+}
+
+/* === MARSA LAPA === */
+.planet-page--mars {
+  --planet-page-accent: var(--mars-color-accent);
+  --planet-page-primary: var(--mars-color-primary);
+  --planet-page-glow: var(--mars-color-glow);
+}
+
+/* === MARSA HERO === */
+.planet-page--mars .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 35% 35%, var(--mars-color-glow), transparent 60%),
+    radial-gradient(ellipse at 65% 65%, rgba(107, 36, 17, 0.2), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === MARSA STATISTIKAS KARTĪTES === */
+.planet-page--mars .stat-card {
+  border-color: rgba(240, 141, 104, 0.2);
+}
+
+.planet-page--mars .stat-card:hover {
+  border-color: var(--mars-color-accent);
+  box-shadow: 0 0 20px var(--mars-color-glow);
+}
+
+.planet-page--mars .stat-card__value {
+  color: var(--mars-color-accent);
+  text-shadow: 0 0 10px var(--mars-color-glow);
+}
+
+/* === MARSA FAKTU KARTĪTES === */
+.planet-page--mars .fact-card {
+  border-color: rgba(240, 141, 104, 0.2);
+}
+
+.planet-page--mars .fact-card__number {
+  color: var(--mars-color-accent);
+}
+
+.planet-page--mars .fact-card:hover {
+  border-color: var(--mars-color-accent);
+}
+
+/* === MARSA ORBĪTAS IZCELŠANA === */
+.planet-page--mars .planet-page__orbit {
+  border-color: var(--mars-color-accent);
+  box-shadow: 0 0 20px var(--mars-color-glow);
+}
+
+/* === MARSA KRĀSU AKCENTI === */
+.planet-page--mars .eyebrow {
+  color: var(--mars-color-accent);
+  border-color: rgba(240, 141, 104, 0.3);
+  background: rgba(240, 141, 104, 0.1);
+}
+
+.planet-page--mars .eyebrow::before {
+  background: var(--mars-color-accent);
+  box-shadow: 0 0 10px var(--mars-color-accent);
+}
+
+/* === MARSA NAVIGĀCIJA === */
+.planet-page--mars .planet-nav__link {
+  border-color: rgba(240, 141, 104, 0.2);
+}
+
+.planet-page--mars .planet-nav__link:hover {
+  border-color: var(--mars-color-accent);
+  color: var(--mars-color-accent);
+  box-shadow: 0 0 20px var(--mars-color-glow);
+}
+
+/* === MARSA GRADIENTA TEKSTS === */
+.planet-page--mars .heading--planet {
+  background: linear-gradient(135deg, var(--mars-color-accent), var(--mars-color-primary), var(--mars-color-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--mars .planet__moons::before,
+  .planet--mars .planet__moons::after {
+    animation: none;
+  }
+}

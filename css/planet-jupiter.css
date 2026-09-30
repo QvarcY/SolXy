@@ -1,0 +1,258 @@
+/* ============================================================
+   SolXy · planet-jupiter.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === JUPITERA MAINĪGIE === */
+:root {
+  --jupiter-color-primary: #d4a373;
+  --jupiter-color-secondary: #a87e56;
+  --jupiter-color-accent: #f0c896;
+  --jupiter-color-dark: #6b4a2e;
+  --jupiter-color-storm: #c1502e;
+  --jupiter-color-band-light: #e8c496;
+  --jupiter-color-band-dark: #8a6444;
+  --jupiter-color-glow: rgba(212, 163, 115, 0.5);
+  --jupiter-color-atmosphere: rgba(240, 200, 150, 0.25);
+}
+
+/* === JUPITERA VIRSMA === */
+.planet--jupiter .planet__surface {
+  background:
+    radial-gradient(circle at 30% 25%, var(--jupiter-color-accent), transparent 40%),
+    radial-gradient(circle at 70% 65%, var(--jupiter-color-primary), transparent 50%),
+    radial-gradient(circle at 45% 85%, var(--jupiter-color-secondary), transparent 40%),
+    linear-gradient(135deg, var(--jupiter-color-primary), var(--jupiter-color-secondary));
+}
+
+/* === JUPITERA JOSLAS (BANDS) === */
+.planet--jupiter .planet__texture {
+  background-image: repeating-linear-gradient(
+    180deg,
+    var(--jupiter-color-band-light) 0%,
+    var(--jupiter-color-band-light) 6%,
+    var(--jupiter-color-band-dark) 6%,
+    var(--jupiter-color-band-dark) 10%,
+    var(--jupiter-color-band-light) 10%,
+    var(--jupiter-color-band-light) 16%,
+    var(--jupiter-color-primary) 16%,
+    var(--jupiter-color-primary) 20%,
+    var(--jupiter-color-band-dark) 20%,
+    var(--jupiter-color-band-dark) 25%,
+    var(--jupiter-color-band-light) 25%,
+    var(--jupiter-color-band-light) 32%,
+    var(--jupiter-color-band-dark) 32%,
+    var(--jupiter-color-band-dark) 37%,
+    var(--jupiter-color-primary) 37%,
+    var(--jupiter-color-primary) 44%,
+    var(--jupiter-color-band-light) 44%,
+    var(--jupiter-color-band-light) 50%,
+    var(--jupiter-color-band-dark) 50%,
+    var(--jupiter-color-band-dark) 56%,
+    var(--jupiter-color-primary) 56%,
+    var(--jupiter-color-primary) 62%,
+    var(--jupiter-color-band-light) 62%,
+    var(--jupiter-color-band-light) 68%,
+    var(--jupiter-color-band-dark) 68%,
+    var(--jupiter-color-band-dark) 74%,
+    var(--jupiter-color-primary) 74%,
+    var(--jupiter-color-primary) 80%,
+    var(--jupiter-color-band-light) 80%,
+    var(--jupiter-color-band-light) 86%,
+    var(--jupiter-color-band-dark) 86%,
+    var(--jupiter-color-band-dark) 92%,
+    var(--jupiter-color-band-light) 92%,
+    var(--jupiter-color-band-light) 100%
+  );
+  opacity: 0.7;
+  mix-blend-mode: overlay;
+}
+
+/* === JUPITERA LIELĀ SARKANĀ PLANKUMA === */
+.planet--jupiter .planet__surface::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  width: 30%;
+  height: 20%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--jupiter-color-storm), rgba(193, 80, 46, 0.6) 60%, transparent 80%);
+  filter: blur(1px);
+  animation: jupiter-storm-rotate 30s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes jupiter-storm-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === JUPITERA GRAUDU STRUKTŪRA === */
+.planet--jupiter .planet__surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(ellipse at 25% 20%, rgba(255, 255, 255, 0.15), transparent 30%),
+    radial-gradient(ellipse at 70% 70%, rgba(255, 255, 255, 0.1), transparent 30%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* === JUPITERA ATMOSFĒRA === */
+.planet--jupiter .planet__atmosphere {
+  box-shadow:
+    0 0 20px var(--jupiter-color-glow),
+    0 0 40px rgba(240, 200, 150, 0.25),
+    inset 0 0 20px rgba(240, 200, 150, 0.3);
+}
+
+/* === JUPITERA GLOW === */
+.planet--jupiter {
+  box-shadow: 0 0 30px var(--jupiter-color-glow);
+}
+
+.planet--jupiter:hover {
+  box-shadow: 0 0 50px var(--jupiter-color-glow),
+              0 0 100px rgba(240, 200, 150, 0.4);
+}
+
+/* === JUPITERA GALILEJA PAVADOŅI === */
+.planet--jupiter .planet__moons::before,
+.planet--jupiter .planet__moons::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* Io (dzeltenīgs) */
+.planet--jupiter .planet__moons::before {
+  width: 3px;
+  height: 3px;
+  background: var(--io-primary);
+  box-shadow: 0 0 4px var(--io-glow);
+  top: -28px;
+  left: 50%;
+  animation: jupiter-moon-orbit 12s linear infinite;
+}
+
+/* Eiropa (balts) */
+.planet--jupiter .planet__moons::after {
+  width: 3px;
+  height: 3px;
+  background: var(--europa-primary);
+  box-shadow: 0 0 4px var(--europa-glow);
+  top: -32px;
+  left: 50%;
+  animation: jupiter-moon-orbit 16s linear infinite reverse;
+}
+
+@keyframes jupiter-moon-orbit {
+  from {
+    transform: translateX(-50%) rotate(0deg) translateX(28px) rotate(0deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) translateX(28px) rotate(-360deg);
+  }
+}
+
+/* === JUPITERA LAPA === */
+.planet-page--jupiter {
+  --planet-page-accent: var(--jupiter-color-accent);
+  --planet-page-primary: var(--jupiter-color-primary);
+  --planet-page-glow: var(--jupiter-color-glow);
+}
+
+/* === JUPITERA HERO === */
+.planet-page--jupiter .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--jupiter-color-glow), transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(193, 80, 46, 0.15), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* === JUPITERA STATISTIKAS KARTĪTES === */
+.planet-page--jupiter .stat-card {
+  border-color: rgba(240, 200, 150, 0.2);
+}
+
+.planet-page--jupiter .stat-card:hover {
+  border-color: var(--jupiter-color-accent);
+  box-shadow: 0 0 20px var(--jupiter-color-glow);
+}
+
+.planet-page--jupiter .stat-card__value {
+  color: var(--jupiter-color-accent);
+  text-shadow: 0 0 10px var(--jupiter-color-glow);
+}
+
+/* === JUPITERA FAKTU KARTĪTES === */
+.planet-page--jupiter .fact-card {
+  border-color: rgba(240, 200, 150, 0.2);
+}
+
+.planet-page--jupiter .fact-card__number {
+  color: var(--jupiter-color-accent);
+}
+
+.planet-page--jupiter .fact-card:hover {
+  border-color: var(--jupiter-color-accent);
+}
+
+/* === JUPITERA ORBĪTAS IZCELŠANA === */
+.planet-page--jupiter .planet-page__orbit {
+  border-color: var(--jupiter-color-accent);
+  box-shadow: 0 0 20px var(--jupiter-color-glow);
+}
+
+/* === JUPITERA KRĀSU AKCENTI === */
+.planet-page--jupiter .eyebrow {
+  color: var(--jupiter-color-accent);
+  border-color: rgba(240, 200, 150, 0.3);
+  background: rgba(240, 200, 150, 0.1);
+}
+
+.planet-page--jupiter .eyebrow::before {
+  background: var(--jupiter-color-accent);
+  box-shadow: 0 0 10px var(--jupiter-color-accent);
+}
+
+/* === JUPITERA NAVIGĀCIJA === */
+.planet-page--jupiter .planet-nav__link {
+  border-color: rgba(240, 200, 150, 0.2);
+}
+
+.planet-page--jupiter .planet-nav__link:hover {
+  border-color: var(--jupiter-color-accent);
+  color: var(--jupiter-color-accent);
+  box-shadow: 0 0 20px var(--jupiter-color-glow);
+}
+
+/* === JUPITERA GRADIENTA TEKSTS === */
+.planet-page--jupiter .heading--planet {
+  background: linear-gradient(135deg, var(--jupiter-color-accent), var(--jupiter-color-primary), var(--jupiter-color-storm));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* === SAMAZINĀTA KUSTĪBA === */
+@media (prefers-reduced-motion: reduce) {
+  .planet--jupiter .planet__surface::after,
+  .planet--jupiter .planet__moons::before,
+  .planet--jupiter .planet__moons::after {
+    animation: none;
+  }
+}

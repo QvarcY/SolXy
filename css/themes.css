@@ -1,0 +1,511 @@
+/* ============================================================
+   SolXy · themes.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   TĒMU PĀRSLĒGS
+   ============================================================ */
+
+.theme-switch {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: calc(var(--space-lg) + 60px);
+  display: flex;
+  gap: var(--space-2xs);
+  padding: var(--space-xs);
+  border-radius: var(--radius-full);
+  background: var(--c-bg-glass-strong);
+  border: 1px solid var(--c-border-default);
+  backdrop-filter: blur(var(--blur-lg));
+  -webkit-backdrop-filter: blur(var(--blur-lg));
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-sticky);
+}
+
+.theme-switch__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}
+
+.theme-switch__label {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--c-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  user-select: none;
+}
+
+.theme-switch__label:hover {
+  color: var(--c-accent-teal);
+  background: var(--c-accent-teal-glass);
+}
+
+.theme-switch__label:focus-within {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ============================================================
+   TUMŠĀ TĒMA (NOklusējusi)
+   ============================================================ */
+
+[data-theme="dark"],
+:root:not([data-theme]) {
+  color-scheme: dark;
+}
+
+/* ============================================================
+   GAIŠĀ TĒMA
+   ============================================================ */
+
+[data-theme="light"],
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --c-bg-primary: #f8fafc;
+  --c-bg-secondary: #f1f5f9;
+  --c-bg-tertiary: #e2e8f0;
+  --c-bg-elevated: #ffffff;
+  --c-bg-overlay: rgba(248, 250, 252, 0.9);
+  --c-bg-glass: rgba(255, 255, 255, 0.6);
+  --c-bg-glass-light: rgba(255, 255, 255, 0.4);
+  --c-bg-glass-strong: rgba(255, 255, 255, 0.85);
+
+  --c-text-primary: #0f172a;
+  --c-text-secondary: #475569;
+  --c-text-tertiary: #94a3b8;
+  --c-text-muted: #cbd5e1;
+  --c-text-inverse: #f8fafc;
+
+  --c-accent-teal: #0d9488;
+  --c-accent-teal-dark: #0f766e;
+  --c-accent-teal-light: #14b8a6;
+  --c-accent-teal-glow: rgba(13, 148, 136, 0.3);
+  --c-accent-teal-glass: rgba(13, 148, 136, 0.1);
+
+  --c-accent-violet: #7c3aed;
+  --c-accent-violet-dark: #6d28d9;
+  --c-accent-violet-light: #8b5cf6;
+  --c-accent-violet-glow: rgba(124, 58, 237, 0.3);
+  --c-accent-violet-glass: rgba(124, 58, 237, 0.1);
+
+  --c-accent-pink: #db2777;
+  --c-accent-pink-dark: #be185d;
+  --c-accent-pink-light: #ec4899;
+  --c-accent-pink-glow: rgba(219, 39, 119, 0.3);
+  --c-accent-pink-glass: rgba(219, 39, 119, 0.1);
+
+  --c-border-subtle: rgba(15, 23, 42, 0.06);
+  --c-border-default: rgba(15, 23, 42, 0.12);
+  --c-border-strong: rgba(15, 23, 42, 0.2);
+  --c-border-accent: rgba(13, 148, 136, 0.4);
+}
+
+/* === GAIŠĀS TĒMAS PAPILDU PIELĀGOJUMI === */
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse at top, rgba(13, 148, 136, 0.05), transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(124, 58, 237, 0.05), transparent 50%),
+    linear-gradient(180deg, var(--c-bg-primary), var(--c-bg-secondary) 50%, var(--c-bg-primary));
+}
+
+[data-theme="light"] .stars,
+[data-theme="light"] .nebula {
+  opacity: 0.3;
+}
+
+[data-theme="light"] .header,
+[data-theme="light"] .footer {
+  background: var(--c-bg-glass-strong);
+  border-color: var(--c-border-subtle);
+}
+
+[data-theme="light"] .card,
+[data-theme="light"] .planet-card,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .fact-card,
+[data-theme="light"] .mission-card,
+[data-theme="light"] .exoplanet-card,
+[data-theme="light"] .moon-card,
+[data-theme="light"] .glossary-item,
+[data-theme="light"] .comparison-group {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--c-border-default);
+}
+
+/* ============================================================
+   AUGSTA KONTRASTA TĒMA
+   ============================================================ */
+
+[data-theme="contrast"],
+:root[data-theme="contrast"] {
+  color-scheme: dark;
+
+  --c-bg-primary: #000000;
+  --c-bg-secondary: #0a0a0a;
+  --c-bg-tertiary: #141414;
+  --c-bg-elevated: #1a1a1a;
+  --c-bg-overlay: rgba(0, 0, 0, 0.95);
+  --c-bg-glass: rgba(20, 20, 20, 0.85);
+  --c-bg-glass-light: rgba(20, 20, 20, 0.7);
+  --c-bg-glass-strong: rgba(10, 10, 10, 0.95);
+
+  --c-text-primary: #ffffff;
+  --c-text-secondary: #e0e0e0;
+  --c-text-tertiary: #b0b0b0;
+  --c-text-muted: #808080;
+  --c-text-inverse: #000000;
+
+  --c-accent-teal: #00ffd9;
+  --c-accent-teal-dark: #00ccaa;
+  --c-accent-teal-light: #66ffee;
+  --c-accent-teal-glow: rgba(0, 255, 217, 0.6);
+  --c-accent-teal-glass: rgba(0, 255, 217, 0.2);
+
+  --c-accent-violet: #bb99ff;
+  --c-accent-violet-dark: #9966ff;
+  --c-accent-violet-light: #ddbbff;
+  --c-accent-violet-glow: rgba(187, 153, 255, 0.6);
+  --c-accent-violet-glass: rgba(187, 153, 255, 0.2);
+
+  --c-accent-pink: #ff88cc;
+  --c-accent-pink-dark: #ff55aa;
+  --c-accent-pink-light: #ffbbee;
+  --c-accent-pink-glow: rgba(255, 136, 204, 0.6);
+  --c-accent-pink-glass: rgba(255, 136, 204, 0.2);
+
+  --c-border-subtle: rgba(255, 255, 255, 0.2);
+  --c-border-default: rgba(255, 255, 255, 0.35);
+  --c-border-strong: rgba(255, 255, 255, 0.55);
+  --c-border-accent: var(--c-accent-teal);
+
+  --focus-ring-width: 3px;
+}
+
+/* === AUGSTA KONTRASTA PAPILDU === */
+[data-theme="contrast"] .card,
+[data-theme="contrast"] .planet-card,
+[data-theme="contrast"] .stat-card,
+[data-theme="contrast"] .fact-card,
+[data-theme="contrast"] .mission-card,
+[data-theme="contrast"] .exoplanet-card,
+[data-theme="contrast"] .moon-card,
+[data-theme="contrast"] .glossary-item {
+  background: var(--c-bg-tertiary);
+  border: 2px solid var(--c-border-default);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+[data-theme="contrast"] .card:hover,
+[data-theme="contrast"] .planet-card:hover {
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 0 2px var(--c-accent-teal);
+}
+
+[data-theme="contrast"] .header,
+[data-theme="contrast"] .footer {
+  background: var(--c-bg-secondary);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-width: 2px;
+}
+
+[data-theme="contrast"] a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* ============================================================
+   SOLARIZED TUMŠĀ TĒMA
+   ============================================================ */
+
+[data-theme="solarized"],
+:root[data-theme="solarized"] {
+  color-scheme: dark;
+
+  --c-bg-primary: #002b36;
+  --c-bg-secondary: #073642;
+  --c-bg-tertiary: #0d4d5c;
+  --c-bg-elevated: #144a57;
+  --c-bg-overlay: rgba(0, 43, 54, 0.9);
+  --c-bg-glass: rgba(7, 54, 66, 0.7);
+  --c-bg-glass-light: rgba(7, 54, 66, 0.5);
+  --c-bg-glass-strong: rgba(7, 54, 66, 0.9);
+
+  --c-text-primary: #eee8d5;
+  --c-text-secondary: #93a1a1;
+  --c-text-tertiary: #657b83;
+  --c-text-muted: #586e75;
+  --c-text-inverse: #002b36;
+
+  --c-accent-teal: #2aa198;
+  --c-accent-teal-dark: #1f7a73;
+  --c-accent-teal-light: #4fc3b8;
+  --c-accent-teal-glow: rgba(42, 161, 152, 0.5);
+  --c-accent-teal-glass: rgba(42, 161, 152, 0.15);
+
+  --c-accent-violet: #6c71c4;
+  --c-accent-violet-dark: #4e52a8;
+  --c-accent-violet-light: #8b8fd8;
+  --c-accent-violet-glow: rgba(108, 113, 196, 0.5);
+  --c-accent-violet-glass: rgba(108, 113, 196, 0.15);
+
+  --c-accent-pink: #d33682;
+  --c-accent-pink-dark: #b02a6c;
+  --c-accent-pink-light: #e05fa0;
+  --c-accent-pink-glow: rgba(211, 54, 130, 0.5);
+  --c-accent-pink-glass: rgba(211, 54, 130, 0.15);
+
+  --c-accent-amber: #b58900;
+  --c-accent-blue: #268bd2;
+  --c-accent-green: #859900;
+  --c-accent-red: #dc322f;
+
+  --c-border-subtle: rgba(238, 232, 213, 0.1);
+  --c-border-default: rgba(238, 232, 213, 0.2);
+  --c-border-strong: rgba(238, 232, 213, 0.35);
+  --c-border-accent: rgba(42, 161, 152, 0.5);
+}
+
+/* ============================================================
+   DRACULA TĒMA
+   ============================================================ */
+
+[data-theme="dracula"],
+:root[data-theme="dracula"] {
+  color-scheme: dark;
+
+  --c-bg-primary: #282a36;
+  --c-bg-secondary: #21222c;
+  --c-bg-tertiary: #343746;
+  --c-bg-elevated: #3c3f58;
+  --c-bg-overlay: rgba(40, 42, 54, 0.9);
+  --c-bg-glass: rgba(52, 55, 70, 0.7);
+  --c-bg-glass-light: rgba(52, 55, 70, 0.5);
+  --c-bg-glass-strong: rgba(33, 34, 44, 0.95);
+
+  --c-text-primary: #f8f8f2;
+  --c-text-secondary: #bdbdd1;
+  --c-text-tertiary: #8285a3;
+  --c-text-muted: #6272a4;
+  --c-text-inverse: #282a36;
+
+  --c-accent-teal: #50fa7b;
+  --c-accent-teal-dark: #40c862;
+  --c-accent-teal-light: #8bffa8;
+  --c-accent-teal-glow: rgba(80, 250, 123, 0.5);
+  --c-accent-teal-glass: rgba(80, 250, 123, 0.15);
+
+  --c-accent-violet: #bd93f9;
+  --c-accent-violet-dark: #9d75d9;
+  --c-accent-violet-light: #d4b3fb;
+  --c-accent-violet-glow: rgba(189, 147, 249, 0.5);
+  --c-accent-violet-glass: rgba(189, 147, 249, 0.15);
+
+  --c-accent-pink: #ff79c6;
+  --c-accent-pink-dark: #e05fa8;
+  --c-accent-pink-light: #ff9dd6;
+  --c-accent-pink-glow: rgba(255, 121, 198, 0.5);
+  --c-accent-pink-glass: rgba(255, 121, 198, 0.15);
+
+  --c-accent-amber: #f1fa8c;
+  --c-accent-blue: #8be9fd;
+  --c-accent-green: #50fa7b;
+  --c-accent-red: #ff5555;
+
+  --c-border-subtle: rgba(248, 248, 242, 0.08);
+  --c-border-default: rgba(248, 248, 242, 0.15);
+  --c-border-strong: rgba(248, 248, 242, 0.3);
+  --c-border-accent: rgba(80, 250, 123, 0.4);
+}
+
+/* ============================================================
+   NORD TĒMA
+   ============================================================ */
+
+[data-theme="nord"],
+:root[data-theme="nord"] {
+  color-scheme: dark;
+
+  --c-bg-primary: #2e3440;
+  --c-bg-secondary: #3b4252;
+  --c-bg-tertiary: #434c5e;
+  --c-bg-elevated: #4c566a;
+  --c-bg-overlay: rgba(46, 52, 64, 0.9);
+  --c-bg-glass: rgba(59, 66, 82, 0.7);
+  --c-bg-glass-light: rgba(59, 66, 82, 0.5);
+  --c-bg-glass-strong: rgba(46, 52, 64, 0.95);
+
+  --c-text-primary: #eceff4;
+  --c-text-secondary: #d8dee9;
+  --c-text-tertiary: #a4b0c2;
+  --c-text-muted: #7b8a9e;
+  --c-text-inverse: #2e3440;
+
+  --c-accent-teal: #88c0d0;
+  --c-accent-teal-dark: #6da5b8;
+  --c-accent-teal-light: #a8d4e0;
+  --c-accent-teal-glow: rgba(136, 192, 208, 0.5);
+  --c-accent-teal-glass: rgba(136, 192, 208, 0.15);
+
+  --c-accent-violet: #b48ead;
+  --c-accent-violet-dark: #937096;
+  --c-accent-violet-light: #c8a6c2;
+  --c-accent-violet-glow: rgba(180, 142, 173, 0.5);
+  --c-accent-violet-glass: rgba(180, 142, 173, 0.15);
+
+  --c-accent-pink: #bf616a;
+  --c-accent-pink-dark: #a14d55;
+  --c-accent-pink-light: #d4848c;
+  --c-accent-pink-glow: rgba(191, 97, 106, 0.5);
+  --c-accent-pink-glass: rgba(191, 97, 106, 0.15);
+
+  --c-accent-amber: #ebcb8b;
+  --c-accent-blue: #81a1c1;
+  --c-accent-green: #a3be8c;
+  --c-accent-red: #bf616a;
+
+  --c-border-subtle: rgba(236, 239, 244, 0.08);
+  --c-border-default: rgba(236, 239, 244, 0.15);
+  --c-border-strong: rgba(236, 239, 244, 0.3);
+  --c-border-accent: rgba(136, 192, 208, 0.4);
+}
+
+/* ============================================================
+   AUTOMĀTISKĀ TĒMA (prefers-color-scheme)
+   ============================================================ */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]):not([data-theme="dark"]):not([data-theme="contrast"]):not([data-theme="solarized"]):not([data-theme="dracula"]):not([data-theme="nord"]) {
+    color-scheme: light;
+
+    --c-bg-primary: #f8fafc;
+    --c-bg-secondary: #f1f5f9;
+    --c-bg-tertiary: #e2e8f0;
+    --c-bg-elevated: #ffffff;
+    --c-bg-overlay: rgba(248, 250, 252, 0.9);
+    --c-bg-glass: rgba(255, 255, 255, 0.6);
+    --c-bg-glass-light: rgba(255, 255, 255, 0.4);
+    --c-bg-glass-strong: rgba(255, 255, 255, 0.85);
+
+    --c-text-primary: #0f172a;
+    --c-text-secondary: #475569;
+    --c-text-tertiary: #94a3b8;
+    --c-text-muted: #cbd5e1;
+    --c-text-inverse: #f8fafc;
+
+    --c-accent-teal: #0d9488;
+    --c-accent-teal-dark: #0f766e;
+    --c-accent-teal-light: #14b8a6;
+    --c-accent-teal-glow: rgba(13, 148, 136, 0.3);
+    --c-accent-teal-glass: rgba(13, 148, 136, 0.1);
+
+    --c-accent-violet: #7c3aed;
+    --c-accent-violet-dark: #6d28d9;
+    --c-accent-violet-light: #8b5cf6;
+    --c-accent-violet-glow: rgba(124, 58, 237, 0.3);
+    --c-accent-violet-glass: rgba(124, 58, 237, 0.1);
+
+    --c-accent-pink: #db2777;
+    --c-accent-pink-dark: #be185d;
+    --c-accent-pink-light: #ec4899;
+    --c-accent-pink-glow: rgba(219, 39, 119, 0.3);
+    --c-accent-pink-glass: rgba(219, 39, 119, 0.1);
+
+    --c-border-subtle: rgba(15, 23, 42, 0.06);
+    --c-border-default: rgba(15, 23, 42, 0.12);
+    --c-border-strong: rgba(15, 23, 42, 0.2);
+    --c-border-accent: rgba(13, 148, 136, 0.4);
+  }
+}
+
+/* ============================================================
+   PREFERS-CONTRAST: MORE
+   ============================================================ */
+
+@media (prefers-contrast: more) {
+  :root {
+    --c-text-primary: #ffffff;
+    --c-text-secondary: #d0d8e8;
+    --c-text-tertiary: #a0a8c8;
+    --c-border-subtle: rgba(232, 238, 252, 0.15);
+    --c-border-default: rgba(232, 238, 252, 0.3);
+    --c-border-strong: rgba(232, 238, 252, 0.5);
+    --focus-ring-width: 3px;
+  }
+}
+
+/* ============================================================
+   FORCED COLORS
+   ============================================================ */
+
+@media (forced-colors: active) {
+  * {
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  .card,
+  .planet-card,
+  .stat-card,
+  .fact-card,
+  .mission-card,
+  .exoplanet-card,
+  .moon-card,
+  .glossary-item {
+    border: 1px solid CanvasText;
+    background: Canvas;
+  }
+
+  .header,
+  .footer {
+    background: Canvas;
+    border-color: CanvasText;
+  }
+
+  a {
+    color: LinkText;
+  }
+
+  .btn {
+    border: 1px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+
+  .btn:hover,
+  .btn:focus-visible {
+    border: 2px solid Highlight;
+    color: Highlight;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .theme-switch {
+    bottom: calc(var(--space-md) + 50px);
+    right: var(--space-md);
+  }
+
+  .theme-switch__label {
+    width: 32px;
+    height: 32px;
+    font-size: var(--fs-xs);
+  }
+}

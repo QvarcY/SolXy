@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Par SolXy — tīra HTML un CSS Saules sistēmas izpētes projektu.">
+  <meta name="author" content="QvarcY">
+  <meta name="theme-color" content="#03050d">
+  <meta name="color-scheme" content="dark light">
+  <title>Par projektu · SolXy</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/stars.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/transitions.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+  <link rel="stylesheet" href="css/print.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Pāriet uz saturu</a>
+  <div class="stars" aria-hidden="true">
+    <div class="stars__layer stars__layer--far"></div>
+    <div class="stars__layer stars__layer--mid"></div>
+    <div class="stars__layer stars__layer--near"></div>
+  </div>
+
+  <header class="header">
+    <div class="page__container">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo" aria-label="SolXy sākumlapa">
+          <span class="header__logo-mark" aria-hidden="true"></span>
+          <span class="header__logo-text">
+            <span class="header__logo-title">SolXy</span>
+            <span class="header__logo-subtitle">Saules sistēma</span>
+          </span>
+        </a>
+        <nav class="header__nav" aria-label="Galvenā navigācija">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a href="index.html" class="header__nav-link">Sākums</a></li>
+            <li class="header__nav-item"><a href="index.html#planets" class="header__nav-link">Planētas</a></li>
+            <li class="header__nav-item"><a href="index.html#moons" class="header__nav-link">Pavadoņi</a></li>
+            <li class="header__nav-item"><a href="index.html#data" class="header__nav-link">Dati</a></li>
+            <li class="header__nav-item"><a href="about.html" class="header__nav-link header__nav-link--active" aria-current="page">Par projektu</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="page__main">
+    <section class="page-title-bar" aria-labelledby="page-title">
+      <div class="page__container">
+        <div class="page-title-bar__inner">
+          <nav aria-label="Atrašanās vieta">
+            <ol class="breadcrumbs" style="list-style: none; padding-left: 0;">
+              <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Sākums</a></li>
+              <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Par projektu</span></li>
+            </ol>
+          </nav>
+          <h1 class="page-title-bar__title" id="page-title">Par projektu</h1>
+          <p class="page-title-bar__subtitle">SolXy — tīra HTML un CSS Saules sistēmas izpētes platforma</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-layout" aria-labelledby="about-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header section-header--left">
+          <span class="section-header__eyebrow">SolXy</span>
+          <h2 class="section-header__title" id="about-title">Kas ir SolXy?</h2>
+          <p class="section-header__subtitle">Eksperiments par to, cik tālu var aiziet ar semantisku HTML un modernu CSS bez JavaScript.</p>
+        </header>
+        <div class="info-block">
+          <p class="info-block__text"><strong>SolXy</strong> ir statiska Saules sistēmas izpētes vietne ar animētu sākumlapu un pakāpeniski publicētu saturu par planētām, pavadoņiem un astronomijas datiem.</p>
+          <p class="info-block__text">Sākotnējā publiskā versija veido projekta čaulu: navigāciju, dizaina sistēmu, animēto Saules sistēmas skatu, dokumentāciju un sagatavotus maršrutus nākamajām sadaļām.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-layout section-layout--alt" aria-labelledby="tech-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Tehnoloģijas</span>
+          <h2 class="section-header__title" id="tech-title">Bez JavaScript runtime</h2>
+          <p class="section-header__subtitle">HTML5, CSS Grid, Flexbox, Custom Properties, gradients, transitions un keyframe animācijas.</p>
+        </header>
+        <div class="grid-layout grid-layout--3">
+          <article class="card"><div class="card__body"><h3 class="card__title">HTML5</h3><p class="card__text">Semantisks marķējums, piekļūstamības atribūti un daudzlapu struktūra.</p></div></article>
+          <article class="card"><div class="card__body"><h3 class="card__title">Tīrs CSS</h3><p class="card__text">Planētas, orbītas, zvaigznes un interaktīvie stāvokļi bez JavaScript.</p></div></article>
+          <article class="card"><div class="card__body"><h3 class="card__title">Pakāpeniska attīstība</h3><p class="card__text">Satura sadaļas tiek pievienotas pa vienam loģiskam projekta komponentam.</p></div></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page__container">
+      <div class="footer__bottom" style="margin-top: 0;">
+        <p class="footer__copyright">© 2026 QvarcY · SolXy · MIT</p>
+        <div class="footer__badges">
+          <span class="footer__badge footer__badge--teal">HTML</span>
+          <span class="footer__badge footer__badge--violet">CSS</span>
+          <span class="footer__badge footer__badge--pink">0 JS</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

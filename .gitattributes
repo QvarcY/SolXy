@@ -1,0 +1,58 @@
+# ============================================================
+# SolXy · .gitattributes
+# Autors: QvarcY (https://github.com/QvarcY)
+# Licence: MIT
+# ============================================================
+
+# === AUTOMĀTISKĀ NORMĀLIZĀCIJA ===
+* text=auto
+
+# === TEKSTA FAILI — LF ===
+*.html    text eol=lf
+*.css     text eol=lf
+*.scss    text eol=lf
+*.sass    text eol=lf
+*.less    text eol=lf
+*.js      text eol=lf
+*.json    text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.md      text eol=lf
+*.txt     text eol=lf
+*.svg     text eol=lf
+
+# === KONFIGURĀCIJAS ===
+.gitignore        text eol=lf
+.gitattributes    text eol=lf
+.editorconfig     text eol=lf
+LICENSE           text eol=lf
+
+# === BINĀRIE FAILI ===
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.webp    binary
+*.avif    binary
+*.ico     binary
+*.pdf     binary
+*.woff    binary
+*.woff2   binary
+*.ttf     binary
+*.otf     binary
+*.eot     binary
+
+# === VALODU NOTEIKŠANA ===
+*.html linguist-language=HTML
+*.css  linguist-language=CSS
+*.md   linguist-documentation
+
+# === DIFF ===
+*.md      diff=markdown
+*.html    diff=html
+*.css     diff=css
+
+# === ARHĪVU IZSLĒGŠANA NO STATISTIKAS ===
+*.zip     -diff -merge -text
+*.tar     -diff -merge -text
+*.gz      -diff -merge -text

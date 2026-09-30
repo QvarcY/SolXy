@@ -1,0 +1,309 @@
+/* ============================================================
+   SolXy · stars.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   ZVAIGŽŅU FONS — 3 PARALLAX SLĀŅI
+   ============================================================ */
+
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-below);
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.stars__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  will-change: transform;
+}
+
+/* ============================================================
+   1. SLĀNIS — TĀLĀS ZVAIGZNES (mazas, blāvas)
+   ============================================================ */
+
+.stars__layer--far {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(232, 238, 252, 0.7), transparent 100%),
+    radial-gradient(1px 1px at 60px 70px, rgba(232, 238, 252, 0.6), transparent 100%),
+    radial-gradient(1px 1px at 100px 10px, rgba(232, 238, 252, 0.8), transparent 100%),
+    radial-gradient(1px 1px at 40px 90px, rgba(232, 238, 252, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 140px 50px, rgba(232, 238, 252, 0.7), transparent 100%),
+    radial-gradient(1px 1px at 180px 80px, rgba(232, 238, 252, 0.6), transparent 100%),
+    radial-gradient(1px 1px at 90px 140px, rgba(232, 238, 252, 0.65), transparent 100%),
+    radial-gradient(1px 1px at 160px 20px, rgba(232, 238, 252, 0.55), transparent 100%),
+    radial-gradient(1px 1px at 30px 160px, rgba(232, 238, 252, 0.6), transparent 100%),
+    radial-gradient(1px 1px at 120px 120px, rgba(232, 238, 252, 0.7), transparent 100%),
+    radial-gradient(1px 1px at 200px 60px, rgba(232, 238, 252, 0.5), transparent 100%),
+    radial-gradient(1px 1px at 70px 180px, rgba(232, 238, 252, 0.65), transparent 100%);
+  background-size: 220px 220px;
+  background-position: 0 0;
+  opacity: 0.7;
+  animation: stars-drift-far 200s linear infinite;
+}
+
+/* ============================================================
+   2. SLĀNIS — VIDĒJĀS ZVAIGZNES (krāsainas)
+   ============================================================ */
+
+.stars__layer--mid {
+  background-image:
+    radial-gradient(1.5px 1.5px at 50px 50px, rgba(255, 255, 255, 0.9), transparent 100%),
+    radial-gradient(1.5px 1.5px at 150px 100px, rgba(94, 234, 212, 0.9), transparent 100%),
+    radial-gradient(1.5px 1.5px at 250px 180px, rgba(255, 255, 255, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 100px 250px, rgba(167, 139, 250, 0.9), transparent 100%),
+    radial-gradient(1.5px 1.5px at 300px 80px, rgba(255, 255, 255, 0.8), transparent 100%),
+    radial-gradient(1.5px 1.5px at 30px 200px, rgba(244, 114, 182, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 350px 220px, rgba(255, 255, 255, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 180px 20px, rgba(94, 234, 212, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 280px 300px, rgba(255, 255, 255, 0.8), transparent 100%),
+    radial-gradient(1.5px 1.5px at 200px 150px, rgba(167, 139, 250, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 80px 320px, rgba(255, 255, 255, 0.85), transparent 100%),
+    radial-gradient(1.5px 1.5px at 320px 150px, rgba(94, 234, 212, 0.8), transparent 100%);
+  background-size: 380px 380px;
+  background-position: 0 0;
+  opacity: 0.85;
+  animation: stars-drift-mid 140s linear infinite;
+}
+
+/* ============================================================
+   3. SLĀNIS — TUVĀS ZVAIGZNES (lielas, spožas)
+   ============================================================ */
+
+.stars__layer--near {
+  background-image:
+    radial-gradient(2px 2px at 100px 80px, rgba(255, 255, 255, 1), transparent 100%),
+    radial-gradient(2px 2px at 300px 200px, rgba(94, 234, 212, 1), transparent 100%),
+    radial-gradient(2px 2px at 500px 100px, rgba(255, 255, 255, 0.95), transparent 100%),
+    radial-gradient(2px 2px at 200px 350px, rgba(167, 139, 250, 1), transparent 100%),
+    radial-gradient(2px 2px at 600px 300px, rgba(255, 255, 255, 0.9), transparent 100%),
+    radial-gradient(2px 2px at 400px 500px, rgba(244, 114, 182, 1), transparent 100%),
+    radial-gradient(2px 2px at 700px 150px, rgba(255, 255, 255, 0.95), transparent 100%),
+    radial-gradient(2px 2px at 150px 550px, rgba(94, 234, 212, 1), transparent 100%),
+    radial-gradient(2px 2px at 550px 400px, rgba(255, 255, 255, 0.9), transparent 100%),
+    radial-gradient(2px 2px at 750px 450px, rgba(167, 139, 250, 1), transparent 100%);
+  background-size: 800px 800px;
+  background-position: 0 0;
+  opacity: 0.95;
+  animation: stars-drift-near 80s linear infinite;
+}
+
+/* === ZVAIGŽŅU MIRGOŠANA === */
+.stars__layer--near::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(3px 3px at 200px 150px, rgba(255, 255, 255, 1), transparent 100%),
+    radial-gradient(3px 3px at 600px 400px, rgba(94, 234, 212, 1), transparent 100%),
+    radial-gradient(3px 3px at 400px 600px, rgba(255, 255, 255, 0.95), transparent 100%),
+    radial-gradient(3px 3px at 700px 250px, rgba(167, 139, 250, 1), transparent 100%);
+  background-size: 900px 900px;
+  animation: stars-twinkle 4s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+/* ============================================================
+   SPĪDĪGĀS ZVAIGZNES (atsevišķi elementi)
+   ============================================================ */
+
+.stars__sparkle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow:
+    0 0 8px var(--c-accent-teal),
+    0 0 16px var(--c-accent-teal),
+    0 0 24px var(--c-accent-teal);
+  animation: stars-sparkle 3s ease-in-out infinite;
+}
+
+.stars__sparkle--1 {
+  top: 15%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.stars__sparkle--2 {
+  top: 65%;
+  left: 75%;
+  background: var(--c-accent-violet);
+  box-shadow:
+    0 0 8px var(--c-accent-violet),
+    0 0 16px var(--c-accent-violet),
+    0 0 24px var(--c-accent-violet);
+  animation-delay: 1s;
+}
+
+.stars__sparkle--3 {
+  top: 40%;
+  left: 50%;
+  background: var(--c-accent-pink);
+  box-shadow:
+    0 0 8px var(--c-accent-pink),
+    0 0 16px var(--c-accent-pink),
+    0 0 24px var(--c-accent-pink);
+  animation-delay: 2s;
+}
+
+.stars__sparkle--4 {
+  top: 80%;
+  left: 15%;
+  animation-delay: 1.5s;
+}
+
+.stars__sparkle--5 {
+  top: 25%;
+  left: 85%;
+  animation-delay: 0.5s;
+}
+
+.stars__sparkle--6 {
+  top: 55%;
+  left: 35%;
+  background: var(--c-accent-violet);
+  box-shadow:
+    0 0 8px var(--c-accent-violet),
+    0 0 16px var(--c-accent-violet),
+    0 0 24px var(--c-accent-violet);
+  animation-delay: 2.5s;
+}
+
+/* ============================================================
+   ZVAIGŽŅU ANIMĀCIJAS
+   ============================================================ */
+
+@keyframes stars-drift-far {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-220px, -220px, 0); }
+}
+
+@keyframes stars-drift-mid {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-380px, -380px, 0); }
+}
+
+@keyframes stars-drift-near {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-800px, -800px, 0); }
+}
+
+@keyframes stars-twinkle {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+@keyframes stars-sparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+}
+
+/* ============================================================
+   NEBULAS (krāsainie mākoņi fonā)
+   ============================================================ */
+
+.nebula {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-below);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.nebula__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+.nebula__blob--1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(94, 234, 212, 0.4), transparent 70%);
+  animation: nebula-float 30s ease-in-out infinite;
+}
+
+.nebula__blob--2 {
+  bottom: -15%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.4), transparent 70%);
+  animation: nebula-float 40s ease-in-out infinite reverse;
+}
+
+.nebula__blob--3 {
+  top: 40%;
+  left: 30%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.3), transparent 70%);
+  animation: nebula-float 50s ease-in-out infinite;
+}
+
+@keyframes nebula-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5%, -5%) scale(1.1); }
+  66% { transform: translate(-5%, 5%) scale(0.9); }
+}
+
+/* ============================================================
+   SAMAZINĀTA KUSTĪBA
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .stars__layer--far,
+  .stars__layer--mid,
+  .stars__layer--near,
+  .stars__layer--near::after,
+  .stars__sparkle,
+  .nebula__blob {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   RESPONSĪVAIS
+   ============================================================ */
+
+@media (max-width: 767px) {
+  .stars__layer--far {
+    background-size: 180px 180px;
+    opacity: 0.6;
+  }
+
+  .stars__layer--mid {
+    background-size: 300px 300px;
+    opacity: 0.75;
+  }
+
+  .stars__layer--near {
+    background-size: 600px 600px;
+    opacity: 0.85;
+  }
+
+  .nebula__blob {
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+}

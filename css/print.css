@@ -1,0 +1,843 @@
+/* ============================================================
+   SolXy · print.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* ============================================================
+   DRUKAS PAMATA STILI
+   ============================================================ */
+
+@media print {
+  /* === LAPAS IESTATĪJUMI === */
+  @page {
+    size: A4;
+    margin: 2cm 1.5cm;
+  }
+
+  @page :first {
+    margin-top: 1cm;
+  }
+
+  /* === PAMATA RESET DRUKAI === */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    filter: none !important;
+  }
+
+  html {
+    font-size: 11pt;
+    background: #fff;
+  }
+
+  body {
+    font-family: "Times New Roman", Georgia, serif;
+    background: #fff;
+    color: #000;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  /* ============================================================
+     PASLĒPTIE ELEMENTI
+     ============================================================ */
+
+  .stars,
+  .nebula,
+  .skip-link,
+  .header,
+  .footer__decoration,
+  .footer__socials,
+  .footer__top-link,
+  .back-to-top,
+  .theme-switch,
+  .page-indicator,
+  .mobile-nav,
+  .hero__scroll,
+  .hero__shimmer,
+  .header-progress,
+  .overlay,
+  .effects-noise,
+  .effect-noise::after,
+  .card--shimmer::after,
+  .control-progress__fill::after,
+  .footer__badges {
+    display: none !important;
+  }
+
+  /* ============================================================
+     TIPOGRĀFIJA
+     ============================================================ */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Times New Roman", Georgia, serif;
+    color: #000;
+    page-break-after: avoid;
+    break-after: avoid;
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1 {
+    font-size: 22pt;
+    margin-bottom: 12pt;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 6pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+    margin-top: 18pt;
+    margin-bottom: 8pt;
+    border-bottom: 1pt solid #666;
+    padding-bottom: 4pt;
+  }
+
+  h3 {
+    font-size: 13pt;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+  }
+
+  h4, h5, h6 {
+    font-size: 11pt;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+
+  p {
+    font-size: 11pt;
+    line-height: 1.5;
+    margin-bottom: 8pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  strong, b {
+    font-weight: bold;
+    color: #000;
+  }
+
+  em, i {
+    font-style: italic;
+  }
+
+  /* ============================================================
+     SAITES
+     ============================================================ */
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  a[href]:not([href^="#"]):not([href^="javascript:"]):not([href^="mailto:"])::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    font-style: italic;
+    color: #555;
+    word-break: break-all;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    font-style: italic;
+    color: #555;
+  }
+
+  /* ============================================================
+     KODS
+     ============================================================ */
+
+  code,
+  pre,
+  .code-block,
+  .code-inline {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    color: #000;
+    background: #f5f5f5 !important;
+    border: 1px solid #ccc;
+    padding: 2pt 4pt;
+    border-radius: 0;
+    page-break-inside: avoid;
+  }
+
+  pre {
+    padding: 8pt;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: visible;
+  }
+
+  /* ============================================================
+     KARTĪTES
+     ============================================================ */
+
+  .card,
+  .planet-card,
+  .moon-card,
+  .mission-card,
+  .exoplanet-card,
+  .stat-card,
+  .fact-card,
+  .glossary-item,
+  .comparison-group,
+  .info-block,
+  .form,
+  .form-card {
+    background: #fff !important;
+    border: 1pt solid #333 !important;
+    padding: 8pt;
+    margin-bottom: 8pt;
+    border-radius: 0;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .card:hover,
+  .planet-card:hover,
+  .stat-card:hover,
+  .fact-card:hover,
+  .mission-card:hover,
+  .exoplanet-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .card__link::after {
+    content: " [" attr(href) "]";
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* ============================================================
+     GRIDI UN IZKĀRTOJUMI
+     ============================================================ */
+
+  .grid,
+  .grid-layout,
+  .cards-grid,
+  .stats-grid,
+  .facts-grid,
+  .planets-grid,
+  .moons-grid,
+  .missions-grid,
+  .exoplanets-grid {
+    display: block;
+  }
+
+  .grid > *,
+  .grid-layout > *,
+  .cards-grid > *,
+  .stats-grid > *,
+  .facts-grid > *,
+  .planets-grid > *,
+  .moons-grid > *,
+  .missions-grid > *,
+  .exoplanets-grid > * {
+    margin-bottom: 8pt;
+    page-break-inside: avoid;
+  }
+
+  .page__container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .section-layout {
+    padding-block: 12pt;
+  }
+
+  /* ============================================================
+     SAULES SISTĒMA UN PLANĒTAS
+     ============================================================ */
+
+  .solar-system,
+  .sun,
+  .orbit,
+  .asteroid-belt,
+  .hero__visual,
+  .hero__scene {
+    display: none !important;
+  }
+
+  .planet,
+  .moon {
+    background: #ccc !important;
+    border: 1pt solid #000;
+    box-shadow: none;
+  }
+
+  .planet__surface,
+  .planet__atmosphere,
+  .planet__rings,
+  .planet__texture,
+  .moon__surface {
+    display: none;
+  }
+
+  /* ============================================================
+     LAIKA LĪNIJA
+     ============================================================ */
+
+  .timeline::before {
+    background: #666;
+    box-shadow: none;
+  }
+
+  .timeline-item {
+    display: block;
+    page-break-inside: avoid;
+    margin-bottom: 12pt;
+  }
+
+  .timeline-item__marker {
+    display: none;
+  }
+
+  .timeline-item__content {
+    background: #fff !important;
+    border: 1pt solid #666 !important;
+    border-left: 3pt solid #000 !important;
+    padding: 8pt;
+    text-align: left !important;
+  }
+
+  .timeline-item__year {
+    color: #000 !important;
+    font-weight: bold;
+    font-size: 12pt;
+  }
+
+  .timeline-item__year::before {
+    background: #000;
+    box-shadow: none;
+  }
+
+  .timeline-item__title {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  .timeline-item__description {
+    font-size: 10pt;
+    color: #333;
+  }
+
+  /* ============================================================
+     SALĪDZINĀJUMA TABULAS
+     ============================================================ */
+
+  .comparison-table-wrap {
+    overflow: visible;
+    border: 1pt solid #333;
+  }
+
+  .comparison-table {
+    font-size: 9pt;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .comparison-table th {
+    background: #e5e5e5 !important;
+    color: #000 !important;
+    font-weight: bold;
+    border-bottom: 1pt solid #000;
+    padding: 4pt;
+  }
+
+  .comparison-table td {
+    padding: 4pt;
+    border-bottom: 0.5pt solid #ccc;
+    color: #000;
+  }
+
+  .comparison-table tbody td:first-child {
+    background: #f5f5f5 !important;
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  .comparison-bar {
+    background: none;
+    border: 1pt solid #666;
+    padding: 4pt;
+  }
+
+  .comparison-bar__fill {
+    background: #333 !important;
+    box-shadow: none;
+  }
+
+  .comparison-bar__value {
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  .size-comparison {
+    background: none !important;
+    border: 1pt solid #333;
+    padding: 12pt;
+    min-height: 0;
+  }
+
+  .size-comparison__sphere {
+    background: #ccc !important;
+    border: 1pt solid #000;
+    box-shadow: none;
+  }
+
+  /* ============================================================
+     VĀRDNĪCA
+     ============================================================ */
+
+  .glossary-alphabet,
+  .glossary-filter,
+  .missions-filter,
+  .exoplanets-filter,
+  .exoplanets-search {
+    display: none !important;
+  }
+
+  .glossary-group {
+    page-break-before: auto;
+  }
+
+  .glossary-group__title {
+    color: #000 !important;
+    border-bottom: 2pt solid #000;
+    font-size: 16pt;
+    page-break-after: avoid;
+  }
+
+  .glossary-group__title::after {
+    display: none;
+  }
+
+  .glossary-list {
+    display: block;
+  }
+
+  .glossary-item {
+    page-break-inside: avoid;
+    margin-bottom: 6pt;
+  }
+
+  .glossary-item__term {
+    color: #000 !important;
+    font-size: 12pt;
+  }
+
+  .glossary-item__definition {
+    color: #333 !important;
+    font-size: 10pt;
+  }
+
+  .glossary-item__tag {
+    border: 1pt solid #666 !important;
+    color: #333 !important;
+    background: none !important;
+  }
+
+  /* ============================================================
+     MISIJAS
+     ============================================================ */
+
+  .mission-card__icon {
+    border: 1pt solid #333;
+    color: #000 !important;
+    background: none !important;
+  }
+
+  .mission-card__year {
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  .mission-status {
+    border: 1pt solid #333 !important;
+    color: #000 !important;
+    background: none !important;
+  }
+
+  .mission-status::before {
+    background: #000 !important;
+    box-shadow: none;
+  }
+
+  /* ============================================================
+     EKSOPLANĒTAS
+     ============================================================ */
+
+  .exoplanet-card__visual {
+    background: #ccc !important;
+    border: 1pt solid #000;
+    box-shadow: none;
+  }
+
+  .exoplanet-card__type {
+    background: none !important;
+    color: #000 !important;
+    border: 1pt solid #333 !important;
+  }
+
+  .exoplanet-orbit {
+    display: none;
+  }
+
+  /* ============================================================
+     ZVAIGŽŅU KARTE
+     ============================================================ */
+
+  .star-map {
+    background: #fff !important;
+    border: 1pt solid #000;
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: 12pt;
+  }
+
+  .star-map__background,
+  .star-map__grid,
+  .star-map__center,
+  .star-map__compass {
+    display: none;
+  }
+
+  .constellation__star {
+    background: #000 !important;
+    box-shadow: none;
+    color: #000;
+  }
+
+  .constellation__line {
+    background: #666 !important;
+    box-shadow: none;
+  }
+
+  .constellation__label {
+    background: #fff !important;
+    border: 1pt solid #000 !important;
+    color: #000 !important;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+
+  .footer {
+    background: none !important;
+    border-top: 1pt solid #000;
+    margin-top: 20pt;
+    padding-top: 10pt;
+    page-break-inside: avoid;
+  }
+
+  .footer::before {
+    display: none;
+  }
+
+  .footer__content {
+    display: block;
+  }
+
+  .footer__block {
+    margin-bottom: 8pt;
+  }
+
+  .footer__text,
+  .footer__meta,
+  .footer__copyright {
+    color: #000 !important;
+    font-size: 9pt;
+  }
+
+  .footer__title {
+    color: #000 !important;
+    font-size: 10pt;
+    font-weight: bold;
+    border-bottom: 1pt solid #666;
+    padding-bottom: 2pt;
+  }
+
+  .footer__link {
+    color: #000 !important;
+    text-decoration: underline;
+    font-size: 9pt;
+  }
+
+  .footer__link::before {
+    display: none;
+  }
+
+  .footer__badge {
+    border: 1pt solid #666 !important;
+    color: #000 !important;
+    background: none !important;
+  }
+
+  /* ============================================================
+     FORMAS
+     ============================================================ */
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    border: 1pt solid #333 !important;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 4pt;
+  }
+
+  .form-label {
+    color: #000 !important;
+    font-weight: bold;
+  }
+
+  .form-hint {
+    color: #555 !important;
+    font-style: italic;
+  }
+
+  /* ============================================================
+     POGAS
+     ============================================================ */
+
+  .btn {
+    border: 1pt solid #333 !important;
+    background: none !important;
+    color: #000 !important;
+    padding: 4pt 8pt;
+    font-weight: bold;
+  }
+
+  .btn::after {
+    content: none !important;
+  }
+
+  /* ============================================================
+     LAPU PĀRTRAUKUMI
+     ============================================================ */
+
+  .page-break-before {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page-break-avoid {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  img, figure, table, pre, blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  tr, li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* ============================================================
+     CITĀTI
+     ============================================================ */
+
+  blockquote {
+    border-left: 3pt solid #000;
+    padding-left: 10pt;
+    margin: 10pt 0;
+    font-style: italic;
+  }
+
+  blockquote cite {
+    font-style: normal;
+    color: #555;
+  }
+
+  .pullquote {
+    border-left: 3pt solid #000;
+    padding: 8pt 0 8pt 12pt;
+    font-size: 13pt;
+    font-style: italic;
+  }
+
+  .pullquote::before {
+    color: #000;
+    opacity: 1;
+  }
+
+  /* ============================================================
+     DETAĻAS (DETAILS)
+     ============================================================ */
+
+  details {
+    border: 1pt solid #333 !important;
+    padding: 6pt;
+  }
+
+  details > summary {
+    font-weight: bold;
+    color: #000 !important;
+  }
+
+  details > summary::after {
+    display: none;
+  }
+
+  details[open] > summary {
+    border-bottom: 1pt solid #ccc;
+    padding-bottom: 4pt;
+    margin-bottom: 4pt;
+  }
+
+  /* ============================================================
+     TABULAS
+     ============================================================ */
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    page-break-inside: auto;
+  }
+
+  th {
+    background: #e5e5e5 !important;
+    color: #000 !important;
+    border: 1pt solid #333;
+    padding: 4pt;
+    font-weight: bold;
+  }
+
+  td {
+    border: 0.5pt solid #666;
+    padding: 4pt;
+    color: #000;
+  }
+
+  tr:nth-child(even) td {
+    background: #f5f5f5 !important;
+  }
+
+  /* ============================================================
+     ATTIĒLI UN SVG
+     ============================================================ */
+
+  img,
+  svg {
+    max-width: 100%;
+    page-break-inside: avoid;
+    filter: grayscale(100%);
+  }
+
+  img[src*="logo"],
+  img[src*="favicon"] {
+    filter: none;
+  }
+
+  /* ============================================================
+     LAPAS NUMURI
+     ============================================================ */
+
+  .page-number::after {
+    content: counter(page);
+  }
+
+  .page-total::after {
+    content: counter(pages);
+  }
+
+  /* ============================================================
+     PĒDĒJAIS LAPAS ELEMENTS
+     ============================================================ */
+
+  body > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ============================================================
+     DRUKAS INFORMĀCIJA
+     ============================================================ */
+
+  .print-only {
+    display: block !important;
+  }
+
+  .screen-only,
+  .no-print {
+    display: none !important;
+  }
+
+  .print-header {
+    display: block !important;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 6pt;
+    margin-bottom: 12pt;
+    text-align: center;
+  }
+
+  .print-footer {
+    display: block !important;
+    border-top: 1pt solid #000;
+    padding-top: 6pt;
+    margin-top: 12pt;
+    font-size: 8pt;
+    color: #555;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   DRUKAS PALĪGKLASES (ārpus @media)
+   ============================================================ */
+
+.print-only {
+  display: none;
+}
+
+.screen-only {
+  display: block;
+}
+
+@media print {
+  .print-only {
+    display: block;
+  }
+
+  .screen-only {
+    display: none;
+  }
+}

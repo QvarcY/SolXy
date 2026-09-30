@@ -1,0 +1,141 @@
+/* ============================================================
+   SolXy · planet-mercury.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === MERKURA MAINĪGIE === */
+:root {
+  --mercury-color-primary: #8c8074;
+  --mercury-color-secondary: #5c544a;
+  --mercury-color-accent: #b8a99a;
+  --mercury-color-dark: #3a342c;
+  --mercury-color-glow: rgba(140, 128, 116, 0.5);
+  --mercury-color-atmosphere: rgba(184, 169, 154, 0.15);
+}
+
+/* === MERKURA VIRSMA === */
+.planet--mercury .planet__surface {
+  background:
+    radial-gradient(circle at 30% 30%, var(--mercury-color-accent), transparent 40%),
+    radial-gradient(circle at 70% 65%, var(--mercury-color-primary), transparent 45%),
+    radial-gradient(circle at 45% 80%, var(--mercury-color-dark), transparent 35%),
+    radial-gradient(circle at 15% 55%, var(--mercury-color-secondary), transparent 40%),
+    linear-gradient(135deg, var(--mercury-color-primary), var(--mercury-color-secondary));
+}
+
+/* === MERKURA KRĀTERU STRUKTŪRA === */
+.planet--mercury .planet__texture {
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(58, 52, 44, 0.6) 3%, transparent 5%),
+    radial-gradient(circle at 65% 40%, rgba(58, 52, 44, 0.5) 4%, transparent 6%),
+    radial-gradient(circle at 40% 70%, rgba(58, 52, 44, 0.5) 2%, transparent 4%),
+    radial-gradient(circle at 80% 25%, rgba(58, 52, 44, 0.4) 2%, transparent 4%),
+    radial-gradient(circle at 55% 55%, rgba(58, 52, 44, 0.4) 3%, transparent 5%),
+    radial-gradient(circle at 25% 80%, rgba(58, 52, 44, 0.5) 2%, transparent 4%),
+    radial-gradient(circle at 75% 75%, rgba(58, 52, 44, 0.4) 2%, transparent 4%),
+    radial-gradient(circle at 10% 55%, rgba(58, 52, 44, 0.4) 2%, transparent 4%);
+  opacity: 0.7;
+}
+
+/* === MERKURA ATMOSFĒRA === */
+.planet--mercury .planet__atmosphere {
+  box-shadow:
+    0 0 10px var(--mercury-color-glow),
+    0 0 20px rgba(184, 169, 154, 0.1);
+}
+
+/* === MERKURA GLOW === */
+.planet--mercury {
+  box-shadow: 0 0 20px var(--mercury-color-glow);
+}
+
+.planet--mercury:hover {
+  box-shadow: 0 0 30px var(--mercury-color-glow),
+              0 0 60px rgba(184, 169, 154, 0.2);
+}
+
+/* === MERKURA LAPA === */
+.planet-page--mercury {
+  --planet-page-accent: var(--mercury-color-accent);
+  --planet-page-primary: var(--mercury-color-primary);
+  --planet-page-glow: var(--mercury-color-glow);
+}
+
+/* === MERKURA HERO === */
+.planet-page--mercury .planet-page__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--mercury-color-glow), transparent 60%),
+    radial-gradient(ellipse at 70% 60%, rgba(184, 169, 154, 0.1), transparent 50%);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* === MERKURA STATISTIKAS KARTĪTES === */
+.planet-page--mercury .stat-card {
+  border-color: rgba(184, 169, 154, 0.15);
+}
+
+.planet-page--mercury .stat-card:hover {
+  border-color: var(--mercury-color-accent);
+  box-shadow: 0 0 20px var(--mercury-color-glow);
+}
+
+.planet-page--mercury .stat-card__value {
+  color: var(--mercury-color-accent);
+  text-shadow: 0 0 10px var(--mercury-color-glow);
+}
+
+/* === MERKURA FAKTU KARTĪTES === */
+.planet-page--mercury .fact-card {
+  border-color: rgba(184, 169, 154, 0.15);
+}
+
+.planet-page--mercury .fact-card__number {
+  color: var(--mercury-color-accent);
+}
+
+.planet-page--mercury .fact-card:hover {
+  border-color: var(--mercury-color-accent);
+}
+
+/* === MERKURA ORBĪTAS IZCELŠANA === */
+.planet-page--mercury .planet-page__orbit {
+  border-color: var(--mercury-color-accent);
+  box-shadow: 0 0 20px var(--mercury-color-glow);
+}
+
+/* === MERKURA KRĀSU AKCENTI === */
+.planet-page--mercury .eyebrow {
+  color: var(--mercury-color-accent);
+  border-color: rgba(184, 169, 154, 0.3);
+  background: rgba(184, 169, 154, 0.1);
+}
+
+.planet-page--mercury .eyebrow::before {
+  background: var(--mercury-color-accent);
+  box-shadow: 0 0 10px var(--mercury-color-accent);
+}
+
+/* === MERKURA NAVIGĀCIJA === */
+.planet-page--mercury .planet-nav__link {
+  border-color: rgba(184, 169, 154, 0.2);
+}
+
+.planet-page--mercury .planet-nav__link:hover {
+  border-color: var(--mercury-color-accent);
+  color: var(--mercury-color-accent);
+  box-shadow: 0 0 20px var(--mercury-color-glow);
+}
+
+/* === MERKURA GRADIENTA TEKSTS === */
+.planet-page--mercury .heading--planet {
+  background: linear-gradient(135deg, var(--mercury-color-accent), var(--mercury-color-primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}

@@ -1,0 +1,529 @@
+/* ============================================================
+   SolXy · base.css
+   Autors: QvarcY (https://github.com/QvarcY)
+   Licence: MIT
+   ============================================================ */
+
+/* === HTML === */
+html {
+  font-family: var(--font-body);
+  font-size: 100%;
+  line-height: var(--lh-normal);
+  color: var(--c-text-primary);
+  background-color: var(--c-bg-primary);
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+  /* Decorative orbits/nebulae may geometrically extend beyond the viewport.
+     Clip that visual overflow without creating a horizontal scroll range. */
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* === BODY === */
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-regular);
+  color: var(--c-text-primary);
+  background-color: var(--c-bg-primary);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* === BODY — FONA GRADIENTI === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-below);
+  background:
+    radial-gradient(ellipse at top, rgba(94, 234, 212, 0.06), transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(167, 139, 250, 0.06), transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(244, 114, 182, 0.04), transparent 40%),
+    linear-gradient(180deg, var(--c-bg-primary), var(--c-bg-secondary) 50%, var(--c-bg-primary));
+  pointer-events: none;
+}
+
+/* === GALVENAIS SATURS === */
+main {
+  flex: 1;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* === SAITES === */
+a {
+  color: var(--c-accent-teal);
+  text-decoration: none;
+  transition: color var(--transition-fast) var(--ease-in-out);
+}
+
+a:hover {
+  color: var(--c-accent-teal-light);
+}
+
+a:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-xs);
+}
+
+/* === VIRSR AKSTI === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  color: var(--c-text-primary);
+}
+
+h1 {
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-extrabold);
+  letter-spacing: var(--ls-tighter);
+}
+
+h2 {
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+}
+
+h4 {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+}
+
+h5 {
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+}
+
+h6 {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-medium);
+}
+
+/* === RINDKOPAS === */
+p {
+  font-size: var(--fs-base);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-secondary);
+  max-width: 70ch;
+}
+
+p + p {
+  margin-top: var(--space-md);
+}
+
+/* === IZCELŠANA === */
+strong,
+b {
+  font-weight: var(--fw-semibold);
+  color: var(--c-text-primary);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* === KODS === */
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-subtle);
+  color: var(--c-accent-teal);
+  font-weight: var(--fw-medium);
+}
+
+pre {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  overflow-x: auto;
+  line-height: var(--lh-normal);
+}
+
+pre code {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--c-text-primary);
+}
+
+/* === SARAKSTI === */
+ul,
+ol {
+  padding-left: var(--space-lg);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-sm);
+}
+
+ol {
+  list-style: decimal;
+}
+
+ol li::marker {
+  color: var(--c-accent-teal);
+  font-weight: var(--fw-semibold);
+}
+
+li + li {
+  margin-top: var(--space-xs);
+}
+
+/* === BLOKCITĀTS === */
+blockquote {
+  position: relative;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  border-left: 3px solid var(--c-accent-teal);
+  background: var(--c-bg-glass);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+blockquote p {
+  font-style: italic;
+  color: var(--c-text-secondary);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-text-tertiary);
+  font-style: normal;
+}
+
+blockquote cite::before {
+  content: "— ";
+}
+
+/* === HORIZONTĀLĀ LĪNIJA === */
+hr {
+  border: none;
+  height: 1px;
+  margin: var(--space-xl) 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--c-border-default) 20%,
+    var(--c-border-default) 80%,
+    transparent
+  );
+}
+
+/* === ATTIĒLI === */
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* === FIGURE === */
+figure {
+  margin: var(--space-lg) 0;
+}
+
+figcaption {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-text-tertiary);
+  text-align: center;
+}
+
+/* === TABULAS === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+th,
+td {
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+th {
+  font-weight: var(--fw-semibold);
+  color: var(--c-text-primary);
+  background: var(--c-bg-glass);
+  font-family: var(--font-display);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+}
+
+td {
+  color: var(--c-text-secondary);
+}
+
+tr:hover td {
+  background: var(--c-bg-glass-light);
+}
+
+/* === DETAĻAS === */
+details {
+  padding: var(--space-md);
+  border: 1px solid var(--c-border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--c-bg-glass);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  transition: border-color var(--transition-fast) var(--ease-in-out);
+}
+
+details + details {
+  margin-top: var(--space-sm);
+}
+
+details[open] {
+  border-color: var(--c-border-accent);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-md);
+  color: var(--c-text-primary);
+  padding: var(--space-xs) 0;
+  list-style: none;
+  user-select: none;
+  transition: color var(--transition-fast) var(--ease-in-out);
+}
+
+summary:hover {
+  color: var(--c-accent-teal);
+}
+
+summary:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-subtle);
+  color: var(--c-accent-teal);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  flex-shrink: 0;
+  transition: transform var(--transition-base) var(--ease-out),
+              background var(--transition-fast) var(--ease-in-out);
+}
+
+details[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+  background: var(--c-accent-teal-glass);
+  border-color: var(--c-accent-teal);
+}
+
+details > *:not(summary) {
+  margin-top: var(--space-md);
+}
+
+/* === FORMAS === */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--c-text-primary);
+  background: var(--c-bg-tertiary);
+  border: 1px solid var(--c-border-default);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast) var(--ease-in-out),
+              box-shadow var(--transition-fast) var(--ease-in-out);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--c-text-tertiary);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--c-accent-teal);
+  box-shadow: 0 0 0 3px var(--c-accent-teal-glass);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-secondary);
+}
+
+/* === POGAS (pamata) === */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  color: var(--c-text-primary);
+  background: var(--c-bg-glass);
+  border: 1px solid var(--c-border-default);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base) var(--ease-in-out);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+}
+
+button:hover {
+  border-color: var(--c-accent-teal);
+  color: var(--c-accent-teal);
+  box-shadow: var(--glow-teal-sm);
+}
+
+button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled,
+[disabled] {
+  opacity: var(--opacity-40);
+  cursor: not-allowed;
+}
+
+/* === IZCELŠANAS KRĀSAS === */
+::selection {
+  background: var(--c-accent-teal-glass);
+  color: var(--c-text-primary);
+}
+
+/* === SKIP LINK === */
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--c-accent-teal);
+  color: var(--c-text-inverse);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-md);
+  z-index: var(--z-max);
+  transform: translateY(-200%);
+  transition: transform var(--transition-base) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--c-text-inverse);
+  outline-offset: 2px;
+}
+
+/* === SR-ONLY === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === GALVENAIS SATURS — VISIEM === */
+:target {
+  scroll-margin-top: 100px;
+}
+
+/* === BODY NOSLĒGŠANA === */
+body.no-scroll {
+  overflow: hidden;
+}

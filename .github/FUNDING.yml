@@ -1,0 +1,52 @@
+# ============================================================
+# SolXy · FUNDING.yml
+# Autors: QvarcY (https://github.com/QvarcY)
+# Licence: MIT
+# GitHub Sponsors un citu finansējuma kanālu konfigurācija
+# ============================================================
+
+# === GITHUB SPONSORS ===
+# Aktivizē "Sponsor" pogu repozitorijā
+github: [QvarcY]
+
+# === PATREON ===
+# patreon: # Aizstāj ar savu Patreon lietotājvārdu
+
+# === OPEN COLLECTIVE ===
+# open_collective: # Aizstāj ar savu Open Collective nosaukumu
+
+# === KO-FI ===
+# ko_fi: # Aizstāj ar savu Ko-fi lietotājvārdu
+
+# === TIDELIFT ===
+# tidelift: # Piem., "npm:package-name" vai "platform-name"
+
+# === COMMUNITY BRIDGE ===
+# community_bridge: # Aizstāj ar sava projekta nosaukumu
+
+# === LIBERAPAY ===
+# liberapay: # Aizstāj ar savu Liberapay lietotājvārdu
+
+# === ISSUEHUNT ===
+# issuehunt: # Aizstāj ar savu IssueHunt lietotājvārdu
+
+# === LFXCROWDFUND ===
+# lfx_crowdfunding: # Aizstāj ar sava LFX Crowdfunding projekta nosaukumu
+
+# === POLAR ===
+# polar: # Aizstāj ar savu Polar lietotājvārdu
+
+# === BUY ME A COFFEE ===
+# buy_me_a_coffee: # Aizstāj ar savu Buy Me a Coffee lietotājvārdu
+
+# === THANKS.DEV ===
+# thanks_dev: # Aizstāj ar savu thanks.dev lietotājvārdu
+
+# === CUSTOM URL ===
+# Pievieno līdz 4 pielāgotas saites
+# custom: ["https://example.com/donate", "https://example.com/sponsor"]
+
+# ============================================================
+# PALDIES, KA ATBALSTI SolXy PROJEKTU!
+# © 2026 · QvarcY · MIT Licence
+# ============================================================

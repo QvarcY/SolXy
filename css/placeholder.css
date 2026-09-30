@@ -1,0 +1,113 @@
+/* ============================================================
+   SolXy · placeholder.css
+   Initial public-shell placeholders for sections published later.
+   ============================================================ */
+
+.release-placeholder {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: var(--space-lg);
+  max-width: 760px;
+  margin-inline: auto;
+  padding: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  border: 1px solid var(--c-border-subtle);
+  border-radius: var(--radius-2xl);
+  background:
+    radial-gradient(circle at 85% 10%, rgba(94, 234, 212, 0.1), transparent 34%),
+    linear-gradient(180deg, var(--c-bg-glass-strong), var(--c-bg-glass));
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(var(--blur-xl));
+  -webkit-backdrop-filter: blur(var(--blur-xl));
+}
+
+.release-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(94, 234, 212, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 234, 212, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(135deg, black, transparent 72%);
+  -webkit-mask-image: linear-gradient(135deg, black, transparent 72%);
+}
+
+.release-placeholder > * {
+  position: relative;
+  z-index: 1;
+}
+
+.release-placeholder__eyebrow {
+  width: fit-content;
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--c-accent-teal-glass);
+  border-radius: var(--radius-full);
+  background: var(--c-accent-teal-glass);
+  color: var(--c-accent-teal);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+}
+
+.release-placeholder__title {
+  max-width: 20ch;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: var(--lh-tight);
+  text-wrap: balance;
+}
+
+.release-placeholder__text {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--c-text-secondary);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-relaxed);
+}
+
+.release-placeholder__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.release-placeholder__tag {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-border-subtle);
+  background: var(--c-bg-glass);
+  color: var(--c-text-tertiary);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.release-placeholder__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+@media (max-width: 767px) {
+  .release-placeholder {
+    padding: var(--space-xl) var(--space-lg);
+    border-radius: var(--radius-xl);
+  }
+
+  .release-placeholder__text {
+    font-size: var(--fs-base);
+  }
+
+  .release-placeholder__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
