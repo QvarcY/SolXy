@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+  <!-- ============================================================
+       SolXy · planets/saturn.html
+       Autors: QvarcY (https://github.com/QvarcY)
+       Licence: MIT
+       ============================================================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Saturns · SolXy — sadaļa tiek gatavota publicēšanai.">
+  <meta name="description" content="Saturns — planēta ar iespaidīgajiem gredzeniem. Uzzini par tās gredzeniem, Titānu, Enceladu un interesantiem faktiem.">
   <meta name="author" content="QvarcY">
+  <meta name="generator" content="SolXy · Tīrs CSS">
   <meta name="theme-color" content="#03050d">
   <meta name="color-scheme" content="dark light">
+  <link rel="author" href="https://github.com/QvarcY">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Saturns · SolXy">
+  <meta property="og:description" content="Planēta ar iespaidīgajiem gredzeniem.">
+  <meta property="og:image" content="../assets/og-image.svg">
+
   <title>Saturns · SolXy</title>
 
+  <!-- === FAVICON === -->
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/logo.svg">
+
+  <!-- === CSS === -->
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/typography.css">
   <link rel="stylesheet" href="../css/utilities.css">
   <link rel="stylesheet" href="../css/stars.css">
+  <link rel="stylesheet" href="../css/sun.css">
+  <link rel="stylesheet" href="../css/planets.css">
+  <link rel="stylesheet" href="../css/planet-saturn.css">
+  <link rel="stylesheet" href="../css/moons.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/planet-page.css">
   <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/controls.css">
   <link rel="stylesheet" href="../css/effects.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/animations-extended.css">
   <link rel="stylesheet" href="../css/transitions.css">
   <link rel="stylesheet" href="../css/themes.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/accessibility.css">
-  <link rel="stylesheet" href="../css/placeholder.css">
   <link rel="stylesheet" href="../css/print.css">
 </head>
-<body>
+
+<body class="planet-page planet-page--saturn">
+  <!-- === SKIP LINK === -->
   <a href="#main" class="skip-link">Pāriet uz saturu</a>
 
+  <!-- === ZVAIGŽŅU FONS === -->
   <div class="stars" aria-hidden="true">
     <div class="stars__layer stars__layer--far"></div>
     <div class="stars__layer stars__layer--mid"></div>
     <div class="stars__layer stars__layer--near"></div>
+    <span class="stars__sparkle stars__sparkle--1"></span>
+    <span class="stars__sparkle stars__sparkle--2"></span>
+    <span class="stars__sparkle stars__sparkle--3"></span>
   </div>
 
+  <!-- === NEBULA === -->
+  <div class="nebula" aria-hidden="true">
+    <div class="nebula__blob nebula__blob--1"></div>
+    <div class="nebula__blob nebula__blob--2"></div>
+  </div>
+
+  <!-- === GALVENE === -->
   <header class="header">
     <div class="page__container">
       <div class="header__inner">
@@ -48,65 +85,605 @@
             <span class="header__logo-subtitle">Saules sistēma</span>
           </span>
         </a>
+
         <nav class="header__nav" aria-label="Galvenā navigācija">
           <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="../index.html" class="header__nav-link">Sākums</a></li>
-            <li class="header__nav-item"><a href="../index.html#planets" class="header__nav-link">Planētas</a></li>
-            <li class="header__nav-item"><a href="../about.html" class="header__nav-link">Par projektu</a></li>
+            <li class="header__nav-item">
+              <a href="../index.html" class="header__nav-link">Sākums</a>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#planets" class="header__nav-link header__nav-link--active" aria-haspopup="true" aria-expanded="false">Planētas</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="mercury.html" class="header__dropdown-link">Merkurs</a></li>
+                <li class="header__dropdown-item"><a href="venus.html" class="header__dropdown-link">Venēra</a></li>
+                <li class="header__dropdown-item"><a href="earth.html" class="header__dropdown-link">Zeme</a></li>
+                <li class="header__dropdown-item"><a href="mars.html" class="header__dropdown-link">Marss</a></li>
+                <li class="header__dropdown-item"><a href="jupiter.html" class="header__dropdown-link">Jupiters</a></li>
+                <li class="header__dropdown-item"><a href="saturn.html" class="header__dropdown-link">Saturns</a></li>
+                <li class="header__dropdown-item"><a href="uranus.html" class="header__dropdown-link">Urāns</a></li>
+                <li class="header__dropdown-item"><a href="neptune.html" class="header__dropdown-link">Neptūns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#moons" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Pavadoņi</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../moons/moon.html" class="header__dropdown-link">Mēness</a></li>
+                <li class="header__dropdown-item"><a href="../moons/io.html" class="header__dropdown-link">Io</a></li>
+                <li class="header__dropdown-item"><a href="../moons/europa.html" class="header__dropdown-link">Eiropa</a></li>
+                <li class="header__dropdown-item"><a href="../moons/ganymede.html" class="header__dropdown-link">Ganimēds</a></li>
+                <li class="header__dropdown-item"><a href="../moons/callisto.html" class="header__dropdown-link">Kallisto</a></li>
+                <li class="header__dropdown-item"><a href="../moons/titan.html" class="header__dropdown-link">Titāns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#data" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Dati</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../data/comparison.html" class="header__dropdown-link">Salīdzinājums</a></li>
+                <li class="header__dropdown-item"><a href="../data/timeline.html" class="header__dropdown-link">Laika līnija</a></li>
+                <li class="header__dropdown-item"><a href="../data/glossary.html" class="header__dropdown-link">Vārdnīca</a></li>
+                <li class="header__dropdown-item"><a href="../data/missions.html" class="header__dropdown-link">Misijas</a></li>
+                <li class="header__dropdown-item"><a href="../data/exoplanets.html" class="header__dropdown-link">Eksoplanētas</a></li>
+                <li class="header__dropdown-item"><a href="../data/star-map.html" class="header__dropdown-link">Zvaigžņu karte</a></li>
+                <li class="header__dropdown-item"><a href="../data/sizes.html" class="header__dropdown-link">Izmēri</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="../about.html" class="header__nav-link">Par projektu</a>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
+  <!-- === GALVENAIS SATURS === -->
   <main id="main" class="page__main">
-    <section class="page-title-bar" aria-labelledby="page-title">
+
+    <!-- ============================================================
+         HERO SEKCIJA
+         ============================================================ -->
+    <section class="planet-page__hero" aria-labelledby="planet-title">
       <div class="page__container">
-        <div class="page-title-bar__inner">
-          <nav aria-label="Atrašanās vieta">
-            <ol class="breadcrumbs" style="list-style: none; padding-left: 0;">
-              <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Sākums</a></li>
-              <li class="breadcrumbs__item"><a href="../index.html#planets" class="breadcrumbs__link">Planētas</a></li>
-              <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Saturns</span></li>
-            </ol>
-          </nav>
-          <h1 class="page-title-bar__title" id="page-title">Saturns</h1>
-          <p class="page-title-bar__subtitle">SolXy · Planēta</p>
+        <nav class="breadcrumbs" aria-label="Atrašanās vieta" style="margin-bottom: var(--space-lg);">
+          <ol class="breadcrumbs__item" style="list-style: none; padding: 0; display: flex; gap: var(--space-xs); flex-wrap: wrap;">
+            <li style="list-style: none;">
+              <a href="../index.html" class="breadcrumbs__link">Sākums</a>
+            </li>
+            <li style="list-style: none;">
+              <a href="../index.html#planets" class="breadcrumbs__link">Planētas</a>
+            </li>
+            <li style="list-style: none;">
+              <span class="breadcrumbs__current" aria-current="page">Saturns</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="planet-page__hero-content">
+          <!-- Teksts -->
+          <div class="planet-page__hero-text">
+            <span class="planet-page__eyebrow">6. planēta no Saules</span>
+
+            <h1 class="planet-page__title" id="planet-title">
+              <span class="heading--planet">Saturns</span>
+            </h1>
+
+            <p class="planet-page__subtitle">
+              Planēta ar iespaidīgajiem gredzeniem
+            </p>
+
+            <p class="planet-page__description">
+              Saturns ir sestā planēta no Saules un otrā lielākā Saules
+              sistēmā. To vislabāk pazīst pēc tā iespaidīgās gredzenu
+              sistēmas, kas sastāv no miljardiem ledus un iežu daļiņu.
+              Saturns ir gāzes gigants ar zemu blīvumu — tas ir vienīgā
+              planēta, kas ir mazāk blīva par ūdeni.
+            </p>
+
+            <div class="btn-row">
+              <a href="jupiter.html" class="btn btn--secondary btn--arrow-left">
+                Iepriekšējā: Jupiters
+              </a>
+              <a href="uranus.html" class="btn btn--primary btn--arrow">
+                Nākamā: Urāns
+              </a>
+            </div>
+          </div>
+
+          <!-- Vizuālais -->
+          <div class="planet-page__hero-visual">
+            <div class="planet-page__orbit planet-page__orbit--1" aria-hidden="true"></div>
+            <div class="planet-page__orbit planet-page__orbit--2" aria-hidden="true"></div>
+            <div class="planet-page__orbit planet-page__orbit--3" aria-hidden="true"></div>
+            <div class="planet planet--saturn planet--page planet--rotate-slow" role="img" aria-label="Saturna planēta ar gredzeniem">
+              <div class="planet__rings"></div>
+              <div class="planet__surface"></div>
+              <div class="planet__texture"></div>
+              <div class="planet__atmosphere"></div>
+              <div class="planet__shadow"></div>
+              <div class="planet__moons"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-layout section-layout--lg">
+    <!-- ============================================================
+         STATISTIKAS KARTĪTES
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="stats-title">
       <div class="page__container">
-        <div class="release-placeholder">
-          <span class="release-placeholder__eyebrow">Drīzumā</span>
-          <h2 class="release-placeholder__title">Saturns vēl top</h2>
-          <p class="release-placeholder__text">Saturna lapa ar gredzeniem, datiem un faktiem vēl tiek gatavota publicēšanai.</p>
-          <div class="release-placeholder__meta" aria-label="Sadaļas statuss">
-            <span class="release-placeholder__tag">SolXy</span>
-            <span class="release-placeholder__tag">Planēta</span>
-            <span class="release-placeholder__tag">Tīrs CSS</span>
+        <header class="section-header">
+          <span class="section-header__eyebrow">Statistika</span>
+          <h2 class="section-header__title" id="stats-title">
+            Saturns skaitļos
+          </h2>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card__label">Attālums no Saules</span>
+            <span class="stat-card__value">1 434<span class="stat-card__unit">mlj km</span></span>
+            <span class="stat-card__note">9,58 AU</span>
           </div>
-          <div class="release-placeholder__actions">
-            <a href="../index.html#planets" class="btn btn--primary">Atpakaļ uz sadaļu</a>
-            <a href="../about.html" class="btn btn--secondary">Par projektu</a>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Orbitālais gads</span>
+            <span class="stat-card__value">29,46<span class="stat-card__unit">gadi</span></span>
+            <span class="stat-card__note">10 759 dienas</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Diena (rotācija)</span>
+            <span class="stat-card__value">10h 42m<span class="stat-card__unit"></span></span>
+            <span class="stat-card__note">Ātra rotācija</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Virsmas temperatūra</span>
+            <span class="stat-card__value">-139<span class="stat-card__unit">°C</span></span>
+            <span class="stat-card__note">Mākoņu virsma</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Rādiuss</span>
+            <span class="stat-card__value">58 232<span class="stat-card__unit">km</span></span>
+            <span class="stat-card__note">9,14× Zemes</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Pavadoņi</span>
+            <span class="stat-card__value">146+</span>
+            <span class="stat-card__note">Lielākais: Titāns</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         INTERESANTI FAKTI
+         ============================================================ -->
+    <section class="planet-page__section planet-page__section--alt" aria-labelledby="facts-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Interesanti fakti</span>
+          <h2 class="section-header__title" id="facts-title">
+            5 lietas, ko iespējams nezini par Saturnu
+          </h2>
+        </header>
+
+        <div class="facts-grid">
+          <article class="fact-card">
+            <span class="fact-card__number">01</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Iespaidīgie gredzeni</h3>
+              <p class="fact-card__text">
+                Saturna gredzeni stiepjas 282 000 km diametrā, bet to
+                biezums ir tikai ap 10–1000 metri. Tie sastāv no
+                miljardiem ledus un iežu daļiņu — no putekļu
+                graudiem līdz mājas lieluma bluķiem.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">02</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Vieglāks par ūdeni</h3>
+              <p class="fact-card__text">
+                Saturna vidējais blīvums ir tikai 0,687 g/cm³ —
+                mazāks par ūdens blīvumu (1 g/cm³). Ja būtu pietiekami
+                liels baseins, Saturns tajā peldētu! Tas ir vienīgā
+                planēta Saules sistēmā ar šādu īpašību.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">03</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Sešstūrainais pols</h3>
+              <p class="fact-card__text">
+                Saturna ziemeļpolā atrodas unikāls sešstūra formas
+                mākoņu veidojums, kas ir aptuveni 30 000 km plats.
+                Šis sešstūris rotē kopā ar planētu, un tā izcelsme
+                joprojām nav pilnībā izskaidrota.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">04</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Titāns — miglains pavadonis</h3>
+              <p class="fact-card__text">
+                Titāns ir lielākais Saturna pavadonis un otrais lielākais
+                Saules sistēmā. Tam ir bieza slāpekļa atmosfēra un
+                šķidru metāna ezeri uz virsmas — vienīgā vieta Saules
+                sistēmā bez Zemes, kur atrasts stabils šķidrums uz
+                virsmas.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">05</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Pazūdošie gredzeni</h3>
+              <p class="fact-card__text">
+                Zinātnieki uzskata, ka Saturna gredzeni lēnām zūd —
+                tie "līst" uz planētu gravitācijas ietekmē. Aprēķini
+                liecina, ka gredzeni varētu pilnībā izzust apmēram
+                100 miljonu gadu laikā. Tāpēc mums ir paveicies tos
+                redzēt tagad!
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU INFORMĀCIJA
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="info-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu informācija</span>
+          <h2 class="section-header__title" id="info-title">
+            Saturna raksturojums
+          </h2>
+        </header>
+
+        <div class="definition-list">
+          <div class="definition-item">
+            <span class="definition-item__term">Nosaukums</span>
+            <p class="definition-item__description">
+              Nosaukts par godu romiešu dievam Saturnam (grieķu:
+              Kronos) — lauksaimniecības dievam un Jupitera tēvam.
+              Latviešu valodā lieto arī nosaukumu "Sāturns" (novecojis).
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Sastāvs</span>
+            <p class="definition-item__description">
+              Galvenokārt ūdeņradis (96%) un hēlijs (3%). Kodols ir
+              iežu un ledus maisījums, kura masa ir 9–22 Zemes masas.
+              Tāpat kā Jupiters, Saturnam nav cietas virsmas.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Gredzeni</span>
+            <p class="definition-item__description">
+              Septiņi galvenie gredzeni (A, B, C, D, E, F, G), kas
+              nosaukti alfabētiskā secībā pēc atklāšanas kārtības.
+              Starp A un B gredzeniem atrodas Kasīni sprauga —
+              4 800 km plata.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Magnētiskais lauks</span>
+            <p class="definition-item__description">
+              Saturnam ir magnētiskais lauks, kas ir 578 reizes
+              spēcīgāks par Zemes, bet 20 reizes vājāks par Jupitera.
+              Ass ir gandrīz precīzi vērsta pret rotācijas asi.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Pavadoņi</span>
+            <p class="definition-item__description">
+              Saturnam ir vairāk nekā 146 apstiprināti pavadoņi, no
+              kuriem lielākais ir Titāns. Citi ievērojami pavadoņi:
+              Encelads (ar geizeriem), Japets (ar divkrāsu virsmu),
+              Reja, Diona.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Izpēte</span>
+            <p class="definition-item__description">
+              Saturnu ir pētījušas Pioneer 11 (1979), Voyager 1 un 2
+              (1980–1981), Cassini-Huygens (2004–2017, 13 gadus
+              orbītā!). Nākotnē plānota Dragonfly misija uz Titānu.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOZĪMĪGĀKIE PAVADOŅI
+         ============================================================ -->
+    <section class="planet-page__section planet-page__section--alt" aria-labelledby="moons-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Pavadoņi</span>
+          <h2 class="section-header__title" id="moons-title">
+            Nozīmīgākie Saturna pavadoņi
+          </h2>
+          <p class="section-header__subtitle">
+            Titāns, Encelads, Japets un citi — katrai ar savu stāstu
+          </p>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Titāns -->
+          <article class="moon-card">
+            <a href="../moons/titan.html" class="moon-card__link" aria-label="Uzzināt vairāk par Titānu"></a>
+            <div class="moon-card__preview moon-card__preview--titan" aria-hidden="true">
+              <div class="moon moon--titan moon--sm">
+                <div class="moon__surface"></div>
+              </div>
+            </div>
+            <h3 class="moon-card__title">Titāns</h3>
+            <p class="moon-card__text">
+              Lielākais pavadonis ar biezu atmosfēru un šķidra metāna ezeriem.
+            </p>
+          </article>
+
+          <!-- Encelads -->
+          <article class="card card--teal">
+            <div class="card__icon" aria-hidden="true">❄</div>
+            <h3 class="card__title">Encelads</h3>
+            <p class="card__text">
+              Ledus pavadonis ar geizeriem, kas izšauj ūdens tvaiku
+              no dienvidpola. Zem ledus atrodas šķidra ūdens okeāns.
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Diametrs</span>
+                <p class="definition-item__description">504 km</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Japets -->
+          <article class="card card--violet">
+            <div class="card__icon" aria-hidden="true">⚫</div>
+            <h3 class="card__title">Japets</h3>
+            <p class="card__text">
+              Noslēpumains pavadonis ar divkrāsu virsmu — viena puse
+              ir gaiša, otra tumša. Tam ir arī milzīgs ekvatoriālais
+              kalnu grēda.
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Diametrs</span>
+                <p class="definition-item__description">1 469 km</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Reja -->
+          <article class="card card--pink">
+            <div class="card__icon" aria-hidden="true">🌑</div>
+            <h3 class="card__title">Reja</h3>
+            <p class="card__text">
+              Otrais lielākais Saturna pavadonis. Tam ir plāna
+              atmosfēra ar skābekli un oglekļa dioksīdu.
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Diametrs</span>
+                <p class="definition-item__description">1 527 km</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU FAKTI (DETAILS)
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="extra-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu lasāmviela</span>
+          <h2 class="section-header__title" id="extra-title">
+            Biežāk uzdotie jautājumi
+          </h2>
+        </header>
+
+        <div class="control-accordion">
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              No kā sastāv Saturna gredzeni?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Saturna gredzeni sastāv no miljardiem ledus un iežu
+                daļiņu. Lielākā daļa ir ūdens ledus, bet ir arī
+                klintis un putekļi. Daļiņu izmēri svārstās no
+                mikroskopiskiem putekļiem līdz bluķiem, kas ir
+                vairāku metru lieli. Gredzeni, iespējams, veidojušies
+                no sadalīta pavadoņa vai komētas, kas pārāk tuvu
+                nonāca pie Saturna.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Saturns ir tik gaišs?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Saturns ir ļoti gaišs, jo tā atmosfēra atstaro daudz
+                saules gaismas. Augšējie mākoņu slāņi sastāv no
+                amonjaka ledus kristāliem, kas labi atstaro gaismu.
+                Turklāt Saturna gredzeni arī atstaro gaismu, padarot
+                planētu vēl spožāku. Saturnu var redzēt ar neapbruņotu
+                aci no Zemes.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Saturna gredzeni ir tik plakani?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Saturna gredzeni ir ļoti plakani, jo tie atrodas
+                planētas ekvatoriālajā plaknē. Tie veidojušies no
+                daļiņām, kas riņķo ap Saturnu — katras daļiņas
+                orbīta ir gandrīz precīzi ekvatoriālajā plaknē, jo
+                planētas gravitācija un rotācija nosaka šo plakni.
+                Tāpēc gredzeni ir plakani kā disks, nevis sfēriski.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Cik ilgi pastāvēs Saturna gredzeni?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Zinātnieki lēš, ka Saturna gredzeni varētu izzust
+                apmēram 100 miljonu gadu laikā. Iemesls — "gredzenu
+                lietus": gravitācija velk gredzenu daļiņas uz planētas
+                virsmu. Cassini misija 2017. gadā novēroja šo procesu.
+                Salīdzinājumam — Saules sistēmas vecums ir 4,6
+                miljardi gadu, tāpēc gredzeni ir salīdzinoši jauns
+                veidojums.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NAVIGĀCIJA UZ CITĀM PLANĒTĀM
+         ============================================================ -->
+    <section class="planet-page__section" aria-label="Navigācija starp planētām">
+      <div class="page__container">
+        <nav class="planet-nav" aria-label="Iepriekšējā un nākamā planēta">
+          <a href="jupiter.html" class="planet-nav__link planet-nav__link--prev">
+            Jupiters
+          </a>
+          <a href="../index.html#planets" class="planet-nav__link planet-nav__link--home">
+            Visas planētas
+          </a>
+          <a href="uranus.html" class="planet-nav__link planet-nav__link--next">
+            Urāns
+          </a>
+        </nav>
+      </div>
+    </section>
+
   </main>
 
+  <!-- === ATGRIEŠANĀS PIE AUGŠAS === -->
+  <a href="#" class="back-to-top" aria-label="Atgriezties pie lapas sākuma"></a>
+
+  <!-- === KĀJENE === -->
   <footer class="footer">
+    <div class="footer__decoration" aria-hidden="true"></div>
+
     <div class="page__container">
-      <div class="footer__bottom" style="margin-top: 0;">
-        <p class="footer__copyright">© 2026 QvarcY · SolXy · MIT</p>
+      <div class="footer__content">
+
+        <div class="footer__block footer__block--brand">
+          <a href="../index.html" class="footer__brand">
+            <span class="footer__brand-mark" aria-hidden="true"></span>
+            <span>SolXy</span>
+          </a>
+          <p class="footer__text">
+            <strong>SolXy</strong> — Saules sistēmas izpēte bez JavaScript.
+            Uzbūvēts tikai ar HTML un CSS.
+          </p>
+          <a href="https://github.com/QvarcY" class="footer__author" rel="noopener noreferrer" target="_blank">
+            <span class="footer__author-avatar" aria-hidden="true">Q</span>
+            <span class="footer__author-info">
+              <span class="footer__author-name">QvarcY</span>
+              <span class="footer__author-handle">@QvarcY</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Planētas</h3>
+          <ul class="footer__list">
+            <li><a href="mercury.html" class="footer__link">Merkurs</a></li>
+            <li><a href="venus.html" class="footer__link">Venēra</a></li>
+            <li><a href="earth.html" class="footer__link">Zeme</a></li>
+            <li><a href="mars.html" class="footer__link">Marss</a></li>
+            <li><a href="jupiter.html" class="footer__link">Jupiters</a></li>
+            <li><a href="saturn.html" class="footer__link">Saturns</a></li>
+            <li><a href="uranus.html" class="footer__link">Urāns</a></li>
+            <li><a href="neptune.html" class="footer__link">Neptūns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Pavadoņi</h3>
+          <ul class="footer__list">
+            <li><a href="../moons/moon.html" class="footer__link">Mēness</a></li>
+            <li><a href="../moons/io.html" class="footer__link">Io</a></li>
+            <li><a href="../moons/europa.html" class="footer__link">Eiropa</a></li>
+            <li><a href="../moons/ganymede.html" class="footer__link">Ganimēds</a></li>
+            <li><a href="../moons/callisto.html" class="footer__link">Kallisto</a></li>
+            <li><a href="../moons/titan.html" class="footer__link">Titāns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Dati</h3>
+          <ul class="footer__list">
+            <li><a href="../data/comparison.html" class="footer__link">Salīdzinājums</a></li>
+            <li><a href="../data/timeline.html" class="footer__link">Laika līnija</a></li>
+            <li><a href="../data/glossary.html" class="footer__link">Vārdnīca</a></li>
+            <li><a href="../data/missions.html" class="footer__link">Misijas</a></li>
+            <li><a href="../data/exoplanets.html" class="footer__link">Eksoplanētas</a></li>
+            <li><a href="../data/star-map.html" class="footer__link">Zvaigžņu karte</a></li>
+            <li><a href="../data/sizes.html" class="footer__link">Izmēri</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 · <a href="https://github.com/QvarcY" rel="noopener noreferrer" target="_blank">QvarcY</a> · MIT Licence
+        </p>
         <div class="footer__badges">
-          <span class="footer__badge footer__badge--teal">HTML</span>
-          <span class="footer__badge footer__badge--violet">CSS</span>
-          <span class="footer__badge footer__badge--pink">0 JS</span>
+          <span class="footer__badge footer__badge--teal">Tīrs CSS</span>
+          <span class="footer__badge footer__badge--violet">0 JS</span>
+          <span class="footer__badge footer__badge--pink">Saturns</span>
         </div>
       </div>
+
+      <a href="#" class="footer__top-link">Uz augšu</a>
     </div>
   </footer>
+
 </body>
 </html>
