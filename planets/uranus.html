@@ -1,43 +1,80 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+  <!-- ============================================================
+       SolXy · planets/uranus.html
+       Autors: QvarcY (https://github.com/QvarcY)
+       Licence: MIT
+       ============================================================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Urāns · SolXy — sadaļa tiek gatavota publicēšanai.">
+  <meta name="description" content="Urāns — ledus gigants ar vertikāliem gredzeniem. Uzzini par tā sānisko rotācijas asi, pavadoņiem un interesantiem faktiem.">
   <meta name="author" content="QvarcY">
+  <meta name="generator" content="SolXy · Tīrs CSS">
   <meta name="theme-color" content="#03050d">
   <meta name="color-scheme" content="dark light">
+  <link rel="author" href="https://github.com/QvarcY">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Urāns · SolXy">
+  <meta property="og:description" content="Ledus gigants ar vertikāliem gredzeniem.">
+  <meta property="og:image" content="../assets/og-image.svg">
+
   <title>Urāns · SolXy</title>
 
+  <!-- === FAVICON === -->
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/logo.svg">
+
+  <!-- === CSS === -->
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/typography.css">
   <link rel="stylesheet" href="../css/utilities.css">
   <link rel="stylesheet" href="../css/stars.css">
+  <link rel="stylesheet" href="../css/sun.css">
+  <link rel="stylesheet" href="../css/planets.css">
+  <link rel="stylesheet" href="../css/planet-uranus.css">
+  <link rel="stylesheet" href="../css/moons.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/planet-page.css">
   <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/controls.css">
   <link rel="stylesheet" href="../css/effects.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/animations-extended.css">
   <link rel="stylesheet" href="../css/transitions.css">
   <link rel="stylesheet" href="../css/themes.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/accessibility.css">
-  <link rel="stylesheet" href="../css/placeholder.css">
   <link rel="stylesheet" href="../css/print.css">
 </head>
-<body>
+
+<body class="planet-page planet-page--uranus">
+  <!-- === SKIP LINK === -->
   <a href="#main" class="skip-link">Pāriet uz saturu</a>
 
+  <!-- === ZVAIGŽŅU FONS === -->
   <div class="stars" aria-hidden="true">
     <div class="stars__layer stars__layer--far"></div>
     <div class="stars__layer stars__layer--mid"></div>
     <div class="stars__layer stars__layer--near"></div>
+    <span class="stars__sparkle stars__sparkle--1"></span>
+    <span class="stars__sparkle stars__sparkle--2"></span>
+    <span class="stars__sparkle stars__sparkle--3"></span>
   </div>
 
+  <!-- === NEBULA === -->
+  <div class="nebula" aria-hidden="true">
+    <div class="nebula__blob nebula__blob--1"></div>
+    <div class="nebula__blob nebula__blob--2"></div>
+  </div>
+
+  <!-- === GALVENE === -->
   <header class="header">
     <div class="page__container">
       <div class="header__inner">
@@ -48,65 +85,620 @@
             <span class="header__logo-subtitle">Saules sistēma</span>
           </span>
         </a>
+
         <nav class="header__nav" aria-label="Galvenā navigācija">
           <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="../index.html" class="header__nav-link">Sākums</a></li>
-            <li class="header__nav-item"><a href="../index.html#planets" class="header__nav-link">Planētas</a></li>
-            <li class="header__nav-item"><a href="../about.html" class="header__nav-link">Par projektu</a></li>
+            <li class="header__nav-item">
+              <a href="../index.html" class="header__nav-link">Sākums</a>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#planets" class="header__nav-link header__nav-link--active" aria-haspopup="true" aria-expanded="false">Planētas</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="mercury.html" class="header__dropdown-link">Merkurs</a></li>
+                <li class="header__dropdown-item"><a href="venus.html" class="header__dropdown-link">Venēra</a></li>
+                <li class="header__dropdown-item"><a href="earth.html" class="header__dropdown-link">Zeme</a></li>
+                <li class="header__dropdown-item"><a href="mars.html" class="header__dropdown-link">Marss</a></li>
+                <li class="header__dropdown-item"><a href="jupiter.html" class="header__dropdown-link">Jupiters</a></li>
+                <li class="header__dropdown-item"><a href="saturn.html" class="header__dropdown-link">Saturns</a></li>
+                <li class="header__dropdown-item"><a href="uranus.html" class="header__dropdown-link">Urāns</a></li>
+                <li class="header__dropdown-item"><a href="neptune.html" class="header__dropdown-link">Neptūns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#moons" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Pavadoņi</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../moons/moon.html" class="header__dropdown-link">Mēness</a></li>
+                <li class="header__dropdown-item"><a href="../moons/io.html" class="header__dropdown-link">Io</a></li>
+                <li class="header__dropdown-item"><a href="../moons/europa.html" class="header__dropdown-link">Eiropa</a></li>
+                <li class="header__dropdown-item"><a href="../moons/ganymede.html" class="header__dropdown-link">Ganimēds</a></li>
+                <li class="header__dropdown-item"><a href="../moons/callisto.html" class="header__dropdown-link">Kallisto</a></li>
+                <li class="header__dropdown-item"><a href="../moons/titan.html" class="header__dropdown-link">Titāns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#data" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Dati</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../data/comparison.html" class="header__dropdown-link">Salīdzinājums</a></li>
+                <li class="header__dropdown-item"><a href="../data/timeline.html" class="header__dropdown-link">Laika līnija</a></li>
+                <li class="header__dropdown-item"><a href="../data/glossary.html" class="header__dropdown-link">Vārdnīca</a></li>
+                <li class="header__dropdown-item"><a href="../data/missions.html" class="header__dropdown-link">Misijas</a></li>
+                <li class="header__dropdown-item"><a href="../data/exoplanets.html" class="header__dropdown-link">Eksoplanētas</a></li>
+                <li class="header__dropdown-item"><a href="../data/star-map.html" class="header__dropdown-link">Zvaigžņu karte</a></li>
+                <li class="header__dropdown-item"><a href="../data/sizes.html" class="header__dropdown-link">Izmēri</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="../about.html" class="header__nav-link">Par projektu</a>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
+  <!-- === GALVENAIS SATURS === -->
   <main id="main" class="page__main">
-    <section class="page-title-bar" aria-labelledby="page-title">
+
+    <!-- ============================================================
+         HERO SEKCIJA
+         ============================================================ -->
+    <section class="planet-page__hero" aria-labelledby="planet-title">
       <div class="page__container">
-        <div class="page-title-bar__inner">
-          <nav aria-label="Atrašanās vieta">
-            <ol class="breadcrumbs" style="list-style: none; padding-left: 0;">
-              <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Sākums</a></li>
-              <li class="breadcrumbs__item"><a href="../index.html#planets" class="breadcrumbs__link">Planētas</a></li>
-              <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Urāns</span></li>
-            </ol>
-          </nav>
-          <h1 class="page-title-bar__title" id="page-title">Urāns</h1>
-          <p class="page-title-bar__subtitle">SolXy · Planēta</p>
+        <nav class="breadcrumbs" aria-label="Atrašanās vieta" style="margin-bottom: var(--space-lg);">
+          <ol class="breadcrumbs__item" style="list-style: none; padding: 0; display: flex; gap: var(--space-xs); flex-wrap: wrap;">
+            <li style="list-style: none;">
+              <a href="../index.html" class="breadcrumbs__link">Sākums</a>
+            </li>
+            <li style="list-style: none;">
+              <a href="../index.html#planets" class="breadcrumbs__link">Planētas</a>
+            </li>
+            <li style="list-style: none;">
+              <span class="breadcrumbs__current" aria-current="page">Urāns</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="planet-page__hero-content">
+          <!-- Teksts -->
+          <div class="planet-page__hero-text">
+            <span class="planet-page__eyebrow">7. planēta no Saules</span>
+
+            <h1 class="planet-page__title" id="planet-title">
+              <span class="heading--planet">Urāns</span>
+            </h1>
+
+            <p class="planet-page__subtitle">
+              Ledus gigants ar vertikāliem gredzeniem
+            </p>
+
+            <p class="planet-page__description">
+              Urāns ir septītā planēta no Saules un trešā lielākā
+              Saules sistēmā. Tas ir unikāls ar savu rotācijas asi,
+              kas ir gandrīz 98 grādus novirzīta no perpendikulārās —
+              Urāns burtiski "ripo" pa savu orbītu. Tā gredzeni atrodas
+              gandrīz vertikāli attiecībā pret planētas kustības virzienu.
+            </p>
+
+            <div class="btn-row">
+              <a href="saturn.html" class="btn btn--secondary btn--arrow-left">
+                Iepriekšējā: Saturns
+              </a>
+              <a href="neptune.html" class="btn btn--primary btn--arrow">
+                Nākamā: Neptūns
+              </a>
+            </div>
+          </div>
+
+          <!-- Vizuālais -->
+          <div class="planet-page__hero-visual">
+            <div class="planet-page__orbit planet-page__orbit--1" aria-hidden="true"></div>
+            <div class="planet-page__orbit planet-page__orbit--2" aria-hidden="true"></div>
+            <div class="planet-page__orbit planet-page__orbit--3" aria-hidden="true"></div>
+            <div class="planet planet--uranus planet--page planet--rotate-slow" role="img" aria-label="Urāna planēta ar vertikāliem gredzeniem">
+              <div class="planet__rings"></div>
+              <div class="planet__surface"></div>
+              <div class="planet__texture"></div>
+              <div class="planet__atmosphere"></div>
+              <div class="planet__shadow"></div>
+              <div class="planet__moons"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-layout section-layout--lg">
+    <!-- ============================================================
+         STATISTIKAS KARTĪTES
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="stats-title">
       <div class="page__container">
-        <div class="release-placeholder">
-          <span class="release-placeholder__eyebrow">Drīzumā</span>
-          <h2 class="release-placeholder__title">Urāns vēl top</h2>
-          <p class="release-placeholder__text">Urāna detalizētā sadaļa tiks pievienota vienā no nākamajiem projekta atjauninājumiem.</p>
-          <div class="release-placeholder__meta" aria-label="Sadaļas statuss">
-            <span class="release-placeholder__tag">SolXy</span>
-            <span class="release-placeholder__tag">Planēta</span>
-            <span class="release-placeholder__tag">Tīrs CSS</span>
+        <header class="section-header">
+          <span class="section-header__eyebrow">Statistika</span>
+          <h2 class="section-header__title" id="stats-title">
+            Urāns skaitļos
+          </h2>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card__label">Attālums no Saules</span>
+            <span class="stat-card__value">2 871<span class="stat-card__unit">mlj km</span></span>
+            <span class="stat-card__note">19,2 AU</span>
           </div>
-          <div class="release-placeholder__actions">
-            <a href="../index.html#planets" class="btn btn--primary">Atpakaļ uz sadaļu</a>
-            <a href="../about.html" class="btn btn--secondary">Par projektu</a>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Orbitālais gads</span>
+            <span class="stat-card__value">84<span class="stat-card__unit">gadi</span></span>
+            <span class="stat-card__note">30 687 dienas</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Diena (rotācija)</span>
+            <span class="stat-card__value">17h 14m<span class="stat-card__unit"></span></span>
+            <span class="stat-card__note">Retrogrāda</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Virsmas temperatūra</span>
+            <span class="stat-card__value">-224<span class="stat-card__unit">°C</span></span>
+            <span class="stat-card__note">Aukstākā atmosfēra</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Rādiuss</span>
+            <span class="stat-card__value">25 362<span class="stat-card__unit">km</span></span>
+            <span class="stat-card__note">4× Zemes</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Pavadoņi</span>
+            <span class="stat-card__value">28</span>
+            <span class="stat-card__note">Nosaukti Šekspīra vārdos</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         INTERESANTI FAKTI
+         ============================================================ -->
+    <section class="planet-page__section planet-page__section--alt" aria-labelledby="facts-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Interesanti fakti</span>
+          <h2 class="section-header__title" id="facts-title">
+            5 lietas, ko iespējams nezini par Urānu
+          </h2>
+        </header>
+
+        <div class="facts-grid">
+          <article class="fact-card">
+            <span class="fact-card__number">01</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Riņķo uz sāniem</h3>
+              <p class="fact-card__text">
+                Urāna rotācijas ass ir novirzīta par 98 grādiem no
+                perpendikulārās — tas burtiski "ripo" pa savu orbītu.
+                Tas nozīmē, ka Urāna poliem ir 42 gadus ilga diena
+                un 42 gadus ilga nakts. Zinātnieki uzskata, ka šo
+                novirzi izraisīja sadursme ar citu objektu agrīnajā
+                vēsturē.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">02</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Aukstākā planēta</h3>
+              <p class="fact-card__text">
+                Urāns ir aukstākā planēta Saules sistēmā, neskatoties
+                uz to, ka Neptūns atrodas tālāk no Saules. Minimālā
+                reģistrētā temperatūra ir -224°C. Šī neparastā
+                parādība joprojām tiek pētīta.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">03</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Vertikālie gredzeni</h3>
+              <p class="fact-card__text">
+                Urānam ir 13 šauri, tumši gredzeni, kas atrodas
+                gandrīz vertikāli attiecībā pret planētas orbītas
+                plakni — pretēji Saturna horizontālajiem gredzeniem.
+                Gredzeni sastāv no tumšām daļiņām, kas atstaro ļoti
+                maz gaismas.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">04</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Ledus gigants</h3>
+              <p class="fact-card__text">
+                Urāns pieder pie "ledus gigantu" kategorijas kopā ar
+                Neptūnu. Atšķirībā no Jupitera un Saturna (gāzes
+                giganti), Urāna iekšienē ir liels daudzums ūdens,
+                amonjaka un metāna ledus, kas atrodas zem milzīga
+                spiediena.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">05</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Nosaukts Šekspīra vārdos</h3>
+              <p class="fact-card__text">
+                Urāna pavadoņi ir nosaukti nevis mitoloģisko būtņu,
+                bet gan Viljama Šekspīra un Aleksandra Poupa darbu
+                varoņu vārdos — Titānija, Oberons, Miranda, Ariels,
+                Umbriels, Džuljeta, Porcija u.c. Tā ir unikāla
+                tradīcija Saules sistēmā.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU INFORMĀCIJA
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="info-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu informācija</span>
+          <h2 class="section-header__title" id="info-title">
+            Urāna raksturojums
+          </h2>
+        </header>
+
+        <div class="definition-list">
+          <div class="definition-item">
+            <span class="definition-item__term">Nosaukums</span>
+            <p class="definition-item__description">
+              Nosaukts par godu grieķu debesu dievam Urānam (Uranus) —
+              pirmajam no titāniem, kurš valdīja pār pasauli. Tas ir
+              vienīgais nosaukums, kas ņemts no grieķu, nevis romiešu
+              mitoloģijas.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Sastāvs</span>
+            <p class="definition-item__description">
+              Galvenokārt ūdeņradis (83%) un hēlijs (15%), ar nelielu
+              daudzumu metāna (2%) un amonjaka. Metāns absorbē
+              sarkano gaismu, piešķirot Urānam tā raksturīgo
+              zilganzaļo krāsu.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Atmosfēra</span>
+            <p class="definition-item__description">
+              Atmosfēra sastāv no trim slāņiem: troposfēra (mākoņi),
+              stratosfēra (metāna migla) un termosfēra (karsta, retināta
+              gāze). Atmosfērā plosās ātrākie vēji Saules sistēmā,
+              sasniedzot 900 km/h.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Rotācijas ass</span>
+            <p class="definition-item__description">
+              Urāna rotācijas ass ir novirzīta par 97,77 grādiem no
+              orbītas plaknes perpendikula. Urāns faktiski ripo pa
+              savu orbītu. Vēl vairāk — Urāns rotē retrogrādi,
+              pretēji savai orbītas kustībai.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Magnētiskais lauks</span>
+            <p class="definition-item__description">
+              Urāna magnētiskais lauks ir neparasti novietots — tas
+              ir 59 grādus novirzīts no rotācijas ass un nenāk no
+              planētas centra. Tas rada savdabīgu magnetosfēru, kas
+              "vijas" līdzi planētas rotācijai.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Izpēte</span>
+            <p class="definition-item__description">
+              Urānu ir apmeklējusi tikai viena misija — Voyager 2
+              (1986. gada janvārī). Tā atklāja 10 jaunus pavadoņus,
+              2 jaunus gredzenus un Urāna magnētisko lauku. Nākotnē
+              tiek plānota Urāna Orbiters and Probe (UOP) misija.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NOZĪMĪGĀKIE PAVADOŅI
+         ============================================================ -->
+    <section class="planet-page__section planet-page__section--alt" aria-labelledby="moons-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Pavadoņi</span>
+          <h2 class="section-header__title" id="moons-title">
+            Nozīmīgākie Urāna pavadoņi
+          </h2>
+          <p class="section-header__subtitle">
+            Nosaukti Šekspīra un Poupa darbu varoņu vārdos
+          </p>
+        </header>
+
+        <div class="cards-grid">
+          <!-- Titānija -->
+          <article class="card card--teal">
+            <div class="card__icon" aria-hidden="true">🌑</div>
+            <h3 class="card__title">Titānija</h3>
+            <p class="card__text">
+              Lielākais Urāna pavadonis — 1 578 km diametrā. Virsma
+              klāta ar krāteriem un kanjoniem. Nosaukta par godu
+              feju karalienei no Šekspīra "Sapņa vasaras naktī".
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Atklāts</span>
+                <p class="definition-item__description">1787, V. Heršels</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Oberons -->
+          <article class="card card--violet">
+            <div class="card__icon" aria-hidden="true">🌒</div>
+            <h3 class="card__title">Oberons</h3>
+            <p class="card__text">
+              Otrais lielākais Urāna pavadonis — 1 523 km diametrā.
+              Virsma ir tumša un klāta ar krāteriem. Nosaukts par
+              godu feju karalim no "Sapņa vasaras naktī".
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Atklāts</span>
+                <p class="definition-item__description">1787, V. Heršels</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Miranda -->
+          <article class="card card--pink">
+            <div class="card__icon" aria-hidden="true">🪨</div>
+            <h3 class="card__title">Miranda</h3>
+            <p class="card__text">
+              Viens no dīvainākajiem pavadoņiem Saules sistēmā —
+              virsma ar milzīgiem kanjoniem, klintīm un nelīdzenumiem.
+              Nosaukta par godu varonei no "Vētras".
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Atklāts</span>
+                <p class="definition-item__description">1948, G. Kuiper</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Ariels -->
+          <article class="card card--amber">
+            <div class="card__icon" aria-hidden="true">✨</div>
+            <h3 class="card__title">Ariels</h3>
+            <p class="card__text">
+              Spožākais Urāna pavadonis ar gaišu virsmu un daudziem
+              kanjoniem. Nosaukts par godu gaisa garam no
+              "Vētras".
+            </p>
+            <div class="definition-list" style="margin-top: var(--space-md); font-size: var(--fs-xs);">
+              <div class="definition-item" style="padding: var(--space-xs);">
+                <span class="definition-item__term">Atklāts</span>
+                <p class="definition-item__description">1851, V. Lasels</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU FAKTI (DETAILS)
+         ============================================================ -->
+    <section class="planet-page__section" aria-labelledby="extra-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu lasāmviela</span>
+          <h2 class="section-header__title" id="extra-title">
+            Biežāk uzdotie jautājumi
+          </h2>
+        </header>
+
+        <div class="control-accordion">
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Urāns ripo uz sāniem?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Precīzs iemesls nav zināms, bet dominējošā hipotēze
+                ir tāda, ka Saules sistēmas veidošanās sākumposmā
+                (pirms apmēram 4 miljardiem gadu) Urāns sadūrās ar
+                citu lielu objektu — iespējams, Zemes lieluma
+                protoplanētu. Šī sadursme izraisīja Urāna
+                apgāšanos uz sāniem. Tā kā Urānam nav liela
+                pavadoņa, kas stabilizētu tā rotācijas asi, šī
+                novirze saglabājās līdz mūsdienām.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Urāns ir zilganzaļš?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Urāna zilganzaļā krāsa ir saistīta ar metānu tā
+                atmosfērā. Metāns absorbē sarkanās gaismas viļņu
+                garumus, atstaro zilos un zaļos — tāpēc Urāns
+                izskatās zilganzaļš. Neskatoties uz to, ka Urāns un
+                Neptūns ir līdzīgi pēc sastāva, Neptūns ir nedaudz
+                zilāks.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Urāns ir aukstāks par Neptūnu?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Šī ir viena no lielākajām mīklām Saules sistēmā.
+                Urāns atrodas tuvāk Saulei nekā Neptūns, tāpēc tam
+                vajadzētu būt siltākam. Tomēr Urāna minimālā
+                temperatūra ir -224°C, savukārt Neptūna — ap -214°C.
+                Zinātnieki uzskata, ka iemesls varētu būt atšķirības
+                iekšējā siltuma izdalīšanā vai Urāna atmosfēras
+                dinamikā. Urāns neizstaro tik daudz siltuma no
+                iekšienes kā Neptūns.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Urānu sauc par "ledus gigantu"?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Urānu (un Neptūnu) sauc par "ledus gigantiem", jo
+                to iekšiene atšķiras no Jupitera un Saturna
+                ("gāzes gigantiem"). Urāna iekšienē ir liels
+                daudzums ūdens, metāna un amonjaka ledus — nevis
+                tikai ūdeņradis un hēlijs. Zem milzīgā spiediena
+                šie savienojumi veido "karstu ledus" slāni, kas
+                nav ne cieta, ne šķidra viela.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NAVIGĀCIJA UZ CITĀM PLANĒTĀM
+         ============================================================ -->
+    <section class="planet-page__section" aria-label="Navigācija starp planētām">
+      <div class="page__container">
+        <nav class="planet-nav" aria-label="Iepriekšējā un nākamā planēta">
+          <a href="saturn.html" class="planet-nav__link planet-nav__link--prev">
+            Saturns
+          </a>
+          <a href="../index.html#planets" class="planet-nav__link planet-nav__link--home">
+            Visas planētas
+          </a>
+          <a href="neptune.html" class="planet-nav__link planet-nav__link--next">
+            Neptūns
+          </a>
+        </nav>
+      </div>
+    </section>
+
   </main>
 
+  <!-- === ATGRIEŠANĀS PIE AUGŠAS === -->
+  <a href="#" class="back-to-top" aria-label="Atgriezties pie lapas sākuma"></a>
+
+  <!-- === KĀJENE === -->
   <footer class="footer">
+    <div class="footer__decoration" aria-hidden="true"></div>
+
     <div class="page__container">
-      <div class="footer__bottom" style="margin-top: 0;">
-        <p class="footer__copyright">© 2026 QvarcY · SolXy · MIT</p>
+      <div class="footer__content">
+
+        <div class="footer__block footer__block--brand">
+          <a href="../index.html" class="footer__brand">
+            <span class="footer__brand-mark" aria-hidden="true"></span>
+            <span>SolXy</span>
+          </a>
+          <p class="footer__text">
+            <strong>SolXy</strong> — Saules sistēmas izpēte bez JavaScript.
+            Uzbūvēts tikai ar HTML un CSS.
+          </p>
+          <a href="https://github.com/QvarcY" class="footer__author" rel="noopener noreferrer" target="_blank">
+            <span class="footer__author-avatar" aria-hidden="true">Q</span>
+            <span class="footer__author-info">
+              <span class="footer__author-name">QvarcY</span>
+              <span class="footer__author-handle">@QvarcY</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Planētas</h3>
+          <ul class="footer__list">
+            <li><a href="mercury.html" class="footer__link">Merkurs</a></li>
+            <li><a href="venus.html" class="footer__link">Venēra</a></li>
+            <li><a href="earth.html" class="footer__link">Zeme</a></li>
+            <li><a href="mars.html" class="footer__link">Marss</a></li>
+            <li><a href="jupiter.html" class="footer__link">Jupiters</a></li>
+            <li><a href="saturn.html" class="footer__link">Saturns</a></li>
+            <li><a href="uranus.html" class="footer__link">Urāns</a></li>
+            <li><a href="neptune.html" class="footer__link">Neptūns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Pavadoņi</h3>
+          <ul class="footer__list">
+            <li><a href="../moons/moon.html" class="footer__link">Mēness</a></li>
+            <li><a href="../moons/io.html" class="footer__link">Io</a></li>
+            <li><a href="../moons/europa.html" class="footer__link">Eiropa</a></li>
+            <li><a href="../moons/ganymede.html" class="footer__link">Ganimēds</a></li>
+            <li><a href="../moons/callisto.html" class="footer__link">Kallisto</a></li>
+            <li><a href="../moons/titan.html" class="footer__link">Titāns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Dati</h3>
+          <ul class="footer__list">
+            <li><a href="../data/comparison.html" class="footer__link">Salīdzinājums</a></li>
+            <li><a href="../data/timeline.html" class="footer__link">Laika līnija</a></li>
+            <li><a href="../data/glossary.html" class="footer__link">Vārdnīca</a></li>
+            <li><a href="../data/missions.html" class="footer__link">Misijas</a></li>
+            <li><a href="../data/exoplanets.html" class="footer__link">Eksoplanētas</a></li>
+            <li><a href="../data/star-map.html" class="footer__link">Zvaigžņu karte</a></li>
+            <li><a href="../data/sizes.html" class="footer__link">Izmēri</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 · <a href="https://github.com/QvarcY" rel="noopener noreferrer" target="_blank">QvarcY</a> · MIT Licence
+        </p>
         <div class="footer__badges">
-          <span class="footer__badge footer__badge--teal">HTML</span>
-          <span class="footer__badge footer__badge--violet">CSS</span>
-          <span class="footer__badge footer__badge--pink">0 JS</span>
+          <span class="footer__badge footer__badge--teal">Tīrs CSS</span>
+          <span class="footer__badge footer__badge--violet">0 JS</span>
+          <span class="footer__badge footer__badge--pink">Urāns</span>
         </div>
       </div>
+
+      <a href="#" class="footer__top-link">Uz augšu</a>
     </div>
   </footer>
+
 </body>
 </html>
