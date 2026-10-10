@@ -1,43 +1,78 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+  <!-- ============================================================
+       SolXy · moons/moon.html
+       Autors: QvarcY (https://github.com/QvarcY)
+       Licence: MIT
+       ============================================================ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Mēness · SolXy — sadaļa tiek gatavota publicēšanai.">
+  <meta name="description" content="Mēness — Zemes vienīgais dabiskais pavadonis. Uzzini par tā virsmu, plūdmaiņām, Apollo misijām un interesantiem faktiem.">
   <meta name="author" content="QvarcY">
+  <meta name="generator" content="SolXy · Tīrs CSS">
   <meta name="theme-color" content="#03050d">
   <meta name="color-scheme" content="dark light">
+  <link rel="author" href="https://github.com/QvarcY">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mēness · SolXy">
+  <meta property="og:description" content="Zemes vienīgais dabiskais pavadonis.">
+  <meta property="og:image" content="../assets/og-image.svg">
+
   <title>Mēness · SolXy</title>
 
+  <!-- === FAVICON === -->
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="apple-touch-icon" href="../assets/logo.svg">
+
+  <!-- === CSS === -->
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/typography.css">
   <link rel="stylesheet" href="../css/utilities.css">
   <link rel="stylesheet" href="../css/stars.css">
+  <link rel="stylesheet" href="../css/sun.css">
+  <link rel="stylesheet" href="../css/moons.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/cards.css">
+  <link rel="stylesheet" href="../css/moon-page.css">
   <link rel="stylesheet" href="../css/buttons.css">
+  <link rel="stylesheet" href="../css/controls.css">
   <link rel="stylesheet" href="../css/effects.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/animations-extended.css">
   <link rel="stylesheet" href="../css/transitions.css">
   <link rel="stylesheet" href="../css/themes.css">
   <link rel="stylesheet" href="../css/responsive.css">
   <link rel="stylesheet" href="../css/accessibility.css">
-  <link rel="stylesheet" href="../css/placeholder.css">
   <link rel="stylesheet" href="../css/print.css">
 </head>
-<body>
+
+<body class="moon-page moon-page--moon">
+  <!-- === SKIP LINK === -->
   <a href="#main" class="skip-link">Pāriet uz saturu</a>
 
+  <!-- === ZVAIGŽŅU FONS === -->
   <div class="stars" aria-hidden="true">
     <div class="stars__layer stars__layer--far"></div>
     <div class="stars__layer stars__layer--mid"></div>
     <div class="stars__layer stars__layer--near"></div>
+    <span class="stars__sparkle stars__sparkle--1"></span>
+    <span class="stars__sparkle stars__sparkle--2"></span>
+    <span class="stars__sparkle stars__sparkle--3"></span>
   </div>
 
+  <!-- === NEBULA === -->
+  <div class="nebula" aria-hidden="true">
+    <div class="nebula__blob nebula__blob--1"></div>
+    <div class="nebula__blob nebula__blob--2"></div>
+  </div>
+
+  <!-- === GALVENE === -->
   <header class="header">
     <div class="page__container">
       <div class="header__inner">
@@ -48,65 +83,623 @@
             <span class="header__logo-subtitle">Saules sistēma</span>
           </span>
         </a>
+
         <nav class="header__nav" aria-label="Galvenā navigācija">
           <ul class="header__nav-list">
-            <li class="header__nav-item"><a href="../index.html" class="header__nav-link">Sākums</a></li>
-            <li class="header__nav-item"><a href="../index.html#moons" class="header__nav-link">Pavadoņi</a></li>
-            <li class="header__nav-item"><a href="../about.html" class="header__nav-link">Par projektu</a></li>
+            <li class="header__nav-item">
+              <a href="../index.html" class="header__nav-link">Sākums</a>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#planets" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Planētas</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../planets/mercury.html" class="header__dropdown-link">Merkurs</a></li>
+                <li class="header__dropdown-item"><a href="../planets/venus.html" class="header__dropdown-link">Venēra</a></li>
+                <li class="header__dropdown-item"><a href="../planets/earth.html" class="header__dropdown-link">Zeme</a></li>
+                <li class="header__dropdown-item"><a href="../planets/mars.html" class="header__dropdown-link">Marss</a></li>
+                <li class="header__dropdown-item"><a href="../planets/jupiter.html" class="header__dropdown-link">Jupiters</a></li>
+                <li class="header__dropdown-item"><a href="../planets/saturn.html" class="header__dropdown-link">Saturns</a></li>
+                <li class="header__dropdown-item"><a href="../planets/uranus.html" class="header__dropdown-link">Urāns</a></li>
+                <li class="header__dropdown-item"><a href="../planets/neptune.html" class="header__dropdown-link">Neptūns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#moons" class="header__nav-link header__nav-link--active" aria-haspopup="true" aria-expanded="false">Pavadoņi</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="moon.html" class="header__dropdown-link">Mēness</a></li>
+                <li class="header__dropdown-item"><a href="io.html" class="header__dropdown-link">Io</a></li>
+                <li class="header__dropdown-item"><a href="europa.html" class="header__dropdown-link">Eiropa</a></li>
+                <li class="header__dropdown-item"><a href="ganymede.html" class="header__dropdown-link">Ganimēds</a></li>
+                <li class="header__dropdown-item"><a href="callisto.html" class="header__dropdown-link">Kallisto</a></li>
+                <li class="header__dropdown-item"><a href="titan.html" class="header__dropdown-link">Titāns</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item header__nav-item--dropdown">
+              <a href="../index.html#data" class="header__nav-link" aria-haspopup="true" aria-expanded="false">Dati</a>
+              <ul class="header__dropdown">
+                <li class="header__dropdown-item"><a href="../data/comparison.html" class="header__dropdown-link">Salīdzinājums</a></li>
+                <li class="header__dropdown-item"><a href="../data/timeline.html" class="header__dropdown-link">Laika līnija</a></li>
+                <li class="header__dropdown-item"><a href="../data/glossary.html" class="header__dropdown-link">Vārdnīca</a></li>
+                <li class="header__dropdown-item"><a href="../data/missions.html" class="header__dropdown-link">Misijas</a></li>
+                <li class="header__dropdown-item"><a href="../data/exoplanets.html" class="header__dropdown-link">Eksoplanētas</a></li>
+                <li class="header__dropdown-item"><a href="../data/star-map.html" class="header__dropdown-link">Zvaigžņu karte</a></li>
+                <li class="header__dropdown-item"><a href="../data/sizes.html" class="header__dropdown-link">Izmēri</a></li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="../about.html" class="header__nav-link">Par projektu</a>
+            </li>
           </ul>
         </nav>
       </div>
     </div>
   </header>
 
+  <!-- === GALVENAIS SATURS === -->
   <main id="main" class="page__main">
-    <section class="page-title-bar" aria-labelledby="page-title">
+
+    <!-- ============================================================
+         HERO SEKCIJA
+         ============================================================ -->
+    <section class="moon-page__hero" aria-labelledby="moon-title">
       <div class="page__container">
-        <div class="page-title-bar__inner">
-          <nav aria-label="Atrašanās vieta">
-            <ol class="breadcrumbs" style="list-style: none; padding-left: 0;">
-              <li class="breadcrumbs__item"><a href="../index.html" class="breadcrumbs__link">Sākums</a></li>
-              <li class="breadcrumbs__item"><a href="../index.html#moons" class="breadcrumbs__link">Pavadoņi</a></li>
-              <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Mēness</span></li>
-            </ol>
-          </nav>
-          <h1 class="page-title-bar__title" id="page-title">Mēness</h1>
-          <p class="page-title-bar__subtitle">SolXy · Pavadonis</p>
+        <nav class="breadcrumbs" aria-label="Atrašanās vieta" style="margin-bottom: var(--space-lg);">
+          <ol class="breadcrumbs__item" style="list-style: none; padding: 0; display: flex; gap: var(--space-xs); flex-wrap: wrap;">
+            <li style="list-style: none;">
+              <a href="../index.html" class="breadcrumbs__link">Sākums</a>
+            </li>
+            <li style="list-style: none;">
+              <a href="../index.html#moons" class="breadcrumbs__link">Pavadoņi</a>
+            </li>
+            <li style="list-style: none;">
+              <span class="breadcrumbs__current" aria-current="page">Mēness</span>
+            </li>
+          </ol>
+        </nav>
+
+        <div class="moon-page__hero-content">
+          <!-- Teksts -->
+          <div class="moon-page__hero-text">
+            <span class="moon-page__eyebrow">Zemes pavadonis</span>
+
+            <h1 class="moon-page__title" id="moon-title">
+              <span class="heading--moon">Mēness</span>
+            </h1>
+
+            <p class="moon-page__subtitle">
+              Zemes vienīgais dabiskais pavadonis
+            </p>
+
+            <p class="moon-page__description">
+              Mēness ir piektais lielākais pavadonis Saules sistēmā un
+              vienīgais dabiskais Zemes pavadonis. Tas ir viens no
+              lielākajiem pavadoņiem attiecībā pret tā planētu — Mēness
+              diametrs ir aptuveni 1/4 no Zemes diametra. Mēness
+              stabilizē Zemes rotācijas asi un izraisa plūdmaiņas
+              okeānos.
+            </p>
+
+            <div class="btn-row">
+              <a href="../planets/earth.html" class="btn btn--secondary btn--arrow-left">
+                Atpakaļ pie Zemes
+              </a>
+              <a href="io.html" class="btn btn--primary btn--arrow">
+                Nākamais: Io
+              </a>
+            </div>
+          </div>
+
+          <!-- Vizuālais -->
+          <div class="moon-page__hero-visual">
+            <div class="moon-page__orbit moon-page__orbit--1" aria-hidden="true"></div>
+            <div class="moon-page__orbit moon-page__orbit--2" aria-hidden="true"></div>
+            <div class="moon moon--moon moon--page moon--rotate-slow" role="img" aria-label="Mēness">
+              <div class="moon__surface"></div>
+              <div class="moon__shadow"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section-layout section-layout--lg">
+    <!-- ============================================================
+         STATISTIKAS KARTĪTES
+         ============================================================ -->
+    <section class="moon-page__section" aria-labelledby="stats-title">
       <div class="page__container">
-        <div class="release-placeholder">
-          <span class="release-placeholder__eyebrow">Drīzumā</span>
-          <h2 class="release-placeholder__title">Mēness vēl top</h2>
-          <p class="release-placeholder__text">Zemes Mēness detalizētā lapa tiks publicēta pavadoņu satura posmā.</p>
-          <div class="release-placeholder__meta" aria-label="Sadaļas statuss">
-            <span class="release-placeholder__tag">SolXy</span>
-            <span class="release-placeholder__tag">Pavadonis</span>
-            <span class="release-placeholder__tag">Tīrs CSS</span>
+        <header class="section-header">
+          <span class="section-header__eyebrow">Statistika</span>
+          <h2 class="section-header__title" id="stats-title">
+            Mēness skaitļos
+          </h2>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-card__label">Attālums no Zemes</span>
+            <span class="stat-card__value">384 400<span class="stat-card__unit">km</span></span>
+            <span class="stat-card__note">Vidējais</span>
           </div>
-          <div class="release-placeholder__actions">
-            <a href="../index.html#moons" class="btn btn--primary">Atpakaļ uz sadaļu</a>
-            <a href="../about.html" class="btn btn--secondary">Par projektu</a>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Orbītas periods</span>
+            <span class="stat-card__value">27,3<span class="stat-card__unit">dienas</span></span>
+            <span class="stat-card__note">Siderālais</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Rotācijas periods</span>
+            <span class="stat-card__value">27,3<span class="stat-card__unit">dienas</span></span>
+            <span class="stat-card__note">Sinhronizēts</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Virsmas temperatūra</span>
+            <span class="stat-card__value">-173 līdz +127<span class="stat-card__unit">°C</span></span>
+            <span class="stat-card__note">Ekstrēmas</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Diametrs</span>
+            <span class="stat-card__value">3 474<span class="stat-card__unit">km</span></span>
+            <span class="stat-card__note">0,27× Zemes</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-card__label">Virsmas laukums</span>
+            <span class="stat-card__value">3,79×10⁷<span class="stat-card__unit">km²</span></span>
+            <span class="stat-card__note">~Āfrika+Austrālija</span>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         INTERESANTI FAKTI
+         ============================================================ -->
+    <section class="moon-page__section moon-page__section--alt" aria-labelledby="facts-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Interesanti fakti</span>
+          <h2 class="section-header__title" id="facts-title">
+            5 lietas, ko iespējams nezini par Mēnesi
+          </h2>
+        </header>
+
+        <div class="facts-grid">
+          <article class="fact-card">
+            <span class="fact-card__number">01</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Vienmēr viena puse</h3>
+              <p class="fact-card__text">
+                Mēness vienmēr rāda vienu un to pašu pusi pret Zemi,
+                jo tā rotācijas periods ir sinhronizēts ar orbītas
+                periodu (27,3 dienas). "Tumšā puse" nav pastāvīgi
+                tumša — tā saņem tikpat daudz saules gaismas, cik
+                redzamā puse, tikai mēs to neredzam no Zemes.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">02</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Plūdmaiņas</h3>
+              <p class="fact-card__text">
+                Mēness gravitācija izraisa plūdmaiņas Zemes okeānos —
+                divas reizes dienā ūdens līmenis ceļas un krīt.
+                Mēness arī lēnām attālinās no Zemes par apmēram
+                3,8 cm gadā, jo plūdmaiņas pārnes Zemes rotācijas
+                enerģiju uz Mēness orbītu.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">03</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Apollo misijas</h3>
+              <p class="fact-card__text">
+                Laikā no 1969. līdz 1972. gadam uz Mēness nosēdās
+                6 Apollo misijas, un 12 cilvēki staigāja pa tā virsmu.
+                Pirmie — Nils Armstrongs un Bazs Oldrins — 1969. gada
+                20. jūlijā (Apollo 11). Pēdējais cilvēks uz Mēness —
+                Džīns Cernans 1972. gadā.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">04</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Veidošanās</h3>
+              <p class="fact-card__text">
+                Dominējošā hipotēze — Mēness veidojās pirms apmēram
+                4,5 miljardiem gadu, kad Zeme sadūrās ar Marsa
+                lieluma objektu (Theia). Trieciena rezultātā
+                izmestais materiāls apvienojās Mēness veidolā.
+                Šī hipotēze izskaidro, kāpēc Mēness sastāvs ir
+                līdzīgs Zemes mantijas sastāvam.
+              </p>
+            </div>
+          </article>
+
+          <article class="fact-card">
+            <span class="fact-card__number">05</span>
+            <div class="fact-card__content">
+              <h3 class="fact-card__title">Krāteri un "jūras"</h3>
+              <p class="fact-card__text">
+                Mēness virsma ir klāta ar krāteriem — vairāk nekā
+                500 000 krāteru, kas lielāki par 1 km. Tumšos
+                plankumus sauc par "jūrām" (maria) — tie ir seni
+                bazalta līdzenumi, kas izveidojušies pēc vulkāniskās
+                aktivitātes. Gaišos apgabalus sauc par "augstienēm"
+                (terrae).
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU INFORMĀCIJA
+         ============================================================ -->
+    <section class="moon-page__section" aria-labelledby="info-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu informācija</span>
+          <h2 class="section-header__title" id="info-title">
+            Mēness raksturojums
+          </h2>
+        </header>
+
+        <div class="definition-list">
+          <div class="definition-item">
+            <span class="definition-item__term">Nosaukums</span>
+            <p class="definition-item__description">
+              Latviešu valodā "Mēness" ir sens nosaukums, kas saistīts
+              ar mēnesi (laika vienību). Citās valodās — "Moon" (angļu),
+              "Luna" (latīņu). Zinātniskais apzīmējums — Luna.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Virsma</span>
+            <p class="definition-item__description">
+              Klāta ar regolītu — smalkiem putekļiem un akmeņiem.
+              Reljefs ietver krāterus, kalnus, ielejas un līdzenumus.
+              Augstākais punkts — 10,8 km virs vidējā līmeņa
+              (netālu no Dienvidpola). Zemākais — Dienvidpola-Aitkenas
+              baseins, kas ir 13 km dziļš.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Atmosfēra</span>
+            <p class="definition-item__description">
+              Mēnesim praktiski nav atmosfēras — tikai ļoti retināta
+              eksosfēra (ap 10 000 atomu uz cm³). Tāpēc uz Mēness
+              nav laika apstākļu, skaņa neizplatās, un debesis vienmēr
+              ir melnas, pat dienā.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Gravitācija</span>
+            <p class="definition-item__description">
+              Mēness gravitācija ir tikai 1/6 no Zemes gravitācijas.
+              Tas nozīmē, ka 80 kg smags cilvēks uz Mēness svērtu
+              tikai ap 13 kg. Zema gravitācija apgrūtina ilgstošu
+              uzturēšanos — muskuļi un kauli vājinās.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Ūdens</span>
+            <p class="definition-item__description">
+              Uz Mēness atrasts ūdens ledus — galvenokārt polārajos
+              krāteros, kur nekad neiekļūst saules gaisma. Šis ledus
+              varētu būt noderīgs nākotnes cilvēku misijām uz Mēnesi —
+              gan dzeršanai, gan skābekļa un ūdeņraža ieguvei.
+            </p>
+          </div>
+
+          <div class="definition-item">
+            <span class="definition-item__term">Izpēte</span>
+            <p class="definition-item__description">
+              Mēness ir vienīgais debess ķermenis ārpus Zemes, ko
+              cilvēki ir apmeklējuši. Kopumā 12 cilvēki ir staigājuši
+              pa Mēness virsmu. Pēdējā misija bija Apollo 17 (1972).
+              Jaunās programmas (Artemis, NASA) plāno atgriešanos
+              uz Mēness 2020. gados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SALĪDZINĀJUMS AR CITIEM PAVADOŅIEM
+         ============================================================ -->
+    <section class="moon-page__section moon-page__section--alt" aria-labelledby="compare-title">
+      <div class="page__container">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Salīdzinājums</span>
+          <h2 class="section-header__title" id="compare-title">
+            Mēness citu pavadoņu kontekstā
+          </h2>
+          <p class="section-header__subtitle">
+            Kā Mēness izskatās, salīdzinot ar citiem lielākajiem Saules sistēmas pavadoņiem
+          </p>
+        </header>
+
+        <div class="comparison-bars">
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--moon-primary); color: var(--moon-primary);"></span>
+              Mēness
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 100%; --bar-color-start: var(--moon-primary); --bar-color-end: var(--moon-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">3 474 km</span>
+          </div>
+
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--io-primary); color: var(--io-primary);"></span>
+              Io
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 105%; --bar-color-start: var(--io-primary); --bar-color-end: var(--io-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">3 643 km</span>
+          </div>
+
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--europa-primary); color: var(--europa-primary);"></span>
+              Eiropa
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 89%; --bar-color-start: var(--europa-primary); --bar-color-end: var(--europa-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">3 122 km</span>
+          </div>
+
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--ganymede-primary); color: var(--ganymede-primary);"></span>
+              Ganimēds
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 152%; --bar-color-start: var(--ganymede-primary); --bar-color-end: var(--ganymede-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">5 268 km</span>
+          </div>
+
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--callisto-primary); color: var(--callisto-primary);"></span>
+              Kallisto
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 138%; --bar-color-start: var(--callisto-primary); --bar-color-end: var(--callisto-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">4 821 km</span>
+          </div>
+
+          <div class="comparison-bar">
+            <span class="comparison-bar__label">
+              <span class="comparison-table__dot" style="background: var(--titan-primary); color: var(--titan-primary);"></span>
+              Titāns
+            </span>
+            <div class="comparison-bar__track">
+              <div class="comparison-bar__fill" style="width: 148%; --bar-color-start: var(--titan-primary); --bar-color-end: var(--titan-accent);"></div>
+            </div>
+            <span class="comparison-bar__value">5 150 km</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PAPILDU FAKTI (DETAILS)
+         ============================================================ -->
+    <section class="moon-page__section" aria-labelledby="extra-title">
+      <div class="page__container page__container--narrow">
+        <header class="section-header">
+          <span class="section-header__eyebrow">Papildu lasāmviela</span>
+          <h2 class="section-header__title" id="extra-title">
+            Biežāk uzdotie jautājumi
+          </h2>
+        </header>
+
+        <div class="control-accordion">
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc Mēness vienmēr rāda vienu un to pašu pusi?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Mēness rotācijas periods ir precīzi vienāds ar tā
+                orbītas periodu ap Zemi (27,3 dienas). Šo parādību
+                sauc par "plūdmaiņu bloķēšanu" (tidal locking) un
+                tā rodas no Zemes gravitācijas ietekmes. Zemes
+                gravitācija laika gaitā ir "nobloķējusi" Mēness
+                rotāciju tā, ka tas vienmēr ir vērsts pret Zemi
+                ar vienu un to pašu pusi. Faktiski mēs redzam
+                ap 59% no Mēness virsmas, jo Mēness orbīta ir
+                nedaudz eliptiska.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kāpēc uz Mēness ir tik daudz krāteru?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Uz Mēness ir daudz krāteru, jo:
+              </p>
+              <ul style="margin-top: var(--space-xs);">
+                <li>Nav atmosfēras, kas sadedzinātu meteorītus pirms tie sasniedz virsmu</li>
+                <li>Nav ūdens vai vēja, kas laika gaitā izlīdzinātu virsmu</li>
+                <li>Nav plātņu tektonikas, kas atjaunotu virsmu</li>
+                <li>Virsma ir sasalusi miljardiem gadu</li>
+              </ul>
+              <p style="margin-top: var(--space-xs);">
+                Tāpēc Mēness virsma ir sava veida "laika kapsula" —
+                tā saglabā informāciju par Saules sistēmas agrīno
+                vēsturi.
+              </p>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kā Mēness ietekmē Zemi?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                Mēness ietekmē Zemi vairākos veidos:
+              </p>
+              <ul style="margin-top: var(--space-xs);">
+                <li><strong>Plūdmaiņas</strong> — gravitācija izraisa okeānu plūdmaiņas divas reizes dienā</li>
+                <li><strong>Rotācijas ass stabilizācija</strong> — Mēness palīdz noturēt Zemes rotācijas asi stabilu (~23,4°)</li>
+                <li><strong>Klimata regulēšana</strong> — bez Mēness Zemes ass svārstītos daudz vairāk, izraisot haotiskas klimata izmaiņas</li>
+                <li><strong>Dienas garuma palēnināšana</strong> — Mēness plūdmaiņas lēnām palēnina Zemes rotāciju (par ~1,8 ms/gadsimtā)</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="control-accordion__item">
+            <summary class="control-accordion__summary">
+              Kad cilvēki atgriezīsies uz Mēness?
+            </summary>
+            <div class="control-accordion__content">
+              <p>
+                NASA programma <strong>Artemis</strong> plāno atgriezt
+                cilvēkus uz Mēness 2020. gados. Pirmā misija — Artemis I
+                (2022) — bija bezpilota izmēģinājuma lidojums ap Mēnesi.
+                Artemis II plāno apkalpes lidojumu ap Mēnesi.
+                Artemis III plāno nosēšanos uz Mēness dienvidpola.
+                Mērķis — izveidot ilgstošu cilvēku klātbūtni uz Mēness
+                un sagatavoties misijām uz Marsu.
+              </p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NAVIGĀCIJA STARP PAVADOŅIEM
+         ============================================================ -->
+    <section class="moon-page__section" aria-label="Navigācija starp pavadoņiem">
+      <div class="page__container">
+        <nav class="moon-nav" aria-label="Iepriekšējais un nākamais pavadonis">
+          <a href="../planets/earth.html" class="moon-nav__link moon-nav__link--prev">
+            Zeme
+          </a>
+          <a href="../index.html#moons" class="moon-nav__link moon-nav__link--parent">
+            Visi pavadoņi
+          </a>
+          <a href="io.html" class="moon-nav__link moon-nav__link--next">
+            Io
+          </a>
+        </nav>
+      </div>
+    </section>
+
   </main>
 
+  <!-- === ATGRIEŠANĀS PIE AUGŠAS === -->
+  <a href="#" class="back-to-top" aria-label="Atgriezties pie lapas sākuma"></a>
+
+  <!-- === KĀJENE === -->
   <footer class="footer">
+    <div class="footer__decoration" aria-hidden="true"></div>
+
     <div class="page__container">
-      <div class="footer__bottom" style="margin-top: 0;">
-        <p class="footer__copyright">© 2026 QvarcY · SolXy · MIT</p>
+      <div class="footer__content">
+
+        <div class="footer__block footer__block--brand">
+          <a href="../index.html" class="footer__brand">
+            <span class="footer__brand-mark" aria-hidden="true"></span>
+            <span>SolXy</span>
+          </a>
+          <p class="footer__text">
+            <strong>SolXy</strong> — Saules sistēmas izpēte bez JavaScript.
+            Uzbūvēts tikai ar HTML un CSS.
+          </p>
+          <a href="https://github.com/QvarcY" class="footer__author" rel="noopener noreferrer" target="_blank">
+            <span class="footer__author-avatar" aria-hidden="true">Q</span>
+            <span class="footer__author-info">
+              <span class="footer__author-name">QvarcY</span>
+              <span class="footer__author-handle">@QvarcY</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Planētas</h3>
+          <ul class="footer__list">
+            <li><a href="../planets/mercury.html" class="footer__link">Merkurs</a></li>
+            <li><a href="../planets/venus.html" class="footer__link">Venēra</a></li>
+            <li><a href="../planets/earth.html" class="footer__link">Zeme</a></li>
+            <li><a href="../planets/mars.html" class="footer__link">Marss</a></li>
+            <li><a href="../planets/jupiter.html" class="footer__link">Jupiters</a></li>
+            <li><a href="../planets/saturn.html" class="footer__link">Saturns</a></li>
+            <li><a href="../planets/uranus.html" class="footer__link">Urāns</a></li>
+            <li><a href="../planets/neptune.html" class="footer__link">Neptūns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Pavadoņi</h3>
+          <ul class="footer__list">
+            <li><a href="moon.html" class="footer__link">Mēness</a></li>
+            <li><a href="io.html" class="footer__link">Io</a></li>
+            <li><a href="europa.html" class="footer__link">Eiropa</a></li>
+            <li><a href="ganymede.html" class="footer__link">Ganimēds</a></li>
+            <li><a href="callisto.html" class="footer__link">Kallisto</a></li>
+            <li><a href="titan.html" class="footer__link">Titāns</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__block">
+          <h3 class="footer__title">Dati</h3>
+          <ul class="footer__list">
+            <li><a href="../data/comparison.html" class="footer__link">Salīdzinājums</a></li>
+            <li><a href="../data/timeline.html" class="footer__link">Laika līnija</a></li>
+            <li><a href="../data/glossary.html" class="footer__link">Vārdnīca</a></li>
+            <li><a href="../data/missions.html" class="footer__link">Misijas</a></li>
+            <li><a href="../data/exoplanets.html" class="footer__link">Eksoplanētas</a></li>
+            <li><a href="../data/star-map.html" class="footer__link">Zvaigžņu karte</a></li>
+            <li><a href="../data/sizes.html" class="footer__link">Izmēri</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          © 2026 · <a href="https://github.com/QvarcY" rel="noopener noreferrer" target="_blank">QvarcY</a> · MIT Licence
+        </p>
         <div class="footer__badges">
-          <span class="footer__badge footer__badge--teal">HTML</span>
-          <span class="footer__badge footer__badge--violet">CSS</span>
-          <span class="footer__badge footer__badge--pink">0 JS</span>
+          <span class="footer__badge footer__badge--teal">Tīrs CSS</span>
+          <span class="footer__badge footer__badge--violet">0 JS</span>
+          <span class="footer__badge footer__badge--pink">Mēness</span>
         </div>
       </div>
+
+      <a href="#" class="footer__top-link">Uz augšu</a>
     </div>
   </footer>
+
 </body>
 </html>
